@@ -3,6 +3,8 @@ import React from 'react';
 class UserChannel extends React.Component {
   constructor(props) {
     super(props);
+
+    this.logout = this.logout.bind(this)
   }
 
   logout(e){
@@ -12,12 +14,15 @@ class UserChannel extends React.Component {
 
 
   render() {
-    <div className="user-channel-main">
-      <footer className="user-footer">
-        Welcome {this.props.currentUser}
-        <button onClick={this.logout} className="logout-button">Logout</button>
-      </footer>
-    </div>
+
+    return (
+      <div className="user-channel-main">
+        <footer className="user-footer">
+          Welcome {this.props.currentUser.display_name}
+          <button onClick={this.logout} className="logout-button">Logout</button>
+        </footer>
+      </div>
+    )
   }
 }
 

@@ -13,6 +13,10 @@ class SignUpForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleChange(type) {
     return (e) => {
       this.setState( {
@@ -23,14 +27,16 @@ class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitForm(this.state);
+    this.props.submitForm(this.state).then(() =>
+      this.props.history.push('/app')
+    )
   }
 
   render() {
 
     return (
       <div className="login-form-div">
-        {this.props.errors}
+        <div className="form-errors">{this.props.errors}</div>
         <form className="login-form">
           <div className="form-inner-div">
             <h1 className="login-form-header">{this.props.welcomeMessage[0]}</h1>

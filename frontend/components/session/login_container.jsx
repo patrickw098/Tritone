@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { loginCurrentUser } from '../../actions/session_actions';
+import { loginCurrentUser, clearErrors } from '../../actions/session_actions';
 import LogInForm from './login_form';
 import { Link } from 'react-router-dom'
 
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  submitForm: (userForm) => dispatch(loginCurrentUser(userForm))
+  submitForm: (userForm) => dispatch(loginCurrentUser(userForm)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LogInForm);

@@ -11,9 +11,14 @@
 
 }
 
+.home-page-header h1 {
+  margin: auto 0;
+}
+
 .home-page-nav {
   height: 52px;
   box-sizing: border-box;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -23,14 +28,22 @@
   border-radius: 5px;
   border: 2px solid white;
   cursor: pointer;
+  margin: 10px;
+}
+
+body {
+  background-color: black;
+  z-index: -2;
+  background-image: url('forest.jpg');
 }
 
 .home-page-body {
-  background-color: black;
-  height: 870px;
   z-index: -1;
-}
+  height: 100%;
+  width: 100%;
 
+}
+/*
 .login-form-div {
   position: absolute;
   top: 50%;
@@ -39,9 +52,9 @@
   width: 480px;
   height: 500px;
   color: white;
-}
+} */
 
-.login-form{
+.login-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,6 +67,8 @@
   box-sizing: border-box;
   padding:40px;
   font-family: sans-serif;
+  border: 1px solid rgba(0,0,0, 0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
 }
 
 .login-form-div button {
@@ -66,6 +81,42 @@
   text-align: center;
   padding: 10px;
   cursor: pointer;
+}
+
+.get-started-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #36393f;
+  color: #f6f6f7;
+  box-sizing: border-box;
+  padding:40px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0,0,0, 0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
+}
+
+.get-started-div button {
+  padding: 20px;
+  background-color: #7289da;
+  height: 80px;
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  margin: auto;
+}
+
+.get-started-div button:hover {
+  background-color: #677bc4;
 }
 
 .login-form-div button:hover {
@@ -97,6 +148,17 @@
 
 .login-form-div input:hover {
   border: 1px solid black;
+}
+
+.form-errors {
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200px);
+  z-index: 2;
+  font-family: sans-serif;
+  padding: 5px;
 }
 
 .form-inner-div {
