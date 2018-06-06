@@ -35,3 +35,11 @@ Channel.delete_all
 Channel.create({ name: "general", server_id: server1.id })
 Channel.create({ name: "riddles discussion", server_id: server1.id })
 Channel.create({ name: "Aech's hideout", server_id: server1.id })
+
+ServerMembership.delete_all
+
+membership1 = ServerMembership.create({ member_id: user6.id, server_id: server1.id })
+membership1 = ServerMembership.create({ member_id: user2.id, server_id: server1.id })
+membership1 = ServerMembership.create({ member_id: user3.id, server_id: server1.id })
+membership1 = ServerMembership.create({ member_id: user4.id, server_id: server1.id })
+membership1 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })

@@ -1,8 +1,25 @@
 .loading-box {
+  color: white;
+  background-color: #36393f;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: .5;
+  height: 300px;
+  width: 400px;
+  border-radius: 20px;
+}
+
+.spinner-container {
+  margin: 100px auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.spinner-container h1 {
+  margin-top: 20px;
+  opacity: 1;
 }
 
 .lds-roller {

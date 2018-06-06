@@ -1,4 +1,6 @@
-json.extract! @user, :id, :username, :avatar_url, :display_name
+json.user do
+  json.extract! @user, :id, :username, :avatar_url, :display_name, :server_ids
+end
 
 # friendslist = @user.friendships.select {|friendship| friendship.accepted == true }
 # friendslist.map! { |f| f.friend_id}
@@ -25,3 +27,12 @@ json.extract! @user, :id, :username, :avatar_url, :display_name
 #     end
 #   end
 # end
+
+json.servers do
+  @user.servers.each do |server|
+    json.set! server.id do
+      json.extract! server, :id, :name
+      json.channel_ids server.channel_ids
+    end
+  end
+end

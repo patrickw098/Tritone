@@ -5,10 +5,10 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
-const loginUser = user => (
+const loginUser = payload => (
   {
     type: LOGIN_USER,
-    user
+    payload
   }
 );
 

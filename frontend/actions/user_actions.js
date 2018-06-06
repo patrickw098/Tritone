@@ -4,9 +4,9 @@ export const RECEIVE_USER = "RECEIVE_USER";
 
 
 //will have to refactor jbuilder later to give back normalized data//
-const receiveUser = (user) => ({
+const receiveUser = (payload) => ({
   type: RECEIVE_USER,
-  user
+  payload
 })
 
 export const fetchUser = (id) => dispatch => {

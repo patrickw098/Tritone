@@ -1,0 +1,63 @@
+.server-list-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  color: white;
+  height: 100%;
+}
+
+.server-list-ul li {
+  height: 50px;
+  width: 50px;
+  margin: 5px auto;
+}
+
+.server-list-ul i{
+  font-size: 20px;
+}
+
+.server-list-ul li:first-child {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #72767d;
+}
+
+.server-list-ul button {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #36393f;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.server-icon:hover {
+  border-radius: 15px;
+  animation-timing-function: linear;
+  animation: animate-button .5s;
+}
+
+@keyframes animate-button {
+  from { border-radius: 100px }
+  to { border-radius: 5px }
+  to { border-radius: 40px}
+  to { border-radius: 15px}
+  to { border-radius: 40px}
+  to { border-radius: 15px}
+}
+
+.create-server-button {
+  color: #72767d;
+  border: 1px dashed #72767d;
+  font-size: 40px;
+}
+
+.create-server-button:hover {
+  color: white;
+  transition-duration: .5s;
+}
+
+.user-page-li button {
+  background-color: #7289da;
+  border-radius: 15px;
+}

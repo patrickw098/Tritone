@@ -49,6 +49,12 @@
   margin: 10px;
 }
 
+.home-page-nav a:hover {
+  color: white;
+}
+
+/* animation */
+
 body {
   background-color: black;
   z-index: -2;
@@ -59,8 +65,16 @@ body {
   z-index: -1;
   height: 100%;
   width: 100%;
-
 }
+
+@keyframes animate-background {
+  from { background-position: 0px }
+  to { background-position: -500px }
+}
+
+/* animation end */
+
+
 /*
 .login-form-div {
   position: absolute;

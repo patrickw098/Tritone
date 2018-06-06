@@ -6,5 +6,14 @@ class Server < ApplicationRecord
   belongs_to :creator,
   class_name: :User
 
-  
+  has_many :server_members,
+  primary_key: :id,
+  foreign_key: :server_id,
+  class_name: :ServerMembership
+
+  has_many :users,
+  through: :server_members,
+  source: :member
+
+
 end
