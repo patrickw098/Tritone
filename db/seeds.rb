@@ -39,7 +39,8 @@ Channel.create({ name: "Aech's hideout", server_id: server1.id })
 ServerMembership.delete_all
 
 membership1 = ServerMembership.create({ member_id: user6.id, server_id: server1.id })
-membership1 = ServerMembership.create({ member_id: user2.id, server_id: server1.id })
-membership1 = ServerMembership.create({ member_id: user3.id, server_id: server1.id })
-membership1 = ServerMembership.create({ member_id: user4.id, server_id: server1.id })
-membership1 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })
+membership2 = ServerMembership.create({ member_id: user2.id, server_id: server1.id })
+membership3 = ServerMembership.create({ member_id: user3.id, server_id: server1.id })
+membership4 = ServerMembership.create({ member_id: user4.id, server_id: server1.id })
+membership5 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })
+membership6 = ServerMembership.create({ member_id: user1.id, server_id: server1.id })
