@@ -39,4 +39,22 @@ class User < ApplicationRecord
     self.online_status = false
   end
 
+  has_many :friendships,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Friendship
+
+  has_many :friends_of,
+  primary_key: :id,
+  foreign_key: :friend_id,
+  class_name: :Friendship
+
+  has_many :friends,
+  through: :friendships,
+  source: :friendship
+
+  has_many :friend_requests,
+  through: :friends_of,
+  source: :user
+
 end

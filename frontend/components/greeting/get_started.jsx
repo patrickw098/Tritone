@@ -18,7 +18,7 @@ class GetStarted extends React.Component {
   demoUser(e) {
     console.log(this.props);
     e.preventDefault();
-    this.props.loginCurrentUser({ username: "demouser", password: "fireball42" })
+    this.props.loginCurrentUser({ username: "demo_user", password: "fireball42" })
   }
 
   redirectToChannel(e) {

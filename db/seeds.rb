@@ -6,8 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!({ username: "Parzival", password: "artemis"})
-User.create({ username: "Art3mis", password: "savetheworld"})
-User.create({ username: "Aech", password: "imcool"})
-User.create({ username: "Daito", password: "samurai"})
-User.create({ username: "Shoto", password: "ninjas"})
+User.delete_all
+
+user1 = User.create({ username: "demo_user", password: "fireball42" })
+user2 = User.create({ username: "Parzival", password: "artemis"})
+user3 = User.create({ username: "Art3mis", password: "savetheworld"})
+user4 = User.create({ username: "Aech", password: "imcool"})
+user5 = User.create({ username: "Daito", password: "samurai"})
+user6 = User.create({ username: "Shoto", password: "ninjas"})
+#
+Friendship.delete_all
+#
+# Friendship.create({ user_id: user2.id, friend_id: user6.id, accepted: true })
+# Friendship.create({ user_id: user2.id, friend_id: user3.id, accepted: true })
+# Friendship.create({ user_id: user2.id, friend_id: user4.id, accepted: true })
+# Friendship.create({ user_id: user2.id, friend_id: user5.id, accepted: true })
+# Friendship.create({ user_id: user6.id, friend_id: user2.id, accepted: true })
+# Friendship.create({ user_id: user3.id, friend_id: user2.id, accepted: true })
+# Friendship.create({ user_id: user4.id, friend_id: user2.id, accepted: true })
+# Friendship.create({ user_id: user5.id, friend_id: user2.id, accepted: true })
+
+Server.delete_all
+
+server1 = Server.create({ name: "High Five", creator_id: user2.id })
+
+Channel.delete_all
+
+Channel.create({ name: "general", server_id: server1.id })
+Channel.create({ name: "riddles discussion", server_id: server1.id })
+Channel.create({ name: "Aech's hideout", server_id: server1.id })
