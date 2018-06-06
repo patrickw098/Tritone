@@ -7,15 +7,12 @@ class Loading extends React.Component {
   }
 
   componentDidMount() {
-    console.log("hello", this.props.userId)
     this.props.fetchUser(this.props.userId)
   }
 
   componentWillReceiveProps() {
-    console.log( this.props.currentUser )
     if ( this.props.currentUser ) {
-      console.log("yayyyy");
-      this.props.history.push('/channels/user');
+      setTimeout(() => this.props.history.push('/channels/user'), 2000);
     }
   }
 

@@ -14,10 +14,15 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 ul {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 img {
@@ -36,7 +41,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
 } */
-/* 
+/*
 button,
 input[type="submit"] {
   cursor: pointer;

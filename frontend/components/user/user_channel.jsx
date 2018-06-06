@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class UserChannel extends React.Component {
   constructor(props) {
@@ -14,15 +15,24 @@ class UserChannel extends React.Component {
 
 
   render() {
-
-    return (
-      <div className="user-channel-main">
-        <footer className="user-footer">
-          Welcome {this.props.currentUser.display_name}
-          <button onClick={this.logout} className="logout-button">Logout</button>
-        </footer>
-      </div>
-    )
+    if ( this.props.currentUser.display_name === undefined ) {
+      return <Redirect to="/app" />
+    } else {
+      return (
+        <div className="user-channel-main">
+          <div className="server-selector-sidebar">
+          </div>
+          <div className="friend-selector-sidebar">
+            <footer className="user-footer">
+              <h3>{this.props.currentUser.display_name}</h3>
+              <button onClick={this.logout} className="logout-button"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            </footer>
+          </div>
+          <div className="message-div">
+          </div>
+        </div>
+      )
+    }
   }
 }
 

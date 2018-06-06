@@ -11,7 +11,6 @@ class Greeting extends React.Component {
     if (currentUser === null){
       return (
         <header className="home-page-header">
-          <h1>Tritone</h1>
           <nav className="home-page-nav">
             <Link to='/login'> Login </Link>
           </nav>
@@ -20,7 +19,6 @@ class Greeting extends React.Component {
     }else{
       return(
         <header className="home-page-header">
-          <h1>Tritone</h1>
           <nav className="home-page-nav">
             <Link to='/channels/user'> Open </Link>
           </nav>

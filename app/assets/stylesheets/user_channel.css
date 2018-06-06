@@ -1,6 +1,51 @@
 .user-channel-main {
   color: black;
   background-color: white;
-  height: 100vw;
+  height: 100vh;
   width: 100vw;
+  display: flex;
+  z-index: 1;
+  flex-direction: row;
+}
+
+.server-selector-sidebar {
+  width: 90px;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: #202225;
+}
+
+.friend-selector-sidebar {
+  width: 240px;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  background-color: #36393f;
+  /* align-items: flex-end; */
+}
+
+.user-footer {
+  align-self: flex-end;
+  background: rgba(32,34,37,.3);
+  height: 52px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.user-footer h3 {
+  margin: auto 0;
+  font-size: 16px;
+}
+
+.message-div {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  z-index: 2;
 }

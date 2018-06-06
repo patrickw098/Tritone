@@ -1,14 +1,32 @@
 .home-page-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 76px;
   box-sizing: border-box;
   padding: 10px;
   background-color: black;
   color: white;
-  font-family: 'Arial', sans-serif;
   padding: 12px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  opacity: .5;
+}
 
+.logo-container {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  top: 20px;
+  left: 25px;
+  font-size: 40px;
+}
+
+.logo-container h1 {
+  cursor: pointer;
+}
+
+.logo-container i {
+  font-size: 40px;
+  padding: 0 10px;
 }
 
 .home-page-header h1 {
@@ -66,9 +84,9 @@ body {
   color: #f6f6f7;
   box-sizing: border-box;
   padding:40px;
-  font-family: sans-serif;
   border: 1px solid rgba(0,0,0, 0.3);
   box-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
+  opacity: .9;
 }
 
 .login-form-div button {
@@ -95,12 +113,12 @@ body {
   color: #f6f6f7;
   box-sizing: border-box;
   padding:40px;
-  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid rgba(0,0,0, 0.3);
   box-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
+  opacity: .9;
 }
 
 .get-started-div button {
@@ -146,8 +164,12 @@ body {
   padding: 0 10px;
 }
 
+.login-form-div input:focus {
+  border: 2px solid #677bc4;
+}
+
 .login-form-div input:hover {
-  border: 1px solid black;
+  border: 2px solid #677bc4;
 }
 
 .form-errors {
@@ -157,7 +179,6 @@ body {
   left: 50%;
   transform: translate(-50%, -200px);
   z-index: 2;
-  font-family: sans-serif;
   padding: 5px;
 }
 
