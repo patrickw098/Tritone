@@ -3,26 +3,26 @@
   background-color: white;
   height: 100vh;
   width: 100vw;
-  display: flex;
   z-index: 1;
   flex-direction: row;
+  display: flex;
 }
 
 .server-selector-sidebar {
   width: 90px;
   height: 100%;
-  box-sizing: border-box;
   z-index: 2;
   background-color: #202225;
+  flex-shrink: 0;
 }
 
 .friend-selector-sidebar {
   width: 240px;
   height: 100%;
-  box-sizing: border-box;
   z-index: 2;
   display: flex;
   background-color: #36393f;
+  flex-shrink: 0;
   /* align-items: flex-end; */
 }
 
