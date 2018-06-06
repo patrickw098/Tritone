@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -d -w"
+    "start": "webpack -d -w",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,9 @@
   "homepage": "https://github.com/patrickw098/Tritone#readme",
   "devDependencies": {
     "webpack-cli": "^3.0.2"
+  },
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
   }
 }
