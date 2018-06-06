@@ -5,6 +5,7 @@
   margin: auto;
   color: white;
   height: 100%;
+  margin-top: 5px;
 }
 
 .server-list-ul li {
@@ -57,7 +58,7 @@
   transition-duration: .5s;
 }
 
-.user-page-li button {
+.active button {
   background-color: #7289da;
   border-radius: 15px;
 }

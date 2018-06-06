@@ -1,17 +1,25 @@
 import React from 'react';
-import { withRouter, Link, Redirect } from 'react-router-dom';
+import { withRouter, NavLink, Redirect } from 'react-router-dom';
 
 class ServerListItem extends React.Component {
   constructor(props) {
     super(props);
+
+  }
+
+  serverLetters(name) {
+    let words = name.split(" ");
+
+    let titles = words.map ((word) => word.split("")[0]);
+
+    return titles.join("")
   }
 
   render() {
     const { server } = this.props;
-    const letter = server.name.split("")[0];
+    const letter = this.serverLetters(server.name);
 
     if ( server.image_url !== undefined && server.image_url !== null ) {
-      console.log("i'm in here");
       return (
         <li className="server-list-item">
           <button className="server-icon">
@@ -20,7 +28,6 @@ class ServerListItem extends React.Component {
         </li>
       )
     } else {
-      console.log("your code works");
       return (
         <li className="server-list-item">
           <button className="server-icon">
