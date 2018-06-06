@@ -13,8 +13,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/app" component={LoadingContainer} />
       <ProtectedRoute path="/channels/user" component={UserChannelContainer} />
-      <Route exact path="/" component={WelcomePage} />
-      <Redirect to="/" />
+      <Route path="/" component={WelcomePage} />
     </Switch>
   </div>
 );
