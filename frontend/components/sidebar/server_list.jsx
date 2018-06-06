@@ -7,15 +7,21 @@ class ServerList extends React.Component {
     super(props);
 
       this.goToUserPage = this.goToUserPage.bind(this);
+      this.openServerModal = this.openServerModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.user.id);
   }
-
+  
   goToUserPage(e) {
     e.preventDefault();
     this.props.history.push('/channels/user')
+  }
+
+  openServerModal(e) {
+    e.preventDefault();
+    this.props.openModal('createServer');
   }
 
   render() {
@@ -25,7 +31,7 @@ class ServerList extends React.Component {
           { this.props.servers.map((server) => {
             return <ServerListItem key={server.id} server={server} />
           })}
-        <li><button className="create-server-button">+</button></li>
+        <li><button className="create-server-button" onClick={this.openServerModal}>+</button></li>
       </ul>
     )
   }

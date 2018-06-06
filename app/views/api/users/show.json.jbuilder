@@ -1,5 +1,5 @@
 json.user do
-  json.extract! @user, :id, :username, :avatar_url, :display_name, :server_ids
+  json.extract! @user, :id, :avatar_url, :display_name, :server_ids
 end
 
 # friendslist = @user.friendships.select {|friendship| friendship.accepted == true }

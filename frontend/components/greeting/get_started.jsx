@@ -16,7 +16,6 @@ class GetStarted extends React.Component {
   }
 
   demoUser(e) {
-    console.log(this.props);
     e.preventDefault();
     this.props.loginCurrentUser({ username: "demo_user", password: "fireball42" })
   }
@@ -28,7 +27,6 @@ class GetStarted extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-    console.log(currentUser);
 
     if (!currentUser) {
       return (

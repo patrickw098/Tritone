@@ -2,29 +2,29 @@
 export const fetchServer = (id) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/channels/${id}`
+    url: `/api/servers/${id}`
   })
 }
 
-export const searchServer = (channel) => {
+export const searchServer = (server) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/channels/`,
-    data: { channel }
+    url: `/api/servers/`,
+    data: { server }
   })
 }
 
 export const deleteServer = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/channels/${id}`
+    url: `/api/servers/${id}`
   })
 }
 
-export const createServer = (channel) => {
+export const createServer = (server) => {
   return $.ajax({
     method: 'POST',
-    url: '/api/channels',
-    data: { channel }
+    url: '/api/servers',
+    data: { server }
   })
 }
