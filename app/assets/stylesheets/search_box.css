@@ -1,0 +1,29 @@
+.search-box-ul {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.search-box-div {
+  position: absolute;
+  overflow: scroll;
+  height: 100px;
+  width: 300px;
+  z-index: 11;
+  top: 52px;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  text-transform: none;
+}
+
+.search-box-item {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-box-item:hover {
+  background-color: rgba(0,0,0, 0.1);
+}

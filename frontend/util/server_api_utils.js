@@ -28,3 +28,11 @@ export const searchServer = (server) => {
     data: { server }
   })
 }
+
+export const joinServer = (server) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/server_memberships',
+    data: { membership: { server_id: server.id } }
+  })
+}

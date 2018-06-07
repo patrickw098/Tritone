@@ -36,6 +36,7 @@
   justify-content: space-between;
   height: 100%;
   align-items: center;
+  position: relative;
 }
 
 .create-server-container h1 {
@@ -50,7 +51,6 @@
   text-align: left;
   padding: 0 20px;
   color: black;
-  margin-bottom: 70px
 }
 
 .create-server-container input:focus {
@@ -91,6 +91,7 @@
   justify-content: space-between;
   height: 100%;
   align-items: center;
+  position: relative;
 }
 
 .join-server-container h1 {
@@ -105,7 +106,7 @@
   text-align: left;
   padding: 0 20px;
   color: black;
-  margin-bottom: 70px;
+  margin-bottom: 0;
 }
 
 .join-server-container input:focus {

@@ -33,6 +33,7 @@ json.servers do
     json.set! server.id do
       json.extract! server, :id, :name
       json.channel_ids server.channel_ids
+      json.user_ids server.user_ids
     end
   end
 end

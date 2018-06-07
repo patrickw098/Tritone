@@ -2,7 +2,7 @@ class Api::SearchesController < ApplicationController
   def servers
     query = params[:server][:name]
     query = "%" + query.split("").join("%") + "%"
-    @servers = Server.where('name LIKE ?', query).limit(10)
+    @servers = Server.where('lower(name) LIKE ?', query).limit(10)
 
     render '/api/servers/index'
   end

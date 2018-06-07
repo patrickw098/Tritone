@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // debugger start
+  // debug start
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-  // debugger end
+  // debug end
 
   ReactDOM.render(<Root store={store} />, root);
 });

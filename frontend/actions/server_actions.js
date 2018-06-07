@@ -38,3 +38,8 @@ export const searchServers = (server) => dispatch => {
   return ServerApiUtils.searchServer(server)
     .then((res) => dispatch(receiveAllServers(res)))
 }
+
+export const joinServer = (server) => dispatch => {
+  return ServerApiUtils.joinServer(server)
+    .then((res) => dispatch(receiveServer(res)))
+}
