@@ -50,20 +50,77 @@
   text-align: left;
   padding: 0 20px;
   color: black;
+  margin-bottom: 70px
 }
 
 .create-server-container input:focus {
   border: 2px solid #7289da;
 }
 
-.create-server-container button {
+.create-server-form-button {
   background-color: #7289da;
   color: white;
   width: 200px;
   height: 50px;
   border-radius: 10px;
+  margin: 0 20px;
 }
 
-.create-server-container button:hover {
+.create-server-form-button:hover {
   background-color: #677bc4;
+}
+
+.join-server-container {
+  background-color: white;
+  height: 300px;
+  width: 520px;
+  border-radius: 10px;
+  padding: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  color: #369368;
+}
+
+.join-server-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.join-server-container h1 {
+  margin-bottom: 40px;
+}
+
+.join-server-container input {
+  border: 2px solid black;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: left;
+  padding: 0 20px;
+  color: black;
+  margin-bottom: 70px;
+}
+
+.join-server-container input:focus {
+  border: 2px solid #3ca374;
+}
+
+.join-server-form-button {
+  background-color: #3ca374;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.join-server-form-button:hover {
+  background-color: #369368;
 }

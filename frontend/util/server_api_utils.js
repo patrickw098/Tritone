@@ -6,14 +6,6 @@ export const fetchServer = (id) => {
   })
 }
 
-export const searchServer = (server) => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/servers/`,
-    data: { server }
-  })
-}
-
 export const deleteServer = (id) => {
   return $.ajax({
     method: 'DELETE',
@@ -25,6 +17,14 @@ export const createServer = (server) => {
   return $.ajax({
     method: 'POST',
     url: '/api/servers',
+    data: { server }
+  })
+}
+
+export const searchServer = (server) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/search/servers',
     data: { server }
   })
 }

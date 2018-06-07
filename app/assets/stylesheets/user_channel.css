@@ -14,6 +14,7 @@
   z-index: 2;
   background-color: #202225;
   flex-shrink: 0;
+  overflow: scroll;
 }
 
 .friend-selector-sidebar {

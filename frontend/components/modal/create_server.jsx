@@ -6,11 +6,10 @@ class CreateServer extends React.Component {
 
     this.state = {
       name: "",
-      creator_id: props.user.id
+      button: "create"
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -19,22 +18,51 @@ class CreateServer extends React.Component {
     })
   }
 
-  handleSubmit(e) {
+  handleSubmit(type, e) {
     e.preventDefault();
-    this.props.createServer(this.state).then(() => this.props.closeModal());
+    if (type === "create") {
+      this.props.createServer(this.state).then(() => this.props.closeModal());
+    }
+  }
+
+  switchButtons(type, e) {
+    e.preventDefault();
+    this.setState({
+      name: "",
+      button: type
+    })
   }
 
   render() {
-    return (
-      <div className="create-server-container">
-        <h1>So you want a new server?</h1>
-          <div className="create-server-div">
-            <label>Enter Server Name</label>
-            <input value={this.state.name} onChange={this.handleChange} />
-            <button className="create-server-form-button" onClick={this.handleSubmit}> Create Server </button>
-          </div>
-      </div>
-    )
+    if (this.state.button === "create" ) {
+      return (
+        <div className="create-server-container">
+          <h1>Create Server</h1>
+            <div className="create-server-div">
+              <input value={this.state.name} onChange={this.handleChange} />
+              <div className="buttons-containers">
+                <button className="create-server-form-button" onClick={(e) => this.handleSubmit("create", e)}> Create Server </button>
+                or
+                <button className="join-server-form-button" onClick={(e) => this.switchButtons("join", e)}> Join Server </button>
+              </div>
+            </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="join-server-container">
+          <h1>Join Server</h1>
+            <div className="join-server-div">
+              <input value={this.state.name} onChange={this.handleChange} />
+              <div className="buttons-containers">
+                <button className="create-server-form-button" onClick={(e) => this.switchButtons("create", e)}> Create Server </button>
+                or
+                <button className="join-server-form-button" onClick={(e) => this.handleSubmit("join", e)}> Join Server </button>
+              </div>
+            </div>
+        </div>
+      )
+    }
   }
 
 }

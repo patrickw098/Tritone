@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :show]
     resources :servers, only: [:index, :show, :create, :destroy]
     resources :channels, only: [:show, :create, :update, :destroy]
+
+    get '/searches/servers', to: 'searches#servers'
+    get '/searches/users', to: 'searches#users'
     resource :sessions, only: [:create, :destroy]
   end
 
