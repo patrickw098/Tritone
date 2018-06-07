@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
   user: state.entities.users[state.session.id],
   servers: userServers(state),
   allServers: state.entities.servers
-})
+});
 
 const userServers = (state) => {
   let user = state.entities.users[state.session.id];
@@ -18,6 +18,6 @@ const userServers = (state) => {
 const mapDispatchToProps = dispatch => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
   openModal: (type) => dispatch(openModal('createServer'))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServerList);

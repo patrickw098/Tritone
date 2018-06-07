@@ -19,7 +19,7 @@ const Modal = ( { modal, closeModal } ) => {
 
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className="modal-child" onClick={(e) => e.stopPropagation()}>
         { component }
       </div>
     </div>
@@ -28,10 +28,10 @@ const Modal = ( { modal, closeModal } ) => {
 
 const mapStateToProps = state => ({
   modal: state.ui.modal
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal())
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal)

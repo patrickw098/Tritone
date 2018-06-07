@@ -8,6 +8,19 @@ class SearchBox extends React.Component {
     this.state = {
       query: props.query
     }
+
+    this.substringSearch = this.substringSearch.bind(this);
+  }
+
+  substringSearch(server, query) {
+    if ( query.length === 0 ) return true;
+
+    let char = query[0];
+    let index = server.indexOf(char);
+
+    if  ( index === -1 ) return false;
+
+    return this.substringSearch(server.slice(index + 1), query.slice(1));
   }
 
 
@@ -18,9 +31,10 @@ class SearchBox extends React.Component {
     let queryLower = query.toLowerCase();
 
     servers.forEach( (server) => {
-      let serverName = server.name.toLowerCase().split("").slice(0, length).join("");
-      if ( serverName === queryLower ) array.push(server);
-    })
+      // let serverName = server.name.toLowerCase().split("").slice(0, length).join(""); //code golfing
+      if ( this.substringSearch(server.name, queryLower) === true ) {
+        array.push(server);
+      }})
 
     if ( array.length === 0 || query.length === 0 ) {
       return (

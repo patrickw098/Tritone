@@ -13,7 +13,7 @@ class ServerList extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.user.id);
   }
-  
+
   goToUserPage(e) {
     e.preventDefault();
     this.props.history.push('/channels/user')
@@ -27,7 +27,14 @@ class ServerList extends React.Component {
   render() {
     return (
       <ul className="server-list-ul">
-        <li className="user-page-li"><NavLink activeClassName="active" to="/channels/user/"><button className="user-page-button"><i className="fa fa-users" aria-hidden="true"></i></button></NavLink></li>
+        <li className="user-page-li">
+          <NavLink activeClassName="active" to="/channels/user/">
+            <button className="user-page-button">
+              <i className="fa fa-users" aria-hidden="true">
+              </i>
+            </button>
+          </NavLink>
+        </li>
           { this.props.servers.map((server) => {
             return <ServerListItem key={server.id} server={server} />
           })}

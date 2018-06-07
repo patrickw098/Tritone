@@ -7,7 +7,9 @@ class SearchBoxItem extends React.Component {
 
   render() {
     return (
-      <li className="search-box-item" onClick={(e) => this.props.select(e, this.props.server)}>{this.props.server.name}</li>
+      <li className="search-box-item" onClick={(e) => this.props.select(e, this.props.server)}>
+        {this.props.server.name}
+      </li>
     )
   }
 }

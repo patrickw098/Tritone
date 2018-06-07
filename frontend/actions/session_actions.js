@@ -5,18 +5,14 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
-const loginUser = payload => (
-  {
+const loginUser = payload => ({
     type: LOGIN_USER,
     payload
-  }
-);
+});
 
-const logoutUser = () => (
-  {
+const logoutUser = () => ({
     type: LOGOUT_USER
-  }
-);
+});
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
@@ -39,8 +35,6 @@ export const createUser = userForm => dispatch => {
     .then(user => dispatch(loginUser(user)), error => dispatch(receiveErrors(error.responseJSON)));
 };
 
-export const clearErrors = () => (
-  {
+export const clearErrors = () => ({
     type: CLEAR_ERRORS
-  }
-);
+});

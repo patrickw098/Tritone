@@ -8,10 +8,17 @@ class Loading extends React.Component {
     this.words = [
       "Riding a capybara",
       "Loading screen is undefined",
-      "Stuck in an infinite loop",
+      "Stuck in an infinite loop, Stuck in an infinite loop, Stuck",
       "Fixing 422 errors",
       "Mastering flex-box",
-      "Can't read value `name` of undefined"
+      "Can't read value name of undefined",
+      "Syntax error, unexpected token , ",
+      "React child needs a key",
+      "Trying to render an object",
+      "Can't call method 'then' on undefined",
+      "Likely forgot to export",
+      "Reducer needs a type",
+      "Normalizing state"
     ]
 
     this.state = {

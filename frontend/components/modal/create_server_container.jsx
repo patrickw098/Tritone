@@ -6,8 +6,8 @@ import { closeModal } from '../../actions/modal_actions';
 const mapStateToProps = state => ({
   user: state.entities.users[state.session.id],
   servers: selectServers(state)
-})
-//
+});
+
 const selectServers = (state) => {
   let serverList = Object.values(state.entities.servers);
 

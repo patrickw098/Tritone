@@ -18,14 +18,15 @@ class CreateServer extends React.Component {
   handleChange(e) {
     this.setState({
       name: e.target.value,
-      id: null
-    }, () => {
+      id: null // this prevents the user from submitting an incorrect server id,
+    }, () => { // since you can only submit with a valid id
       if (this.state.button === "join" && this.state.name.length === 1) {
-        this.props.searchServers(this.state);
+        this.props.searchServers(this.state); //only searches when the first letter is entered
       }
     })
   }
 
+// when a server is selected in a child component, this component receives an updated state with server id
   handleServerSelect(e, object) {
     e.preventDefault();
     this.setState({
@@ -51,6 +52,7 @@ class CreateServer extends React.Component {
     })
   }
 
+  // this render probably should be rendering two different components... //
   render() {
     if (this.state.button === "create" ) {
       return (

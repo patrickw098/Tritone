@@ -7,17 +7,17 @@ export const REMOVE_SERVER = "REMOVE_SERVER";
 const receiveServer = (payload) => ({
   type: RECEIVE_SERVER,
   payload
-})
+});
 
 const removeServer = (serverId) => ({
   type: REMOVE_SERVER,
   serverId
-})
+});
 
 const receiveAllServers = (payload) => ({
   type: RECEIVE_ALL_SERVERS,
   payload
-})
+});
 
 export const fetchServer = (id) => dispatch => {
   return ServerApiUtils.fetchServer(id)
