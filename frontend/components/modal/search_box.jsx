@@ -16,11 +16,12 @@ class SearchBox extends React.Component {
     if ( query.length === 0 ) return true;
 
     let char = query[0];
-    let index = server.indexOf(char);
+    let lowerServer = server.toLowerCase();
+    let index = lowerServer.indexOf(char);
 
     if  ( index === -1 ) return false;
 
-    return this.substringSearch(server.slice(index + 1), query.slice(1));
+    return this.substringSearch(lowerServer.slice(index + 1), query.slice(1));
   }
 
 

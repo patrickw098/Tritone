@@ -39,6 +39,12 @@ class User < ApplicationRecord
     self.online_status = false
   end
 
+  def sorted_servers
+    sorted = self.server_memberships.sort_by { |server| server.created_at }
+    sorted.map! { |server| server.server_id }
+    sorted
+  end
+
   has_many :friendships,
   primary_key: :id,
   foreign_key: :user_id,

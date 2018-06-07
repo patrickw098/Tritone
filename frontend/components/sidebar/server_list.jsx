@@ -14,6 +14,12 @@ class ServerList extends React.Component {
     this.props.fetchUser(this.props.user.id);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.match.params.serverId !== this.props.match.params.serverId ) {
+      this.props.fetchServer(newProps.match.params.serverId);
+    }
+  }
+
   goToUserPage(e) {
     e.preventDefault();
     this.props.history.push('/channels/user')

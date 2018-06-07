@@ -22,17 +22,21 @@ class ServerListItem extends React.Component {
     if ( server.image_url !== undefined && server.image_url !== null ) {
       return (
         <li className="server-list-item">
-          <button className="server-icon">
-            <img src={server.image_url} />
-          </button>
+          <NavLink activeClassName="active-server" to={`/channels/${server.id}`}>
+            <button className="server-icon">
+              <img src={server.image_url} />
+            </button>
+          </NavLink>
         </li>
       )
     } else {
       return (
         <li className="server-list-item">
-          <button className="server-icon">
-            <span>{letter}</span>
-          </button>
+          <NavLink activeClassName="active-server" to={`/channels/${server.id}`}>
+            <button className="server-icon">
+              <span>{letter}</span>
+            </button>
+          </NavLink>
         </li>
       )
     }
