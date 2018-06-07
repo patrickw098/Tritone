@@ -1,5 +1,7 @@
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
+export const OPEN_FOOTER = "OPEN_FOOTER";
+export const CLOSE_FOOTER = "CLOSE_FOOTER";
 
 export const openModal = (modal) => ({
   type: OPEN_MODAL,
@@ -11,3 +13,12 @@ export const closeModal = () => {
     type: CLOSE_MODAL
   }
 }
+
+export const openFooter = (footer) => ({
+  type: OPEN_FOOTER,
+  footer
+})
+
+export const closeFooter = () => ({
+  type: CLOSE_FOOTER
+})

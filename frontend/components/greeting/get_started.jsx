@@ -31,12 +31,15 @@ class GetStarted extends React.Component {
     if (!currentUser) {
       return (
         <div className="get-started-div">
-          <button onClick={this.getStarted}>
-            <h1>Get Started!</h1>
-          </button>
-          <button onClick={this.demoUser}>
-            <h1>Demo User Login</h1>
-          </button>
+          <h1> Tritone, a discord app clone </h1>
+          <div className="get-started-button-container">
+            <button className="demo-user" onClick={this.demoUser}>
+              <h2>Demo User Log In</h2>
+            </button>
+            <button className="get-started-button" onClick={this.getStarted}>
+              <h2>Get Started!</h2>
+            </button>
+          </div>
         </div>
       );
     } else {

@@ -53,6 +53,10 @@
   color: black;
 }
 
+.create-server-container input:hover {
+  border: 2px solid #677bc4;
+}
+
 .create-server-container input:focus {
   border: 2px solid #7289da;
 }
@@ -109,6 +113,10 @@
   margin-bottom: 0;
 }
 
+.join-server-container input:hover {
+  border: 2px solid #369368;
+}
+
 .join-server-container input:focus {
   border: 2px solid #3ca374;
 }
@@ -124,4 +132,28 @@
 
 .join-server-form-button:hover {
   background-color: #369368;
+}
+
+.dropdown-box {
+  position: absolute;
+  right: 5px;
+  top: -40px;
+  height: 20px;
+  width: 120px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.dropdown-box li:hover {
+  background-color: #7289da;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.user-footer {
+  position: relative;
 }

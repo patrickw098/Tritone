@@ -7,8 +7,8 @@
   background-color: black;
   color: white;
   padding: 12px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  opacity: .5;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  opacity: .5
 }
 
 .logo-container {
@@ -17,16 +17,21 @@
   color: white;
   top: 20px;
   left: 25px;
-  font-size: 40px;
+  font-size: 33px;
+  vertical-align: middle;
 }
 
 .logo-container h1 {
   cursor: pointer;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: fantasy;
+  margin-left: -3px;
 }
 
 .logo-container i {
-  font-size: 40px;
-  padding: 0 10px;
+  font-size: 36px;
+  padding: 0 5px;
 }
 
 .home-page-header h1 {
@@ -42,15 +47,16 @@
 }
 
 .home-page-nav a {
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px 15px;
+  border-radius: 20px;
   border: 2px solid white;
   cursor: pointer;
   margin: 10px;
+  font-size: 12px;
 }
 
 .home-page-nav a:hover {
-  background-color: #7289da;
+  border-color: white;
 }
 
 /* animation */
@@ -117,11 +123,11 @@ body {
 
 .get-started-div {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 480px;
-  height: 300px;
+  height: 200px;
   border-radius: 10px;
   background-color: #36393f;
   color: #f6f6f7;
@@ -132,22 +138,48 @@ body {
   justify-content: space-between;
   border: 1px solid rgba(0,0,0, 0.3);
   box-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
-  opacity: .9;
+  opacity: .8;
+}
+
+.get-started-div h1 {
+  text-align: center;
+  text-shadow: 1px;
+  font-size: 24px;
+  opacity: 1;
+}
+
+.get-started-button-container {
+  display: flex;
+
 }
 
 .get-started-div button {
-  padding: 20px;
-  background-color: #7289da;
-  height: 80px;
-  width: 400px;
+  padding: 10px;
+  height: 60px;
+  width: 170px;
   border-radius: 5px;
   border: 1px solid black;
   text-align: center;
   cursor: pointer;
   margin: auto;
+  box-shadow: 1px 1px 1px 1px black;
+  opacity: 1;
 }
 
-.get-started-div button:hover {
+.demo-user {
+  background-color: white;
+  color: black;
+}
+
+.demo-user:hover {
+  background-color: lightgray;
+}
+
+.get-started-button {
+  background-color: #7289da;
+}
+
+.get-started-button:hover {
   background-color: #677bc4;
 }
 
@@ -189,7 +221,7 @@ body {
 }
 
 .login-form-div input:hover {
-  border: 2px solid #677bc4;
+  border: 2px solid rgba(0,0,0, 0.3);
 }
 
 .form-errors {

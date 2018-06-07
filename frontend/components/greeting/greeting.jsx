@@ -11,9 +11,11 @@ class Greeting extends React.Component {
     if (currentUser === null){
       return (
         <header className="home-page-header">
-          <nav className="home-page-nav">
-            <Link to='/login'> Login </Link>
-          </nav>
+          <div className="login-nav">
+            <nav className="home-page-nav">
+              <Link to='/login'> Log In </Link>
+            </nav>
+          </div>
         </header>
       );
     }else{
