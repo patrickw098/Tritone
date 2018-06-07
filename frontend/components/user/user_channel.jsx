@@ -17,7 +17,6 @@ class UserChannel extends React.Component {
   logout(e){
     e.preventDefault();
     if ( this.props.dropdown ) {
-      console.log(this.props.dropdown);
       this.props.closeFooter();
     } else {
       this.props.openFooter(true);
