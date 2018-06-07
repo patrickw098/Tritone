@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class GetStarted extends React.Component {
   constructor(props) {
@@ -41,11 +41,7 @@ class GetStarted extends React.Component {
       );
     } else {
       return (
-        <div className="get-started-div">
-          <button onClick={this.redirectToChannel}>
-            <h1>Open App!</h1>
-          </button>
-        </div>
+        <Redirect to="/app" />
       )
     }
   }

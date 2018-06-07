@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/" />
+      <Redirect to="/app" />
     )
   )}/>
 );

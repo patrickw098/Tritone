@@ -10,11 +10,11 @@ import { AuthRoute } from '../util/route_util';
 const WelcomePage = () => {
   return (
     <div>
-      <Route exact path="/" component={GreetingContainer} />
-      <Route exact path="/" component={GetStartedContainer} />
       <Route path="/" component={Logo} />
       <AuthRoute path="/login" component={LogInContainer} />
       <AuthRoute path="/signup" component={SignUpContainer} />
+      <Route exact path="/" component={GreetingContainer} />
+      <Route exact path="/" component={GetStartedContainer} />
     </div>
   )
 }

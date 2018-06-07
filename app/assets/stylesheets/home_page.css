@@ -166,7 +166,13 @@ body {
 }
 
 .login-form-div label div {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.login-form-div label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .login-form-div input {
@@ -188,12 +194,13 @@ body {
 
 .form-errors {
   color: red;
-  position: absolute;
+  margin-left: 10px;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -200px);
+  transform: translate(-50%, -200px); */
   z-index: 2;
-  padding: 5px;
+  font-size: 12px;
 }
 
 .form-inner-div {
