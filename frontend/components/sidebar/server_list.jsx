@@ -11,7 +11,9 @@ class ServerList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.user.id);
+    if ( this.props.match.params.serverId !== undefined ) {
+      this.props.fetchServer(this.props.match.params.serverId);
+    }
   }
 
   componentWillReceiveProps(newProps) {

@@ -11,12 +11,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div className="app-start">
     <Modal />
-    <Switch>
-      <ProtectedRoute path="/app" component={LoadingContainer} />
-      <ProtectedRoute path="/channels/user" component={UserChannelContainer} />
-      <ProtectedRoute path="/channels/:serverId" component={ServerChannelContainer} />
-      <Route path="/" component={WelcomePage} />
-    </Switch>
+      <Switch>
+        <ProtectedRoute path="/app" component={LoadingContainer} />
+        <ProtectedRoute path="/channels/user" component={UserChannelContainer} />
+        <ProtectedRoute path="/channels/:serverId" component={ServerChannelContainer} />
+        <Redirect to="/" />
+      </Switch>
+      <Route exact path="/" component={WelcomePage} />
   </div>
 );
 
