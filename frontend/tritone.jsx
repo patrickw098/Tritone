@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // debugger start
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   // debugger end
 
   ReactDOM.render(<Root store={store} />, root);

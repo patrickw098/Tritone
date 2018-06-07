@@ -24,7 +24,7 @@ export const createServer = (server) => {
 export const searchServer = (server) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/search/servers',
+    url: 'api/searches/servers',
     data: { server }
   })
 }

@@ -1,11 +1,10 @@
-class Api::ChannelsController < ApplicationController
+class Api::SearchesController < ApplicationController
   def servers
-    query = server_params.name
+    query = params[:server][:name]
     query = "%" + query.split("").join("%") + "%"
+    @servers = Server.where('name LIKE ?', query).limit(10)
 
-    @servers = Server.where(name: query).limit(10)
-
-    render '/api/servers#index'
+    render '/api/servers/index'
   end
 
   def users

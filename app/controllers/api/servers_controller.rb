@@ -19,7 +19,7 @@ class Api::ServersController < ApplicationController
   end
 
   def show
-    @server = Server.find(params[:id])
+    @server = Server.includes(:channels, :users).find(params[:id])
   end
 
   def destroy

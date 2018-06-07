@@ -15,6 +15,10 @@ class CreateServer extends React.Component {
   handleChange(e) {
     this.setState({
       name: e.target.value
+    }, () => {
+      if (this.state.button === "join") {
+        this.props.searchServers(this.state);
+      }
     })
   }
 
@@ -54,6 +58,8 @@ class CreateServer extends React.Component {
           <h1>Join Server</h1>
             <div className="join-server-div">
               <input value={this.state.name} onChange={this.handleChange} />
+              <div className="search-box-div">
+              </div>
               <div className="buttons-containers">
                 <button className="create-server-form-button" onClick={(e) => this.switchButtons("create", e)}> Create Server </button>
                 or

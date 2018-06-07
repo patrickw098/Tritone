@@ -14,6 +14,11 @@ const removeServer = (serverId) => ({
   serverId
 })
 
+const receiveAllServers = (payload) => ({
+  type: RECEIVE_ALL_SERVERS,
+  payload
+})
+
 export const fetchServer = (id) => dispatch => {
   return ServerApiUtils.fetchServer(id)
     .then((res) => dispatch(receiveServer(res)))
@@ -27,4 +32,9 @@ export const createServer = (server) => dispatch => {
 export const deleteServer = (id) => dispatch => {
   return ServerApiUtils.deleteServer(id)
     .then((res) => dispatch(removeServer(res.id)))
+}
+
+export const searchServers = (server) => dispatch => {
+  return ServerApiUtils.searchServer(server)
+    .then((res) => dispatch(receiveAllServers(res)))
 }

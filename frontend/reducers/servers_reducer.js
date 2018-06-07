@@ -14,6 +14,8 @@ const serversReducer = (state = initialState, action) => {
         const newServer = Object.assign({}, state);
         delete newServer(action.payload.serverId);
         return newServer;
+      case RECEIVE_ALL_SERVERS:
+        return Object.assign({}, action.payload.servers, state);
       default:
         return state;
   }
