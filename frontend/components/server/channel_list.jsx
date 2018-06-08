@@ -1,6 +1,6 @@
 import React from 'react';
 import ChannelListItem from './channel_list_item';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import CreateChannelContainer from './create_channel_container'
 
 class ChannelList extends React.Component {
@@ -10,6 +10,12 @@ class ChannelList extends React.Component {
 
   componentDidMount() {
     this.props.fetchServer(this.props.serverId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if ( newProps.match.path === "/channels/:serverId" ) {
+      this.props.history.push(`/channels/${newProps.serverId}/${newProps.channels[0].id}`)
+    }
   }
 
   render() {

@@ -13,6 +13,12 @@ class CreateChannel extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      server_id: newProps.serverId
+    })
+  }
+
   handleChange(e) {
     e.preventDefault();
     this.setState({
