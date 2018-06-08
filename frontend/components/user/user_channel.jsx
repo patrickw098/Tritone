@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import ServerListContainer from '../sidebar/server_list_container';
 import Dropdown from '../footer/dropdown_container';
+import ChannelListContainer from '../server/channel_list_container';
 
 class UserChannel extends React.Component {
   constructor(props) {
@@ -34,6 +35,8 @@ class UserChannel extends React.Component {
             <ServerListContainer />
           </div>
           <div className="friend-selector-sidebar">
+            <div className = "channel-list-div">
+            </div>
             <footer className="user-footer">
               <h3>{this.props.currentUser.display_name}</h3>
               <button onClick={this.logout} className="logout-button"><i className="fa fa-cog" aria-hidden="true"></i></button>

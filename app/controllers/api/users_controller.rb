@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:servers).find(params[:id])
+    @user = User.includes(:servers, :channels).find(params[:id])
   end
 
   private

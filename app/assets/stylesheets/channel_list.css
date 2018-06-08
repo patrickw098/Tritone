@@ -1,0 +1,9 @@
+.channel-list-div {
+  display: flex;
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #f6f6f7;
+}

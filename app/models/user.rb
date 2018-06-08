@@ -72,4 +72,8 @@ class User < ApplicationRecord
   through: :server_memberships,
   source: :server
 
+  has_many :channels,
+  through: :servers,
+  source: :channels
+
 end
