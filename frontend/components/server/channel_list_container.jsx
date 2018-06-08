@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchServer } from '../../actions/server_actions';
+import { fetchChannel } from '../../actions/channel_actions';
 import ChannelList from './channel_list';
 import { withRouter } from 'react-router-dom';
 
@@ -20,7 +21,8 @@ const serverChannels = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => ({
-  fetchServer: (id) => dispatch(fetchServer(id))
+  fetchServer: (id) => dispatch(fetchServer(id)),
+  fetchChannel: (id) => dispatch(fetchChannel(id))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelList));

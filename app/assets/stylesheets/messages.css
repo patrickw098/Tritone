@@ -1,0 +1,27 @@
+.messages-box {
+  height: 100%;
+  width: 100%;
+  overflow:scroll;
+}
+
+.messages-ul {
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.message-li {
+  height: auto;
+  padding: 20px 0;
+  margin-left: 20px;
+  margin-right: 6px;
+  border-top: 1px solid gray;
+}
+
+.message-text {
+  margin: 6px 0 0 0;
+  box-sizing: content-box;
+  font-size: 14px;
+}

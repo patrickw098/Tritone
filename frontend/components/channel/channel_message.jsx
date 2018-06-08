@@ -4,6 +4,7 @@ import ServerListContainer from '../sidebar/server_list_container';
 import FooterContainer from '../footer/footer_container';
 import ChannelListContainer from '../server/channel_list_container';
 import NavBarContainer from '../navbar/navbar_container';
+import MessagesContainer from '../message/messages_container';
 
 class ChannelMessage extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class ChannelMessage extends React.Component {
               <div className="messages-main-body">
                 <div className="messages-sub-body">
                   <div className="messages">
+                    <MessagesContainer />
                   </div>
                   <div className="message-input-div">
                   </div>

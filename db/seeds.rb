@@ -32,9 +32,9 @@ server1 = Server.create({ name: "High Five", creator_id: user2.id })
 
 Channel.delete_all
 
-Channel.create({ name: "general", server_id: server1.id })
-Channel.create({ name: "riddles discussion", server_id: server1.id })
-Channel.create({ name: "Aech's hideout", server_id: server1.id })
+channel1 = Channel.create({ name: "general", server_id: server1.id })
+channel2 = Channel.create({ name: "riddles discussion", server_id: server1.id })
+channel3 = Channel.create({ name: "Aech's hideout", server_id: server1.id })
 
 ServerMembership.delete_all
 
@@ -44,3 +44,15 @@ membership3 = ServerMembership.create({ member_id: user3.id, server_id: server1.
 membership4 = ServerMembership.create({ member_id: user4.id, server_id: server1.id })
 membership5 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })
 membership6 = ServerMembership.create({ member_id: user1.id, server_id: server1.id })
+
+Message.delete_all
+
+message1 = Message.create({ body: "hello world!", channel_id: channel1.id, author_id: user1.id })
+message2 = Message.create({ body: "demo user testing!", channel_id: channel1.id, author_id: user1.id })
+message3 = Message.create({ body: "omg!", channel_id: channel1.id, author_id: user1.id })
+message4 = Message.create({ body: "wheeee!", channel_id: channel1.id, author_id: user1.id })
+message5 = Message.create({ body: "cooool!", channel_id: channel1.id, author_id: user1.id })
+message6 = Message.create({ body: "nope!", channel_id: channel1.id, author_id: user1.id })
+message7 = Message.create({ body: "ragh!", channel_id: channel1.id, author_id: user1.id })
+message8 = Message.create({ body: "broken!", channel_id: channel1.id, author_id: user1.id })
+message9 = Message.create({ body: "i'm the last message!", channel_id: channel1.id, author_id: user1.id })

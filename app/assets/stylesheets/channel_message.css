@@ -5,7 +5,6 @@
 }
 
 .messages-main-body {
-  background-color: pink;
   height: 100%;
   width: 100%;
   display: flex;
@@ -14,7 +13,6 @@
 
 
 .messages-sub-body {
-  background-color: purple;
   height: 100%;
   width: 100%;
   display: flex;
@@ -22,12 +20,12 @@
 }
 
 .messages {
-  background-color: red;
   height: 100%;
+  display: flex;
 }
 
 .online-user-list-container {
-  background-color: green;
+  background-color: antiquewhite;
   height: 100%;
   width: 240px;
 }

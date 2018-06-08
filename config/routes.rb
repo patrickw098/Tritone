@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :servers, only: [:index, :show, :create, :destroy]
     resources :channels, only: [:show, :create, :update, :destroy]
     resources :server_memberships, only: [:create, :destroy]
+    resources :messages, only: [:create, :destroy]
 
     get '/searches/servers', to: 'searches#servers'
     get '/searches/users', to: 'searches#users'

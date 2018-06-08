@@ -9,7 +9,7 @@ end
 json.channels do
   @server.channels.each do |channel|
     json.set! channel.id do
-      json.extract! channel, :id, :name
+      json.extract! channel, :id, :name, :message_ids
     end
   end
 end

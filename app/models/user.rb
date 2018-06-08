@@ -76,4 +76,9 @@ class User < ApplicationRecord
   through: :servers,
   source: :channels
 
+  has_many :messages,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Message
+
 end
