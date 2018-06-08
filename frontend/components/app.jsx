@@ -17,8 +17,9 @@ const App = () => (
     <Modal />
       <Switch>
         <ProtectedRoute path="/app" component={LoadingContainer} />
-        <ProtectedRoute path="/channels/user" component={UserChannelContainer} />
-        <ProtectedRoute path="/channels/:serverId" component={ServerChannelContainer} />
+        <ProtectedRoute exact path="/channels/user" component={UserChannelContainer} />
+        <ProtectedRoute exact path="/channels/:serverId" component={ServerChannelContainer} />
+        <ProtectedRoute exact path="/channels/:serverId/:channelId" component={ServerChannelContainer} />
         <Route exact path="/" component={Logo} />
         <AuthRoute path="/login" component={LogInContainer} />
         <AuthRoute path="/signup" component={SignUpContainer} />

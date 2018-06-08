@@ -227,10 +227,6 @@ body {
 .form-errors {
   color: red;
   margin-left: 10px;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -200px); */
   z-index: 2;
   font-size: 13px;
 }

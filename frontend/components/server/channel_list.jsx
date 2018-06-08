@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelListItem from './channel_list_item';
+import { withRouter } from 'react-router-dom';
 
 class ChannelList extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class ChannelList extends React.Component {
   }
 
   componentDidMount() {
+    console.log("channel list", this.props.serverId)
     this.props.fetchServer(this.props.serverId);
   }
 
@@ -22,7 +24,7 @@ class ChannelList extends React.Component {
           <div className="channel-list-body">
             <ul className="channel-list-ul">
               {this.props.channels.map ((channel) => {
-                return <ChannelListItem key={channel.id} channel={channel} />
+                return <ChannelListItem key={channel.id} channel={channel} serverId={this.props.serverId}/>
               })}
             </ul>
           </div>
@@ -32,4 +34,4 @@ class ChannelList extends React.Component {
   }
 }
 
-export default ChannelList;
+export default withRouter(ChannelList);

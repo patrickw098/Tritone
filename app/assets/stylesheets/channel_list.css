@@ -4,6 +4,55 @@
   color: white;
   font-size: 16px;
   font-weight: 500;
-  line-height: 32px;
   color: #f6f6f7;
+  width: 100%;
+  line-height: 32px;
+}
+
+.channel-list-header {
+  height: 48px;
+  padding: 0 12px 0 16px;
+  border-bottom: 1px solid #202225;
+}
+
+.channel-list {
+  width: 100%;
+  margin-right: 5px;
+}
+
+.server-name {
+  height: 48px;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+.channel-list-body {
+  padding-top: 16px;
+}
+
+.channel-list-ul {
+}
+
+.channel-name {
+  margin: 1px 0 1px 8px;
+  padding: 0 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.channel-name span {
+  color:  #72767d;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.channel-name:hover {
+  background-color: rgba(79,84,92,.6);
+}
+
+.selected-channel li {
+  background-color: rgba(79,84,92,.6) !important;
+  cursor: default !important;
 }

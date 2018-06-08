@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, OPEN_FOOTER, CLOSE_FOOTER } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, OPEN_FOOTER, CLOSE_FOOTER, TOGGLE_FOOTER } from '../actions/modal_actions';
 
 const initialState = {
   modal: null,
@@ -16,6 +16,12 @@ const uiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { footer: action.footer });
     case CLOSE_FOOTER:
         return initialState;
+    case TOGGLE_FOOTER:
+      if ( state.footer ) {
+        return Object.assign({}, state, { footer: false });
+      } else {
+        return Object.assign({}, state, { footer: true });
+      }
     default:
       return state;
   }

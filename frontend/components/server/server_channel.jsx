@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import ServerListContainer from '../sidebar/server_list_container';
-import Dropdown from '../footer/dropdown_container';
+import FooterContainer from '../footer/footer_container';
 import ChannelListContainer from './channel_list_container';
 
 class ServerChannel extends React.Component {
@@ -9,10 +9,6 @@ class ServerChannel extends React.Component {
     super(props);
 
     this.logout = this.logout.bind(this)
-  }
-
-  componentDidMount() {
-    this.props.closeFooter();
   }
 
   logout(e){
@@ -40,11 +36,7 @@ class ServerChannel extends React.Component {
             <div className = "channel-list-div">
               <ChannelListContainer />
             </div>
-            <footer className="user-footer">
-              <h3>{this.props.currentUser.display_name}</h3>
-              <button onClick={this.logout} className="logout-button"><i className="fa fa-cog" aria-hidden="true"></i></button>
-              <Dropdown />
-            </footer>
+            <FooterContainer />
           </div>
           <div className="message-div">
           </div>

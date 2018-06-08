@@ -34,14 +34,18 @@
 
 .server-icon:hover {
   border-radius: 15px;
+  background-color: #7289da;
+  transition-duration: 1s;
   animation-timing-function: linear;
-  animation: animate-button .5s;
+  animation: animate-button .3s;
 }
 
 .user-page-button:hover {
   border-radius: 15px;
+  background-color: #7289da;
+  transition-duration: 1s;
   animation-timing-function: linear;
-  animation: animate-button .5s;
+  animation: animate-button .3s;
 }
 
 @keyframes animate-button {
@@ -71,6 +75,7 @@
 }
 
 .active-server button {
+  background-color: #7289da;
   border-left: 5px solid white;
   border-radius: 15px;
   animation: none !important;

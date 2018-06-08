@@ -3,11 +3,13 @@ import { fetchServer } from '../../actions/server_actions';
 import ChannelList from './channel_list';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => ({
-  serverId: ownProps.match.params.serverId,
-  server: state.entities.servers[ownProps.match.params.serverId],
-  channels: serverChannels(state, ownProps)
-})
+const mapStateToProps = (state, ownProps) => {
+  return ({
+    serverId: ownProps.match.params.serverId,
+    server: state.entities.servers[ownProps.match.params.serverId],
+    channels: serverChannels(state, ownProps)
+  })
+}
 
 const serverChannels = (state, ownProps) => {
   let server = state.entities.servers[ownProps.match.params.serverId];
@@ -18,7 +20,7 @@ const serverChannels = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => ({
-  fetchServer: (id) => dispatch(fetchServer())
+  fetchServer: (id) => dispatch(fetchServer(id))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelList));
