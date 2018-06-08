@@ -9,7 +9,6 @@ class ChannelList extends React.Component {
   }
 
   componentDidMount() {
-    console.log("channel list", this.props.serverId)
     this.props.fetchServer(this.props.serverId);
   }
 
