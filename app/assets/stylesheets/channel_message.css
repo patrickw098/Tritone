@@ -1,0 +1,40 @@
+.navbar-header {
+  height: 48px;
+  width: 100%;
+  border-bottom: 1px solid #b9bbbe;
+}
+
+.messages-main-body {
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.messages-sub-body {
+  background-color: purple;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  background-color: red;
+  height: 100%;
+}
+
+.online-user-list-container {
+  background-color: green;
+  height: 100%;
+  width: 240px;
+}
+
+.message-input-div {
+  height: 95px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: blue;
+}

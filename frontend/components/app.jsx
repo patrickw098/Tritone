@@ -7,6 +7,7 @@ import GreetingContainer from "./greeting/greeting_container";
 import LogInContainer from './session/login_container';
 import SignUpContainer from './session/signup_container';
 import GetStartedContainer from './greeting/get_started_container';
+import ChannelMessageContainer from './channel/channel_message_container';
 import Modal from './modal/modal';
 import Logo from './greeting/logo';
 import WelcomePage from './welcome_page'
@@ -19,7 +20,7 @@ const App = () => (
         <ProtectedRoute path="/app" component={LoadingContainer} />
         <ProtectedRoute exact path="/channels/user" component={UserChannelContainer} />
         <ProtectedRoute exact path="/channels/:serverId" component={ServerChannelContainer} />
-        <ProtectedRoute exact path="/channels/:serverId/:channelId" component={ServerChannelContainer} />
+        <ProtectedRoute exact path="/channels/:serverId/:channelId" component={ChannelMessageContainer} />
         <Route exact path="/" component={Logo} />
         <AuthRoute path="/login" component={LogInContainer} />
         <AuthRoute path="/signup" component={SignUpContainer} />
