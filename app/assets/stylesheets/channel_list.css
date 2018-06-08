@@ -10,9 +10,12 @@
   overflow:scroll;
 }
 
+
+
 .channel-list-header {
-  height: 48px;
+  height: 47px;
   padding: 0 12px 0 16px;
+  width: 100%;
   border-bottom: 1px solid #202225;
 }
 
