@@ -2,6 +2,19 @@
   height: 48px;
   width: 100%;
   border-bottom: 1px solid #b9bbbe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar-header span {
+  padding-right: 5px;
+}
+
+.navbar-header h1 {
+  height: 22px;
+  color: #4f545c;
+  font-weight: 500;
 }
 
 .messages-main-body {
@@ -25,7 +38,7 @@
 }
 
 .online-user-list-container {
-  background-color: antiquewhite;
+  background-color: #f6f6f7;
   height: 100%;
   width: 240px;
 }
@@ -34,5 +47,31 @@
   height: 95px;
   width: 100%;
   box-sizing: border-box;
-  background-color: blue;
+}
+
+.create-message-form {
+  height: 44px
+  padding: 25px 0px;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+
+.create-message-div {
+  width: 90%;
+  height: 94px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-message-div input {
+  margin: 25px 0px;
+  height: 44px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #737f8d;
+  background-color: #f6f6f7;
+  font-size: 0.9375rem;
 }

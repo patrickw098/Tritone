@@ -11,9 +11,8 @@ const mapStatetoProps = (state, ownProps) => ({
 
 const selectMessages = (state, ownProps) => {
   let channel = state.entities.channels[ownProps.match.params.channelId];
-  debugger
   let messages = channel.message_ids.map((id) => state.entities.messages[id]);
-  return messages;
+  return messages.reverse();
 }
 
 const mapDispatchToProps = dispatch => ({

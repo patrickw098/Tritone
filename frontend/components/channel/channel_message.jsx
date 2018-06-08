@@ -5,6 +5,7 @@ import FooterContainer from '../footer/footer_container';
 import ChannelListContainer from '../server/channel_list_container';
 import NavBarContainer from '../navbar/navbar_container';
 import MessagesContainer from '../message/messages_container';
+import MessageInputContainer from '../message/message_input_container';
 
 class ChannelMessage extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class ChannelMessage extends React.Component {
                     <MessagesContainer />
                   </div>
                   <div className="message-input-div">
+                    <MessageInputContainer />
                   </div>
                 </div>
                 <div className="online-user-list-container">

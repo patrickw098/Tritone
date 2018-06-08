@@ -14,9 +14,8 @@ class ChannelList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("fetchChannel");
-    this.props.fetchChannel(newProps.channels[0].id);
     if ( newProps.match.path === "/channels/:serverId" ) {
+      this.props.fetchChannel(newProps.channels[0].id);
       this.props.history.push(`/channels/${newProps.serverId}/${newProps.channels[0].id}`);
     }
   }

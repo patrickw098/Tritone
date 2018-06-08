@@ -7,19 +7,22 @@ class Messages extends React.Component {
   }
 
   componentDidMount() {
-    console.log("channelAJAX");
     this.props.fetchChannel(this.props.channelId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.channelId !== this.props.channelId) {
+      this.props.fetchChannel(newProps.channelId);
+    }
+  }
+
   render() {
-    debugger;
     if ( this.props.messages[0] === undefined ) {
       return (
         <div className="messages-box">
         </div>
       )
     } else {
-      console.log("i'm here");
       return (
         <div className="messages-box">
           <ul className="messages-ul">
