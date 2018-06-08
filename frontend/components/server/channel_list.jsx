@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelListItem from './channel_list_item';
 import { withRouter } from 'react-router-dom';
+import CreateChannelContainer from './create_channel_container'
 
 class ChannelList extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class ChannelList extends React.Component {
               {this.props.channels.map ((channel) => {
                 return <ChannelListItem key={channel.id} channel={channel} serverId={this.props.serverId}/>
               })}
+              <CreateChannelContainer />
             </ul>
           </div>
         </div>

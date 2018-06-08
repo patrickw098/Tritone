@@ -9,7 +9,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def show
-    @channel = Channel.find(params[:id])
+    @channel = Channel.includes(:server).find(params[:id])
   end
 
   def update

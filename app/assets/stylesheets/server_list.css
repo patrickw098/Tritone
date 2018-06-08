@@ -36,7 +36,7 @@
   border-radius: 15px;
   background-color: #7289da;
   transition-duration: 1s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
   animation: animate-button .3s;
 }
 
@@ -44,7 +44,7 @@
   border-radius: 15px;
   background-color: #7289da;
   transition-duration: 1s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
   animation: animate-button .3s;
 }
 
@@ -79,4 +79,6 @@
   border-left: 5px solid white;
   border-radius: 15px;
   animation: none !important;
+  transform: translateX(-5px);
+  transition-duration: .1s !important;
 }

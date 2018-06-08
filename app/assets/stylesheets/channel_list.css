@@ -7,6 +7,7 @@
   color: #f6f6f7;
   width: 100%;
   line-height: 32px;
+  overflow:scroll;
 }
 
 .channel-list-header {
@@ -18,6 +19,39 @@
 .channel-list {
   width: 100%;
   margin-right: 5px;
+}
+
+.create-channel-li{
+  margin: 1px 0 1px 8px;
+  padding: 0 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  align-items: center;
+  text-align: center;
+}
+
+.create-channel-li input {
+  border: 1px solid #202225;
+  padding: 0 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.create-channel-li button {
+  font-size: 12px;
+  background-color: #7289da;
+  border-radius: 5px;
+  height: 25px;
+  width: 50px;
+  padding-left: 2px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+
+.create-channel-li button:hover {
+  background-color: #677bc4;
 }
 
 .server-name {
