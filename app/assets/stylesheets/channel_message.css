@@ -1,10 +1,11 @@
 .navbar-header {
-  height: 48px;
+  height: 47px;
   width: 100%;
   border-bottom: 1px solid #b9bbbe;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .navbar-header span {
@@ -57,11 +58,12 @@
 }
 
 .create-message-div {
-  width: 90%;
+  width: 95%;
   height: 94px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  border-top: 1px solid gray;
 }
 
 .create-message-div input {

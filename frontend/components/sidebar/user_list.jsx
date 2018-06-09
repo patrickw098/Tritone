@@ -11,7 +11,7 @@ class UserList extends React.Component {
   }
 
   render() {
-    if (this.props.offlineUsers === undefined) {
+    if (this.props.offlineUsers[0] === undefined) {
       return (
         <div className="user-list-container">
         </div>
@@ -23,7 +23,7 @@ class UserList extends React.Component {
           <ul className="online-ul">
             <h1> Online - {this.props.onlineUsers.length} </h1>
             {this.props.onlineUsers.map ((user) => {
-              return <UserListItem user={user} />
+              return <UserListItem key={user.id} user={user} />
             })}
           </ul>
         </div>
@@ -31,7 +31,7 @@ class UserList extends React.Component {
           <h1> Offline - {this.props.offlineUsers.length} </h1>
           <ul className="offline-ul">
             {this.props.offlineUsers.map ((user) => {
-              return <UserListItem user={user} />
+              return <UserListItem key={user.id} user={user} />
             })}
           </ul>
         </div>

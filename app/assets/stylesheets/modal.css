@@ -19,7 +19,7 @@
   background-color: white;
   height: 300px;
   width: 520px;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 40px;
   font-size: 18px;
   font-weight: 700;
@@ -66,19 +66,21 @@
   color: white;
   width: 200px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 0 20px;
+  box-shadow: 4px 4px 4px #4f545c;
 }
 
 .create-server-form-button:hover {
   background-color: #677bc4;
+  box-shadow: none;
 }
 
 .join-server-container {
   background-color: white;
   height: 300px;
   width: 520px;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 40px;
   font-size: 18px;
   font-weight: 700;
@@ -126,12 +128,14 @@
   color: white;
   width: 200px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 0 20px;
+  box-shadow: 4px 4px 4px #4f545c;
 }
 
 .join-server-form-button:hover {
   background-color: #369368;
+  box-shadow: none;
 }
 
 .dropdown-box {
@@ -156,4 +160,8 @@
 
 .user-footer {
   position: relative;
+}
+
+.button-selected {
+  box-shadow: none;
 }

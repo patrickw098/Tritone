@@ -35,6 +35,35 @@ class Messages extends React.Component {
     });
   }
 
+  combineMessages(messages) {
+    let newMessages = [];
+    var i = 0;
+
+    while ( i < messages.length) {
+      let message = messages[i];
+      let next = messages[i+1];
+      let last = messages[i+2];
+      if ( next === undefined ) break;
+
+      if ( message.author_id === next.author_id ) {
+        message.body += next.body;
+
+        if (message.author_id === last.author_id ) {
+          message.body += last.body;
+
+          i++;
+        }
+
+        i++;
+      }
+
+      newMessages.push(message);
+      i++
+    }
+
+    return newMessages;
+  }
+
   render() {
     if ( this.props.messages[0] === undefined ) {
       return (
@@ -42,10 +71,12 @@ class Messages extends React.Component {
         </div>
       )
     } else {
+      let messages = this.props.messages;
+
       return (
         <div className="messages-box">
           <ul className="messages-ul">
-            { this.props.messages.map ((message) => {
+            { messages.map ((message) => {
               return <MessageItem key={message.id} message={message} />
             })}
           </ul>

@@ -20,7 +20,7 @@ class ChannelList extends React.Component {
   }
 
   render() {
-    if (this.props.channels === undefined) {
+    if (this.props.channels[0] === undefined) {
       return <div className="channel-list"><ul className="channel-list-ul"></ul></div>
     } else {
       return (

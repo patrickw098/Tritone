@@ -62,7 +62,7 @@ class CreateServer extends React.Component {
               <input value={this.state.name} onChange={this.handleChange} />
               <div className="search-box-div"></div>
               <div className="buttons-containers">
-                <button className="create-server-form-button" onClick={(e) => this.handleSubmit("create", e)}> Create Server </button>
+                <button className="create-server-form-button button-selected" onClick={(e) => this.handleSubmit("create", e)}> Create Server </button>
                 or
                 <button className="join-server-form-button" onClick={(e) => this.switchButtons("join", e)}> Join Server </button>
               </div>
@@ -81,7 +81,7 @@ class CreateServer extends React.Component {
               <div className="buttons-containers">
                 <button className="create-server-form-button" onClick={(e) => this.switchButtons("create", e)}> Create Server </button>
                 or
-                <button className="join-server-form-button" onClick={(e) => this.handleSubmit("join", e)}> Join Server </button>
+                <button className="join-server-form-button button-selected" onClick={(e) => this.handleSubmit("join", e)}> Join Server </button>
               </div>
             </div>
         </div>
