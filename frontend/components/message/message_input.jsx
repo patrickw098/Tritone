@@ -13,9 +13,17 @@ class MessageInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    let input = document.getElementById("message-input-id");
+    input.focus();
+  }
+
   componentWillReceiveProps(newProps) {
     this.setState({
       channel_id: newProps.channelId
+    }, () => {
+      let input = document.getElementById("message-input-id");
+      input.focus();
     })
   }
 
@@ -36,7 +44,7 @@ class MessageInput extends React.Component {
     return (
       <div className="create-message-div">
         <form className="create-message-form">
-          <input value={this.state.body} placeholder="Enter Message!" onChange={this.handleChange} />
+          <input id="message-input-id" value={this.state.body} placeholder="Enter Message!" onChange={this.handleChange} />
           <button onClick={this.handleSubmit}></button>
         </form>
       </div>

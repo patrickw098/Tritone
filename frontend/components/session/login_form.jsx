@@ -16,6 +16,8 @@ class SignUpForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+    let input = document.getElementById("form-input-id");
+    input.focus();
   }
 
   handleChange(type) {
@@ -55,7 +57,7 @@ class SignUpForm extends React.Component {
               <h1 className="login-form-header">{this.props.welcomeMessage[0]}</h1>
               <h2 className="login-form-subheader">{this.props.welcomeMessage[1]}</h2>
               <label><div>USERNAME<span className="form-errors">{error1}</span></div>
-                <input type="text" onChange={this.handleChange('username')} value={this.state.username}></input>
+                <input id="form-input-id" type="text" onChange={this.handleChange('username')} value={this.state.username}></input>
               </label>
               <label><div>PASSWORD<span className="form-errors">{error2}</span></div>
                 <input type="password" onChange={this.handleChange('password')} value={this.state.password}></input>

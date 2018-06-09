@@ -15,6 +15,11 @@ class CreateServer extends React.Component {
     this.handleServerSelect = this.handleServerSelect.bind(this);
   }
 
+  componentDidMount() {
+    let input = document.getElementById("input-id");
+    input.focus();
+  }
+
   handleChange(e) {
     this.setState({
       name: e.target.value,
@@ -32,6 +37,9 @@ class CreateServer extends React.Component {
     this.setState({
       name: object.name,
       id: object.id
+    },  () => {
+      let input = document.getElementById("input-id");
+      input.focus()
     });
   }
 
@@ -49,6 +57,9 @@ class CreateServer extends React.Component {
     this.setState({
       name: "",
       button: type
+    }, () => {
+      let input = document.getElementById("input-id");
+      input.focus();
     })
   }
 
@@ -59,7 +70,9 @@ class CreateServer extends React.Component {
         <div className="create-server-container">
           <h1>Create Server</h1>
             <div className="create-server-div">
-              <input value={this.state.name} onChange={this.handleChange} />
+              <form onSubmit={(e) => this.handleSubmit("create", e) }>
+                <input id="input-id" value={this.state.name} onChange={this.handleChange} />
+              </form>
               <div className="search-box-div"></div>
               <div className="buttons-containers">
                 <button className="create-server-form-button button-selected" onClick={(e) => this.handleSubmit("create", e)}> Create Server </button>
@@ -74,7 +87,9 @@ class CreateServer extends React.Component {
         <div className="join-server-container">
           <h1>Join Server</h1>
             <div className="join-server-div">
-              <input value={this.state.name} onChange={this.handleChange} />
+              <form onSubmit={(e) => this.handleSubmit("join", e) }>
+                <input id="input-id" value={this.state.name} onChange={this.handleChange} />
+              </form>
               <div className="search-box-div">
                 <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>
               </div>
