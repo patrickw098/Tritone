@@ -1,6 +1,6 @@
 json.channels do
   json.set! @channel.id do
-    json.extract! @channel, :id, :name, :message_ids
+    json.extract! @channel, :id, :name, :message_ids, :creator_id
   end
 end
 
@@ -16,7 +16,7 @@ json.messages do
   @channel.messages.each do |message|
     json.set! message.id do
       json.extract! message, :id, :channel_id, :author_id, :body
-      json.created_at message.created_at.localtime.to_formatted_s 
+      json.created_at message.created_at.localtime.to_formatted_s
       json.author message.author.display_name
     end
   end

@@ -5,4 +5,8 @@ class Channel < ApplicationRecord
 
   has_many :messages
 
+  def creator_id
+    self.server.creator.id
+  end
+
 end

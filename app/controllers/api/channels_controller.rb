@@ -18,15 +18,16 @@ class Api::ChannelsController < ApplicationController
     if @channel.update_attributes
       render :show
     else
-      render jon: @channel.errors.full_messages, status: 422
+      render json: @channel.errors.full_messages, status: 422
     end
   end
 
   def destroy
     @channel = Channel.find(params[:id])
+    @server = @channel.server
     @channel.delete
 
-    render json: @channel
+    render :destroy
   end
 
   private

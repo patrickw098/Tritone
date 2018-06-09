@@ -16,6 +16,6 @@ end
 
 json.channels do
   json.set! message.channel.id do
-    json.extract! message.channel, :id, :name, :message_ids
+    json.extract! message.channel, :id, :name, :message_ids, :creator_id
   end
 end

@@ -6,7 +6,7 @@ end
 json.servers do
   @user.servers.each do |server|
     json.set! server.id do
-      json.extract! server, :id, :name
+      json.extract! server, :id, :name, :creator_id
       json.channel_ids server.channel_ids
       json.user_ids server.user_ids
     end

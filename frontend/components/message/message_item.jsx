@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteContainer from '../util/delete_container';
 
 class MessageItem extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class MessageItem extends React.Component {
             </h3>
             <h3 className="message-text"> {this.props.message.body}</h3>
           </div>
+          <DeleteContainer formType={"message"} message={this.props.message}/>
         </div>
       </li>
     )

@@ -14,8 +14,9 @@ class Api::MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.delete
+    @channel = Channel.find(@message.channel_id);
 
-    render json: @message
+    render :destroy
   end
 
   private
