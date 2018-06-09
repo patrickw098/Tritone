@@ -8,4 +8,12 @@ class Message < ApplicationRecord
 
   belongs_to :channel
 
+  has_one :server,
+  through: :channel,
+  source: :server
+
+  after_create_commit do
+    NewMessageEventBroadcastJob.perform_later(self)
+  end
+
 end

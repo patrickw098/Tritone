@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Messages from './messages'
 import { fetchChannel } from '../../actions/channel_actions';
+import { receiveMessage } from '../../actions/message_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStatetoProps = (state, ownProps) => ({
@@ -16,7 +17,8 @@ const selectMessages = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannel: (id) => dispatch(fetchChannel(id))
+  fetchChannel: (id) => dispatch(fetchChannel(id)),
+  receiveMessage: (message) => dispatch(receiveMessage(message))
 })
 
 export default withRouter(connect(mapStatetoProps,mapDispatchToProps)(Messages));

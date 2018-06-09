@@ -1,7 +1,7 @@
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 import { createMessage } from '../util/message_api_utils'
 
-const receiveMessage = (payload) => ({
+export const receiveMessage = (payload) => ({
   type: RECEIVE_MESSAGE,
   payload
 })

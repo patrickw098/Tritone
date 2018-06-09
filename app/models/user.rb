@@ -45,6 +45,14 @@ class User < ApplicationRecord
     sorted
   end
 
+  def online
+    self.online_status = true
+  end
+
+  def offline
+    self.online_status = false
+  end
+
   has_many :friendships,
   primary_key: :id,
   foreign_key: :user_id,
