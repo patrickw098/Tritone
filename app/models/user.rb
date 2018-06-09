@@ -2,7 +2,8 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  before_validation :set_avatar_name, :ensure_session_token, :set_online_status
+  before_validation :set_avatar_name, :ensure_session_token
+
 
   attr_reader :password
 
@@ -36,7 +37,7 @@ class User < ApplicationRecord
 
   #sets default online status to false (offline) #
   def set_online_status
-    self.online_status = false
+    self.online_status = "offline"
   end
 
   def sorted_servers
@@ -46,11 +47,11 @@ class User < ApplicationRecord
   end
 
   def online
-    self.online_status = true
+    self.update_attributes({online_status: "online"})
   end
 
   def offline
-    self.online_status = false
+    self.update_attributes({online_status: "offline"})
   end
 
   has_many :friendships,

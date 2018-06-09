@@ -1,5 +1,5 @@
 json.user do
-  json.extract! @user, :id, :avatar_url, :display_name
+  json.extract! @user, :id, :avatar_url, :display_name, :online_status
   json.server_ids @user.sorted_servers
 end
 
