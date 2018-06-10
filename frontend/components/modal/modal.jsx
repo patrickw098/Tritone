@@ -1,8 +1,9 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import CreateServerContainer from './create_server_container.jsx';
-import EditChannelContainer from './edit_channel_container.jsx';
+import CreateServerContainer from './create_server_container';
+import EditChannelContainer from './edit_channel_container';
+import EditServerContainer from './edit_server_container';
 
 const Modal = ( { modal, closeModal } ) => {
   if (!modal) {
@@ -16,6 +17,9 @@ const Modal = ( { modal, closeModal } ) => {
       break;
     case 'editChannel':
       component = <EditChannelContainer />
+      break;
+    case 'editServer':
+      component = <EditServerContainer />
       break;
     default:
       return null;

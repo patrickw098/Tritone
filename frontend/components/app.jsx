@@ -15,7 +15,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="app-start">
-    <Modal />
       <Switch>
         <ProtectedRoute path="/app" component={LoadingContainer} />
         <ProtectedRoute exact path="/channels/user" component={UserChannelContainer} />
@@ -26,6 +25,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignUpContainer} />
         <Redirect to="/" />
       </Switch>
+      <Modal />
       <Route exact path="/" component={GreetingContainer} />
       <Route exact path="/" component={GetStartedContainer} />
   </div>

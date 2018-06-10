@@ -18,6 +18,16 @@ class Api::ServersController < ApplicationController
     end
   end
 
+  def update
+    @server = Server.find(params[:id])
+
+    if @server.update_attributes(server_params)
+      render :show
+    else
+      render json: @server.errors.full_messages, status: 422
+    end
+  end
+
   def show
     @server = Server.includes(:channels, :users).find(params[:id])
   end

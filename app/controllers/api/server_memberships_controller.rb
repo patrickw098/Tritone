@@ -4,7 +4,8 @@ class Api::ServerMembershipsController < ApplicationController
     @membership.member_id = current_user.id
 
     if @membership.save
-      @server = @membership.server
+      server_id = @membership.server_id
+      @server = Server.find(server_id);
       render '/api/servers/show'
     else
       render json: @membership.errors.full_messages, status: 422
@@ -13,6 +14,11 @@ class Api::ServerMembershipsController < ApplicationController
   end
 
   def destroy
+    @membership = ServerMembership.find(params[:id])
+    @server = @membership.server
+    @membership.destroy
+
+    render '/api/servers/leave'
   end
 
   private

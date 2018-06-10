@@ -5,22 +5,23 @@ class ServerOptions extends React.Component {
     super(props);
 
     this.state = {
-      toggle: false;
+      toggle: false
     }
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.toggleClick = this.toggleClick.bind(this);
   }
 
   toggleClick() {
     if  ( this.state.toggle ) {
       this.setState({
-        toggle: false;
+        toggle: false
       })
     } else {
       this.setState({
-        toggle: true;
+        toggle: true
       })
     }
   }
@@ -31,20 +32,19 @@ class ServerOptions extends React.Component {
 
   handleLeave(e) {
     e.preventDefault();
+    this.props.leaveServer(this.props.serverMembershipId);
+    this.props.history.push("/channels/user")
   }
 
   handleEdit(e) {
     e.preventDefault();
+    this.props.openModal("editServer");
   }
 
   render() {
-    let component;
+    var component;
 
-    if ( currentUser.id === server.creator_id ) {
-      component = <div onClick={this.handleDelete}>Delete Server</div>
-    }
-
-    if (toggle === false) {
+    if (this.state.toggle === false) {
       return (
         <div onClick={this.toggleClick} className="server-options-container">
           <i className="fas fa-caret-down"></i>
@@ -54,13 +54,16 @@ class ServerOptions extends React.Component {
       return (
         <div onClick={this.toggleClick} className="server-options-container">
           <i className="fas fa-caret-down"></i>
-            <ul className="server-options-ul">
-              <li onClick={this.handleLeave}>Leave Server</li>
-              <li onClick={this.handleEdit}>Edit Server</li>
-              <li>{component}</li>
-            </ul>
+            <div className="dropdown-box-server">
+              <ul className="server-options-ul">
+                <li onClick={this.handleEdit}>Edit Server Name</li>
+                <li onClick={this.handleLeave}>Leave Server</li>
+              </ul>
+            </div>
         </div>
       )
     }
   }
 }
+
+export default ServerOptions;

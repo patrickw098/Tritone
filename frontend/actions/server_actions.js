@@ -29,9 +29,9 @@ export const createServer = (server) => dispatch => {
     .then((res) => dispatch(receiveServer(res)))
 }
 
-export const deleteServer = (id) => dispatch => {
-  return ServerApiUtils.deleteServer(id)
-    .then((res) => dispatch(removeServer(res.id)))
+export const updateServer = (server) => dispatch => {
+  return ServerApiUtils.updateServer(server)
+    .then((res) => dispatch(receiveServer(res)))
 }
 
 export const searchServers = (server) => dispatch => {
@@ -42,4 +42,11 @@ export const searchServers = (server) => dispatch => {
 export const joinServer = (server) => dispatch => {
   return ServerApiUtils.joinServer(server)
     .then((res) => dispatch(receiveServer(res)))
+}
+
+export const leaveServer = (id) => dispatch => {
+  return ServerApiUtils.leaveServer(id)
+    .then((res) => {
+      dispatch(receiveServer(res))
+    })
 }

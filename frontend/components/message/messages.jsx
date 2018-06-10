@@ -35,7 +35,6 @@ class Messages extends React.Component {
             this.props.history.push(`/channels/${payload}`);
             break;
           case "update_users":
-            console.log(payload);
             this.props.receiveServer(payload);
             break;
           default:

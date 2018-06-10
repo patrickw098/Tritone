@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelListItem from './channel_list_item';
+import ServerOptionsContainer from '../util/server_options_container'
 import { withRouter, Redirect } from 'react-router-dom';
 import CreateChannelContainer from './create_channel_container'
 
@@ -26,7 +27,7 @@ class ChannelList extends React.Component {
       return (
         <div className="channel-list">
           <div className="channel-list-header">
-            <h1 className="server-name">{this.props.server.name}</h1>
+            <h1 className="server-name">{this.props.server.name} <ServerOptionsContainer server={this.props.server} /> </h1>
           </div>
           <div className="channel-list-body">
             <ul className="channel-list-ul">

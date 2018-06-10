@@ -6,10 +6,11 @@ export const fetchServer = (id) => {
   })
 }
 
-export const deleteServer = (id) => {
+export const updateServer = (server) => {
   return $.ajax({
-    method: 'DELETE',
-    url: `/api/servers/${id}`
+    method: 'PATCH',
+    url: `/api/servers/${server.id}`,
+    data: { server }
   })
 }
 
@@ -37,10 +38,9 @@ export const joinServer = (server) => {
   })
 }
 
-export const leaveServer = (server) => {
+export const leaveServer = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/server_memberships',
-    data: { membership: { server_id: server.id }}
+    url: `api/server_memberships/${id}`
   })
 }

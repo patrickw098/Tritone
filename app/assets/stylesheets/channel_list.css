@@ -65,6 +65,9 @@
   height: 48px;
   vertical-align: middle;
   line-height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .channel-list-body {

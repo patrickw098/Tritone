@@ -2,11 +2,11 @@ class UserOnlineEventEventBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(room)
+    channel = Channel.find(room);
     ActionCable.server.broadcast(
       ("chat_#{room}"),
       command: "update_users",
-      channel = Channel.find(room)
-      payload: ActiveSupport::JSON.decode(parse_message(channel)),
+      payload: ActiveSupport::JSON.decode(parse_message(channel))
     )
   end
 
