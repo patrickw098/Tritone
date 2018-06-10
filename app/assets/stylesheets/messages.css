@@ -16,6 +16,10 @@
   color: #7289da;
 }
 
+.hashtag {
+  color: #99aab5 !important;
+}
+
 .messages-ul {
   height: 100%;
   width: 100%;

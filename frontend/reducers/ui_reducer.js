@@ -1,8 +1,9 @@
-import { OPEN_MODAL, CLOSE_MODAL, OPEN_FOOTER, CLOSE_FOOTER, TOGGLE_FOOTER } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_FOOTER, TOGGLE_FRIENDS, RESET_FRIENDS } from '../actions/modal_actions';
 
 const initialState = {
   modal: null,
-  footer: false
+  footer: false,
+  friends: true
 }
 
 const uiReducer = (state = initialState, action) => {
@@ -12,16 +13,20 @@ const uiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { modal: action.modal });
     case CLOSE_MODAL:
       return initialState;
-    case OPEN_FOOTER:
-      return Object.assign({}, state, { footer: action.footer });
-    case CLOSE_FOOTER:
-        return initialState;
     case TOGGLE_FOOTER:
       if ( state.footer ) {
         return Object.assign({}, state, { footer: false });
       } else {
         return Object.assign({}, state, { footer: true });
       }
+    case TOGGLE_FRIENDS:
+      if ( state.friends ) {
+        return Object.assign({}, state, { friends: false });
+      } else {
+        return Object.assign({}, state, { friends: true });
+      }
+    case RESET_FRIENDS:
+      return Object.assign({}, state, { friends: true });
     default:
       return state;
   }

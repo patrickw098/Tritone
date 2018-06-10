@@ -30,7 +30,7 @@ class EditChannel extends React.Component {
   render() {
     return (
         <div id="edit-channel" className="create-server-container">
-          <h1>Enter New Name For {this.props.channel.name}</h1>
+          <h1>Enter New Name For <span className="hashtag">#</span> {this.props.channel.name}</h1>
             <div className="create-server-div">
             <form onSubmit={(e) => this.handleSubmit(e) }>
               <input id="input-id" value={this.state.name} onChange={this.handleChange} placeholder={this.props.channel.name}/>
