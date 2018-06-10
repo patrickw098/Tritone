@@ -6,7 +6,8 @@ import { fetchServer } from '../../actions/server_actions';
 const mapStateToProps = (state, ownProps) => ({
   offlineUsers: selectOfflineUsers(state, ownProps),
   onlineUsers: selectOnlineUsers(state, ownProps),
-  serverId: ownProps.match.params.serverId
+  serverId: ownProps.match.params.serverId,
+  friends: state.ui.friends
 })
 
 const selectOfflineUsers = (state, ownProps) => {

@@ -3,8 +3,8 @@
   width: 100%;
   border-bottom: 1px solid #b9bbbe;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   flex-shrink: 0;
 }
 

@@ -41,9 +41,7 @@ class ChannelMessage extends React.Component {
                     <MessageInputContainer />
                   </div>
                 </div>
-                <div className="online-user-list-container">
-                  <UserListContainer />
-                </div>
+                <UserListContainer />
               </div>
           </div>
         </div>

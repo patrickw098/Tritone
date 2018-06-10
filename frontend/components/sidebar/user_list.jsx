@@ -13,27 +13,34 @@ class UserList extends React.Component {
   render() {
     if (this.props.offlineUsers[0] === undefined && this.props.onlineUsers[0] === undefined) {
       return (
-        <div className="user-list-container">
+        <div>
+        </div>
+      )
+    } else if ( this.props.friends === false ) {
+      return (
+        <div>
         </div>
       )
     } else {
       return (
-      <div className="user-list-container" >
-        <div className="online-users">
-          <ul className="online-ul">
-            <h1> Online - {this.props.onlineUsers.length} </h1>
-            {this.props.onlineUsers.map ((user) => {
-              return <UserListItem key={user.id} user={user} />
-            })}
-          </ul>
-        </div>
-        <div className="offline-users">
-          <h1> Offline - {this.props.offlineUsers.length} </h1>
-          <ul className="offline-ul">
-            {this.props.offlineUsers.map ((user) => {
-              return <UserListItem key={user.id} user={user} />
-            })}
-          </ul>
+      <div className="online-user-list-container">
+        <div className="user-list-container" >
+          <div className="online-users">
+            <ul className="online-ul">
+              <h1> Online - {this.props.onlineUsers.length} </h1>
+              {this.props.onlineUsers.map ((user) => {
+                return <UserListItem key={user.id} user={user} />
+              })}
+            </ul>
+          </div>
+          <div className="offline-users">
+            <h1> Offline - {this.props.offlineUsers.length} </h1>
+            <ul className="offline-ul">
+              {this.props.offlineUsers.map ((user) => {
+                return <UserListItem key={user.id} user={user} />
+              })}
+            </ul>
+          </div>
         </div>
       </div>
       )

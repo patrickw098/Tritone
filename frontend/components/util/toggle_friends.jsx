@@ -1,6 +1,6 @@
 import React from 'react';
 
-class React extends React.Component {
+class ToggleFriends extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,9 +17,11 @@ class React extends React.Component {
   }
 
   render() {
-    <div className="toggle-friends-div" onClick={this.handleClick}>
-      <i className="fas fa-user-cog"></i>
-    </div>
+    return(
+      <div className="toggle-friends-div" onClick={this.handleClick}>
+        <i className="fas fa-user-cog"></i>
+      </div>
+    )
   }
 }
 
