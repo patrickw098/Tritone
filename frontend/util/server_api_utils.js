@@ -36,3 +36,11 @@ export const joinServer = (server) => {
     data: { membership: { server_id: server.id } }
   })
 }
+
+export const leaveServer = (server) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/server_memberships',
+    data: { membership: { server_id: server.id }}
+  })
+}

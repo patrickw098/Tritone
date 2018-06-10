@@ -3,7 +3,5 @@ json.message do
 end
 
 json.channels do
-  json.set! @channel.id do
-    json.extract! @channel, :id, :name, :message_ids, :creator_id
-  end
+  json.partial! 'api/channels/channel', channel: @channel
 end

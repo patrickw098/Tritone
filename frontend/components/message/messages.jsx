@@ -32,8 +32,11 @@ class Messages extends React.Component {
             this.props.receiveMessage(payload);
             break;
           case "redirect_to_server":
-            console.log(payload)
             this.props.history.push(`/channels/${payload}`);
+            break;
+          case "update_users":
+            console.log(payload);
+            this.props.receiveServer(payload);
             break;
           default:
             console.log(`Unknown command, ${command}`)

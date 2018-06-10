@@ -1,24 +1,17 @@
 json.servers do
-  json.set! @server.id do
-    json.extract! @server, :id, :name
-    json.user_ids @server.user_ids
-    json.channel_ids @server.channel_ids
-  end
+  json.partial! 'api/servers/server', server: @server
 end
 
 json.channels do
   @server.channels.each do |channel|
-    json.set! channel.id do
-      json.extract! channel, :id, :name, :message_ids, :creator_id
-    end
+    json.partial! 'api/channels/channel', channel: channel
   end
 end
 
 json.users do
   @server.users.each do |user|
     json.set! user.id do
-      json.extract! user, :id, :display_name, :avatar_url, :online_status
-      json.server_ids user.sorted_servers
+      json.partial! 'api/users/user', user: user
     end
   end
 end
