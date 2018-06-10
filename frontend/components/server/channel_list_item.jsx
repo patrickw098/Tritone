@@ -7,11 +7,6 @@ class ChannelListItem extends React.Component {
     super(props);
   }
 
-  selectChannel(e) {
-    e.preventDefault();
-
-  }
-
   render () {
     return (
       <NavLink activeClassName="selected-channel" to={`/channels/${this.props.serverId}/${this.props.channel.id}`}>

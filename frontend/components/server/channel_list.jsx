@@ -10,13 +10,13 @@ class ChannelList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchServer(this.props.serverId);
+    // this.props.fetchServer(this.props.serverId);
   }
 
   componentWillReceiveProps(newProps) {
     if ( newProps.match.path === "/channels/:serverId" ) {
-      this.props.fetchChannel(newProps.channels[0].id);
-      this.props.history.push(`/channels/${newProps.serverId}/${newProps.channels[0].id}`);
+      // this.props.fetchChannel(newProps.channels[0].id);
+      // this.props.history.push(`/channels/${newProps.serverId}/${newProps.channels[0].id}`);
     }
   }
 

@@ -10,6 +10,18 @@ class ServerChannel extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchServer(this.props.serverId)
+  }
+
+  componentWillReceiveProps(newProps) {
+    if ( newProps.serverId !==  this.props.serverId ) {
+      this.props.fetchServer(this.props.serverId)
+    } else {
+      this.props.history.push(`/channels/${this.props.serverId}/${this.props.server.channel_ids[0]}`)
+    }
+  }
+
   render() {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />
