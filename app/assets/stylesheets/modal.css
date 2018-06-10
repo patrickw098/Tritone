@@ -30,6 +30,10 @@
   color: #7289da;
 }
 
+#edit-channel {
+  height: 200px;
+}
+
 .create-server-div {
   display: flex;
   flex-direction: column;

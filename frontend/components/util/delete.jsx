@@ -7,6 +7,7 @@ class Delete extends React.Component {
 
     this.handleMessage = this.handleMessage.bind(this);
     this.handleChannel = this.handleChannel.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleMessage(e) {
@@ -16,9 +17,12 @@ class Delete extends React.Component {
 
   handleChannel(e) {
     e.preventDefault();
-    debugger
     this.props.deleteChannel(this.props.channel.id);
-    this.props.history.push(`/channels/${this.props.serverId}`)
+  }
+
+  handleEdit(e) {
+    e.preventDefault();
+    this.props.openModal("editChannel");
   }
 
 
@@ -32,6 +36,7 @@ class Delete extends React.Component {
     } else if ( this.props.formType === "channel" && this.props.currentUser === this.props.channel.creator_id && this.props.channel.name !== "general") {
       return (
         <div className="delete-channel-div">
+          <button className="edit-channel-button" onClick={this.handleEdit}><i className="fas fa-edit"></i></button>
           <button className="delete-channel-button" onClick={this.handleChannel}><i className="fas fa-trash-alt"></i></button>
         </div>
       )

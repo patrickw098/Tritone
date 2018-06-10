@@ -9,4 +9,8 @@ class Channel < ApplicationRecord
     self.server.creator.id
   end
 
+  before_destroy do
+    DeleteChannelEventBroadcastJob.perform_now(self)
+  end
+
 end

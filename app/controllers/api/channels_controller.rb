@@ -13,9 +13,9 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.new(channel_params)
+    @channel = Channel.find(params[:id])
 
-    if @channel.update_attributes
+    if @channel.update_attributes(channel_params)
       render :show
     else
       render json: @channel.errors.full_messages, status: 422
@@ -25,7 +25,7 @@ class Api::ChannelsController < ApplicationController
   def destroy
     @channel = Channel.find(params[:id])
     @server = @channel.server
-    @channel.delete
+    @channel.destroy
 
     render :destroy
   end

@@ -15,22 +15,29 @@ class Messages extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.channelId !== this.props.channelId) {
       this.props.fetchChannel(newProps.channelId);
+      this.subscription.unsubscribe();
       this.setUpSubscription(newProps.channelId, newProps.receiveMessage);
     }
   }
 
   setUpSubscription(channelId, receiveMessage) {
-    const cable = ActionCable.createConsumer();
-    cable.subscriptions.create({
+    this.consumer = ActionCable.createConsumer();
+    this.subscription = this.consumer.subscriptions.create({
       channel: 'ChatChannel',
       room: `${channelId}`
     }, {
-      connected: function() {
-      },
-      disconnected: function() {
-      },
-      received: ({ payload }) => {
-        receiveMessage(payload)
+      received: ({ payload, command }) => {
+        switch (command) {
+          case "update_message":
+            this.props.receiveMessage(payload);
+            break;
+          case "redirect_to_server":
+            console.log(payload)
+            this.props.history.push(`/channels/${payload}`);
+            break;
+          default:
+            console.log(`Unknown command, ${command}`)
+        }
       },
     });
   }

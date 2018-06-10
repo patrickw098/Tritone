@@ -46,7 +46,7 @@
   background-color: #7289da;
   transition-duration: 1s;
   animation-timing-function: ease-in;
-  animation: animate-button .3s;
+  animation-name: animate-button .3s;
 }
 
 @keyframes animate-button {

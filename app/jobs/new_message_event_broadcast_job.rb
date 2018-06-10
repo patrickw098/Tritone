@@ -4,7 +4,8 @@ class NewMessageEventBroadcastJob < ApplicationJob
   def perform(message)
     ActionCable.server.broadcast(
       ("chat_#{message.channel_id}"),
-      payload: ActiveSupport::JSON.decode(parse_message(message))
+      payload: ActiveSupport::JSON.decode(parse_message(message)),
+      command: "update_message"
     )
   end
 
