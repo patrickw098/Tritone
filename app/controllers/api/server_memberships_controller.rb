@@ -14,7 +14,7 @@ class Api::ServerMembershipsController < ApplicationController
   end
 
   def destroy
-    @membership = ServerMembership.includes(:user, :server).find(params[:id])
+    @membership = ServerMembership.includes(:member, :server).find(params[:id])
     @server = @membership.server
     @membership.destroy
 

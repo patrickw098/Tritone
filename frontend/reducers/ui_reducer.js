@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_FOOTER, TOGGLE_FRIENDS, RESET_FRIENDS } from '../actions/modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_FOOTER, TOGGLE_FRIENDS, RESET_FRIENDS, ERROR_MESSAGE } from '../actions/modal_actions';
 
 const initialState = {
   modal: null,
@@ -27,6 +27,8 @@ const uiReducer = (state = initialState, action) => {
       }
     case RESET_FRIENDS:
       return Object.assign({}, state, { friends: true });
+    case ERROR_MESSAGE:
+      return Object.assign({}, state, { modal: "errorMessage" })
     default:
       return state;
   }

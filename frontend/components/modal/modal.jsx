@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CreateServerContainer from './create_server_container';
 import EditChannelContainer from './edit_channel_container';
 import EditServerContainer from './edit_server_container';
+import ErrorMessageContainer from './error_message_container';
 
 const Modal = ( { modal, closeModal } ) => {
   if (!modal) {
@@ -20,6 +21,9 @@ const Modal = ( { modal, closeModal } ) => {
       break;
     case 'editServer':
       component = <EditServerContainer />
+      break;
+    case 'errorMessage':
+      component = <ErrorMessageContainer />
       break;
     default:
       return null;

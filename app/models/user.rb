@@ -90,4 +90,11 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Message
 
+  has_many :dm_memberships
+
+  has_many :dms,
+  through: :dm_memberships,
+  source: :dm
+
+
 end

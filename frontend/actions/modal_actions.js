@@ -5,6 +5,7 @@ export const CLOSE_FOOTER = "CLOSE_FOOTER";
 export const TOGGLE_FOOTER = "TOGGLE_FOOTER";
 export const TOGGLE_FRIENDS = "TOGGLE_FRIENDS";
 export const RESET_FRIENDS = "RESET_FRIENDS";
+export const ERROR_MESSAGE = "ERROR_MESSAGE";
 
 export const openModal = (modal) => ({
   type: OPEN_MODAL,
@@ -36,4 +37,9 @@ export const toggleFriends = () => ({
 
 export const resetFriends = () => ({
   type: RESET_FRIENDS
+})
+
+export const errorMessage = message => ({
+  type: ERROR_MESSAGE,
+  message
 })

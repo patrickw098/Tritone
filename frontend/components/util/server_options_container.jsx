@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import ServerOptions from './server_options';
 import { withRouter } from 'react-router-dom';
 import { leaveServer } from '../../actions/server_actions';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, errorMessage } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
-  server: ownProps.server.id,
+  server: ownProps.server,
   serverMembershipId: findMembershipId(state, ownProps)
 })
 
@@ -21,7 +21,8 @@ const findMembershipId = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   leaveServer: (id) => dispatch(leaveServer(id)),
-  openModal: (formType) => dispatch(openModal(formType))
+  openModal: (formType) => dispatch(openModal(formType)),
+  errorMessage: (message) => dispatch(errorMessage(message))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerOptions));

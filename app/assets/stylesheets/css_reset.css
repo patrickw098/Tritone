@@ -14,7 +14,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 ul {
@@ -29,6 +29,10 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+input {
+  font-weight: 500;
 }
 /*
 input[type="password"],

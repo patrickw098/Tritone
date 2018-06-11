@@ -62,6 +62,8 @@
   color: #72767d;
   border: 1px dashed #72767d;
   font-size: 40px;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .create-server-button:hover {
