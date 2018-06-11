@@ -9,40 +9,40 @@ class Messages extends React.Component {
 
   componentDidMount() {
     this.props.fetchChannel(this.props.channelId);
-    this.setUpSubscription(this.props.channelId, this.props.receiveMessage);
+    // this.setUpSubscription(this.props.channelId, this.props.receiveMessage);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.channelId !== this.props.channelId) {
       this.props.fetchChannel(newProps.channelId);
-      this.subscription.unsubscribe();
-      this.setUpSubscription(newProps.channelId, newProps.receiveMessage);
+      // this.subscription.unsubscribe();
+      // this.setUpSubscription(newProps.channelId, newProps.receiveMessage);
     }
   }
 
-  setUpSubscription(channelId, receiveMessage) {
-    this.consumer = ActionCable.createConsumer();
-    this.subscription = this.consumer.subscriptions.create({
-      channel: 'ChatChannel',
-      room: `${channelId}`
-    }, {
-      received: ({ payload, command }) => {
-        switch (command) {
-          case "update_message":
-            this.props.receiveMessage(payload);
-            break;
-          case "redirect_to_server":
-            this.props.history.push(`/channels/${payload}`);
-            break;
-          case "update_users":
-            this.props.receiveServer(payload);
-            break;
-          default:
-            console.log(`Unknown command, ${command}`)
-        }
-      },
-    });
-  }
+  // setUpSubscription(channelId, receiveMessage) {
+  //   this.consumer = ActionCable.createConsumer();
+  //   this.subscription = this.consumer.subscriptions.create({
+  //     channel: 'ChatChannel',
+  //     room: `${channelId}`
+  //   }, {
+  //     received: ({ payload, command }) => {
+  //       switch (command) {
+  //         case "update_message":
+  //           this.props.receiveMessage(payload);
+  //           break;
+  //         case "redirect_to_server":
+  //           this.props.history.push(`/channels/${payload}`);
+  //           break;
+  //         case "update_users":
+  //           this.props.receiveServer(payload);
+  //           break;
+  //         default:
+  //           console.log(`Unknown command, ${command}`)
+  //       }
+  //     },
+  //   });
+  // }
 
   combineMessages(messages) {
     let newMessages = [];

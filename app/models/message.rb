@@ -14,8 +14,8 @@ class Message < ApplicationRecord
   through: :channel,
   source: :server
 
-  after_create_commit do
-    NewMessageEventBroadcastJob.perform_later(self)
-  end
+  # after_create_commit do
+  #   NewMessageEventBroadcastJob.perform_later(self)
+  # end
 
 end
