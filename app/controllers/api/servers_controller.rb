@@ -19,7 +19,7 @@ class Api::ServersController < ApplicationController
   end
 
   def update
-    @server = Server.find(params[:id])
+    @server = Server.includes(:users, :channels).find(params[:id])
 
     if @server.update_attributes(server_params)
       render :show
@@ -33,7 +33,7 @@ class Api::ServersController < ApplicationController
   end
 
   def destroy
-    @server = Server.find(params[:id])
+    @server = Server.includes(:channels, :users).find(params[:id])
     @server.delete
 
     render json: @server

@@ -2,7 +2,7 @@ class UserOnlineEventEventBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(room)
-    channel = Channel.find(room);
+    channel = Channel.includes(:messages, :server).find(room);
     ActionCable.server.broadcast(
       ("chat_#{room}"),
       command: "update_users",

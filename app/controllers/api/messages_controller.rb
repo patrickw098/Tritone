@@ -4,7 +4,7 @@ class Api::MessagesController < ApplicationController
     @message.author_id = current_user.id
 
     if @message.save
-      @channel = Channel.find(@message.channel_id)
+      @channel = Channel.includes(:server, :messages).find(@message.channel_id)
       render 'api/channels/show'
     else
       render json: @message.errors.full_messages, status: 422
@@ -12,9 +12,9 @@ class Api::MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:id])
+    @message = Message.includes(:channel, :server).find(params[:id])
     @message.delete
-    @channel = Channel.find(@message.channel_id);
+    @channel = Channel.includes(:server, :messages).find(@message.channel_id);
 
     render :destroy
   end

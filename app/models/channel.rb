@@ -9,8 +9,15 @@ class Channel < ApplicationRecord
     self.server.creator.id
   end
 
-  before_destroy do
-    DeleteChannelEventBroadcastJob.perform_now(self)
+  def sorted_messages
+    channel_messages = self.messages
+    sorted = channel_messages.sort_by { |message| message.created_at }
+    sorted.map! { |message| message.id}
+    sorted
   end
+
+  # before_destroy do
+  #   DeleteChannelEventBroadcastJob.perform_now(self)
+  # end
 
 end

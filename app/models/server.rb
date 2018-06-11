@@ -15,5 +15,12 @@ class Server < ApplicationRecord
   through: :server_members,
   source: :member
 
+  def sorted_channels
+    serv_channels = self.channels
+    sorted = serv_channels.sort_by { |channel| channel.created_at }
+    sorted.map! { |channel| channel.id }
+    sorted
+  end
+
 
 end

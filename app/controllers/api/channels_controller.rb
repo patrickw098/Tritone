@@ -13,7 +13,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.find(params[:id])
+    @channel = Channel.includes(:server, :messages).find(params[:id])
 
     if @channel.update_attributes(channel_params)
       render :show
@@ -23,7 +23,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def destroy
-    @channel = Channel.find(params[:id])
+    @channel = Channel.includes(:server, :messages).find(params[:id])
     @server = @channel.server
     @channel.destroy
 

@@ -5,7 +5,7 @@ class Api::ServerMembershipsController < ApplicationController
 
     if @membership.save
       server_id = @membership.server_id
-      @server = Server.find(server_id);
+      @server = Server.includes(:users, :channels).find(server_id);
       render '/api/servers/show'
     else
       render json: @membership.errors.full_messages, status: 422
@@ -14,7 +14,7 @@ class Api::ServerMembershipsController < ApplicationController
   end
 
   def destroy
-    @membership = ServerMembership.find(params[:id])
+    @membership = ServerMembership.includes(:user, :server).find(params[:id])
     @server = @membership.server
     @membership.destroy
 
