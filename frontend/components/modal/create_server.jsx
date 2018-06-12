@@ -74,7 +74,7 @@ class CreateServer extends React.Component {
           <h1>Create Server</h1>
             <div className="create-server-div">
               <form onSubmit={(e) => this.handleSubmit("create", e) }>
-                <input id="input-id" value={this.state.name} onChange={this.handleChange} />
+                <input autocomplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
               </form>
               <div className="search-box-div"></div>
               <div className="buttons-containers">
@@ -91,7 +91,7 @@ class CreateServer extends React.Component {
           <h1>Join Server</h1>
             <div className="join-server-div">
               <form onSubmit={(e) => this.handleSubmit("join", e) }>
-                <input id="input-id" value={this.state.name} onChange={this.handleChange} />
+                <input autocomplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
               </form>
               <div className="search-box-div">
                 <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>

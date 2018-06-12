@@ -18,7 +18,6 @@ class Delete extends React.Component {
   handleChannel(e) {
     e.preventDefault();
     this.props.deleteChannel(this.props.channel.id)
-    this.props.history.push(`/channels/${this.props.serverId}/`)
   }
 
   handleEdit(e) {

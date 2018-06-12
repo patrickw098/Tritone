@@ -4,8 +4,7 @@ class Channel < ApplicationRecord
   belongs_to :server,
   primary_key: :id,
   foreign_key: :server_id,
-  class_name: :Server,
-  dependent: :destroy
+  class_name: :Server
 
   has_many :messages
 
@@ -21,8 +20,8 @@ class Channel < ApplicationRecord
   end
 
 
-  # before_destroy do
-  #   DeleteChannelEventBroadcastJob.perform_now(self)
-  # end
+  before_destroy do
+    DeleteChannelEventBroadcastJob.perform_now(self)
+  end
 
 end

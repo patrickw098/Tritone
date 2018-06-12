@@ -4,20 +4,17 @@ class Message < ApplicationRecord
   belongs_to :author,
   primary_key: :id,
   foreign_key: :author_id,
-  class_name: :User,
-  dependent: :destroy
+  class_name: :User
 
-  belongs_to :channel,
-  dependent: :destroy
+  belongs_to :channel
 
   has_one :server,
   through: :channel,
-  source: :server,
-  dependent: :destroy
+  source: :server
 
 
-  # after_create_commit do
-  #   NewMessageEventBroadcastJob.perform_later(self)
-  # end
+  after_create_commit do
+    NewMessageEventBroadcastJob.perform_later(self)
+  end
 
 end

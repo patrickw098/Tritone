@@ -4,10 +4,8 @@ class DmMembership < ApplicationRecord
   belongs_to :dm,
   primary_key: :id,
   foreign_key: :dm_id,
-  class_name: :Server,
-  dependent: :destroy
+  class_name: :Server
 
-  belongs_to :user,
-  dependent: :destroy
+  belongs_to :user
 
 end

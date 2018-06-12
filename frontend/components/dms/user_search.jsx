@@ -43,7 +43,7 @@ class UserSearch extends React.Component {
         this.props.closeModal();
       } else if ( index !== -1 ) {
         this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
-        this.props.closeModal(); 
+        this.props.closeModal();
       } else {
         this.props.dmServer(this.state).then(this.redirectAfter);
       }
@@ -68,7 +68,7 @@ class UserSearch extends React.Component {
         <h1>Search For User</h1>
           <div className="join-server-div">
             <form onSubmit={(e) => this.handleSubmit(e) }>
-              <span>@ </span><input id="input-id" value={this.state.name} onChange={this.handleChange} />
+              <span>@ </span><input autocomplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
             </form>
             <div className="search-box-div">
               <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>
