@@ -23,7 +23,6 @@ class Api::ChannelsController < ApplicationController
   end
 
   def destroy
-    debugger
     @channel = Channel.includes(:server, :messages).find(params[:id])
     @server = @channel.server
     @channel.destroy

@@ -29,7 +29,7 @@ class Server < ApplicationRecord
   source: :messages
 
   def sorted_channels
-    serv_channels = self.channels
+    serv_channels = self.channels.includes(:server)
     sorted = serv_channels.sort_by { |channel| channel.created_at }
     sorted.map! { |channel| channel.id }
     sorted

@@ -41,13 +41,13 @@ class User < ApplicationRecord
   end
 
   def sorted_servers
-    sorted = self.server_memberships.sort_by { |server| server.created_at }
+    sorted = self.server_memberships.includes(:member).sort_by { |server| server.created_at }
     sorted.map! { |server| server.server_id }
     sorted
   end
 
   def sorted_dms
-    sorted = self.dms.select{ |server| server.last_message }
+    sorted = self.dms.includes(:users).select{ |server| server.last_message }
     sorted = sorted.sort_by { |server| server.last_message.created_at }
     sorted.reverse
   end

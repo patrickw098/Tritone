@@ -39,7 +39,7 @@ class Messages extends React.Component {
           default:
             console.log(`Unknown command, ${command}`)
         }
-      },
+      }
     });
   }
 
