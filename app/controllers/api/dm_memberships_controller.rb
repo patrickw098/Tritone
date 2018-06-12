@@ -1,16 +1,18 @@
 class Api::DmMembershipsController < ApplicationController
   def create
-    users_array = [current_user.id, params[:id]].sort
-    @dmserver = Dm.create(name: "#{users_array[0]}-&-#{users_array[1]}")
-    @membership1 = ServerMembership.new(membership_params)
-    @membership1.server_id = @dmserver.id
-    @membership2 = ServerMembership.new(current_user.id)
-    @membership2.server_id = @dmserver.id
+    dmserver = Server.create({name: "private", creator_id: current_user.id })
+    channel = Channel.create({name: "general", server_id: dmserver.id })
+    membership1 = DmMembership.new(membership_params)
+    membership1.dm_id = dmserver.id
+    membership2 = DmMembership.new({ user_id: current_user.id })
+    membership2.dm_id = dmserver.id
 
-    @membership1.save
-    @membership2.save
+    membership1.save
+    membership2.save
 
-    render json: ["hello"]
+    @user = current_user
+
+    render 'api/users/show'
 
   end
 

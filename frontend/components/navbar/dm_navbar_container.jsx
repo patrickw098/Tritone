@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const findDmName = (state, ownProps) => {
-  debugger
   let dms = Object.values(state.entities.dmServers);
   let selected = []
   dms.forEach( (dm) => {

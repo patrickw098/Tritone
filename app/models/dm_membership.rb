@@ -7,6 +7,7 @@ class DmMembership < ApplicationRecord
   class_name: :Server,
   dependent: :destroy
 
-  belongs_to :user
+  belongs_to :user,
+  dependent: :destroy
 
 end

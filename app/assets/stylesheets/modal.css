@@ -110,6 +110,14 @@
   position: relative;
 }
 
+#search-user {
+  color: gray;
+}
+
+#search-user input:focus {
+  border: 2px solid gray;
+}
+
 .join-server-container h1 {
   margin-bottom: 40px;
 }

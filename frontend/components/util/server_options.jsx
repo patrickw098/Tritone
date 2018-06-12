@@ -39,7 +39,6 @@ class ServerOptions extends React.Component {
   handleEdit(e) {
     e.preventDefault();
     if ( this.props.server.creator_id === this.props.currentUser ) {
-      debugger
       this.props.openModal("editServer");
     } else {
       this.props.errorMessage("Only the server administrator can edit the server name.")

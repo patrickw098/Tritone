@@ -12,7 +12,8 @@ class Message < ApplicationRecord
 
   has_one :server,
   through: :channel,
-  source: :server
+  source: :server,
+  dependent: :destroy
 
 
   # after_create_commit do

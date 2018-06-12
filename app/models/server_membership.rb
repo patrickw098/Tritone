@@ -4,12 +4,14 @@ class ServerMembership < ApplicationRecord
   belongs_to :server,
   primary_key: :id,
   foreign_key: :server_id,
-  class_name: :Server
+  class_name: :Server,
+  dependent: :destroy
 
 
   belongs_to :member,
   primary_key: :id,
   foreign_key: :member_id,
-  class_name: :User
+  class_name: :User,
+  dependent: :destroy
 
 end

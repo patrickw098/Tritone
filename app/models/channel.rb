@@ -4,7 +4,8 @@ class Channel < ApplicationRecord
   belongs_to :server,
   primary_key: :id,
   foreign_key: :server_id,
-  class_name: :Server
+  class_name: :Server,
+  dependent: :destroy
 
   has_many :messages
 

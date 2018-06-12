@@ -12,6 +12,7 @@ class UserSearch extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleServerSelect = this.handleServerSelect.bind(this);
+    this.redirectAfter = this.redirectAfter.bind(this);
   }
 
   handleChange(e) {
@@ -25,16 +26,30 @@ class UserSearch extends React.Component {
     })
   }
 
+  redirectAfter() {
+    this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
+    this.props.closeModal();
+  }
+
   handleServerSelect(e, object) {
     e.preventDefault();
     this.setState({
       name: object.display_name,
       id: object.id
     },  () => {
-      console.log(this.state)
-      let input = document.getElementById("input-id");
-      input.focus()
+      let index = this.props.dmServerIds.indexOf(`${this.state.id}`)
+      if ( index !== -1 ) {
+        this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
+        this.props.closeModal();
+      } else {
+        this.props.dmServer(this.state).then(this.redirectAfter);
+      }
     });
+  }
+
+  componentDidMount() {
+    let input = document.getElementById("input-id");
+    input.focus()
   }
 
 
@@ -46,11 +61,11 @@ class UserSearch extends React.Component {
 
   render() {
     return (
-      <div className="join-server-container">
+      <div id="search-user" className="join-server-container">
         <h1>Search For User</h1>
           <div className="join-server-div">
             <form onSubmit={(e) => this.handleSubmit(e) }>
-              <input id="input-id" value={this.state.name} onChange={this.handleChange} />
+              <span>@ </span><input id="input-id" value={this.state.name} onChange={this.handleChange} />
             </form>
             <div className="search-box-div">
               <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>

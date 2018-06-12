@@ -57,8 +57,8 @@ export const leaveServer = (id) => dispatch => {
     })
 }
 
-export const dmServer = (id) => dispatch => {
-  return ServerApiUtils.createDm(id)
+export const dmServer = (user) => dispatch => {
+  return ServerApiUtils.createDm(user)
     .then((res) => {
       dispatch(receiveDmServer(res))
     })

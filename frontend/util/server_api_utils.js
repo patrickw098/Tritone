@@ -45,10 +45,10 @@ export const leaveServer = (id) => {
   })
 }
 
-export const createDm = (id) => {
+export const createDm = (user) => {
   return $.ajax({
     method: 'POST',
     url: `/api/dm_memberships`,
-    data: { membership: { user_id: id } }
+    data: { membership: { user_id: user.id } }
   })
 }

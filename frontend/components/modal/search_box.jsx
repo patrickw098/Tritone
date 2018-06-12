@@ -28,7 +28,6 @@ class SearchBox extends React.Component {
   render() {
     const { servers, query } = this.props;
     let array = [];
-    debugger
     let length = query.length;
     let queryLower = query.toLowerCase();
 
