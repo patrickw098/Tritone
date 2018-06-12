@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageItem from './message_item';
 import ActionCable from 'actioncable';
+import Avatar from '../avatar/avatar';
 
 class Messages extends React.Component {
   constructor(props) {

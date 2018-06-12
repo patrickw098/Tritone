@@ -47,12 +47,13 @@
 .message-icon {
   height: 50px;
   width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .message-li i {
-  height: 50px;
-  width: 50px;
-  font-size: 40px;
   color: green;
 }
 

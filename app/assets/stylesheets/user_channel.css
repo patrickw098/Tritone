@@ -41,10 +41,19 @@
   box-sizing: border-box;
 }
 
+.user-name-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .user-footer h3 {
   margin: auto 0;
   font-size: 14px;
   font-weight: 400;
+  flex-direction: row;
+  display: flex;
+  margin: auto 0;
 }
 
 .message-div {

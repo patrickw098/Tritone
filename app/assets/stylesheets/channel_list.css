@@ -94,6 +94,18 @@
   flex-direction: row;
 }
 
+.dm-channel-name {
+  display: flex;
+  flex-direction: row;
+}
+
+#dm-channel-name {
+  height: 50px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
 .channel-name strong {
   overflow: hidden;
   width: 150px;

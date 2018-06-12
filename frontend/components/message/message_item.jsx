@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteContainer from '../util/delete_container';
+import Avatar from '../avatar/avatar';
 
 class MessageItem extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class MessageItem extends React.Component {
       <li className="message-li">
         <div className="message-content">
           <div className="message-icon">
-            {image}
+            <Avatar />
           </div>
           <div className="message-items-container">
             <h3 className="message-author">{this.props.message.author}

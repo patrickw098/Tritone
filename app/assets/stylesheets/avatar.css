@@ -1,0 +1,64 @@
+#avatar-container {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  margin-right: 10px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  border: none;
+}
+
+#avatar-circle {
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  border: none;
+}
+
+#avatar-circle i {
+  width: 30px;
+  height: 30px;
+  font-size: 39px;
+  position: absolute;
+  top: 2px;
+  left: -2px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.green {
+  color: green !important;
+}
+
+.red {
+  color: red !important;
+}
+
+.orange {
+  color: orange !important;
+}
+
+.yellow {
+  color: yellow !important;
+}
+
+.black {
+  color: black !important;
+}
+
+.purple {
+  color: purple !important;
+}
+
+.gray {
+  color: gray !important;
+}
