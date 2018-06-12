@@ -26,7 +26,7 @@ class ServerChannel extends React.Component {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />
     } else if (this.props.currentUser.server_ids.indexOf(parseInt(this.props.match.params.serverId)) === -1 ){
-      return <Redirect to="/channels/user" />
+      return <Redirect to="/channels/@me" />
     } else {
       return (
         <div className="user-channel-main">

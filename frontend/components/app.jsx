@@ -8,6 +8,7 @@ import LogInContainer from './session/login_container';
 import SignUpContainer from './session/signup_container';
 import GetStartedContainer from './greeting/get_started_container';
 import ChannelMessageContainer from './channel/channel_message_container';
+import DmMessageContainer from './dms/dm_message_container';
 import Modal from './modal/modal';
 import Logo from './greeting/logo';
 import WelcomePage from './welcome_page'
@@ -17,7 +18,8 @@ const App = () => (
   <div className="app-start">
       <Switch>
         <ProtectedRoute path="/app" component={LoadingContainer} />
-        <ProtectedRoute exact path="/channels/user" component={UserChannelContainer} />
+        <ProtectedRoute exact path="/channels/@me/:channelId" component={DmMessageContainer} />
+        <ProtectedRoute exact path="/channels/@me/" component={UserChannelContainer} />
         <ProtectedRoute exact path="/channels/:serverId/:channelId" component={ChannelMessageContainer} />
         <ProtectedRoute exact path="/channels/:serverId" component={ServerChannelContainer} />
         <Route exact path="/" component={Logo} />

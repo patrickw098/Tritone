@@ -9,7 +9,7 @@ class DmListItem extends React.Component {
 
   render () {
     return (
-      <NavLink activeClassName="selected-channel" to={`/channels/users/${this.props.dmServer.server_id}`}>
+      <NavLink activeClassName="selected-channel" to={`/channels/@me/${this.props.dmServer.channel_id}`}>
         <li className="channel-name">
           <strong>{ this.props.dmServer.name }</strong>
         </li>

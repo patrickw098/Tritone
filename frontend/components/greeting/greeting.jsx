@@ -22,7 +22,7 @@ class Greeting extends React.Component {
       return(
         <header className="home-page-header">
           <nav className="home-page-nav">
-            <Link to='/channels/user'> Open </Link>
+            <Link to='/channels/@me'> Open </Link>
           </nav>
         </header>
       );

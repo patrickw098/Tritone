@@ -37,7 +37,7 @@ class Loading extends React.Component {
 
   componentWillReceiveProps() {
     if ( this.props.currentUser ) {
-      setTimeout(() => this.props.history.push('/channels/user'), 2000);
+      setTimeout(() => this.props.history.push('/channels/@me'), 2000);
     }
   }
 

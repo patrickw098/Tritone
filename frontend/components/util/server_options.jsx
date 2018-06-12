@@ -33,7 +33,7 @@ class ServerOptions extends React.Component {
   handleLeave(e) {
     e.preventDefault();
     this.props.leaveServer(this.props.serverMembershipId);
-    this.props.history.push("/channels/user")
+    this.props.history.push("/channels/@me")
   }
 
   handleEdit(e) {

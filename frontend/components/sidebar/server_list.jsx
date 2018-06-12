@@ -24,7 +24,7 @@ class ServerList extends React.Component {
 
   goToUserPage(e) {
     e.preventDefault();
-    this.props.history.push('/channels/user')
+    this.props.history.push('/channels/@me')
   }
 
   openServerModal(e) {
@@ -36,7 +36,7 @@ class ServerList extends React.Component {
     return (
       <ul className="server-list-ul">
         <li className="user-page-li">
-          <NavLink activeClassName="active" to="/channels/user/">
+          <NavLink activeClassName="active" to="/channels/@me">
             <button className="user-page-button">
               <i className="fa fa-users" aria-hidden="true">
               </i>

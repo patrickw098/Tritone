@@ -1,14 +1,15 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import ServerListContainer from '../sidebar/server_list_container';
-import FooterContainer from '../footer/footer_container';
 import ChannelListContainer from '../server/channel_list_container';
-import NavBarContainer from '../navbar/navbar_container';
+import FooterContainer from '../footer/footer_container';
+import DmNavBarContainer from '../navbar/dm_navbar_container';
+import DmListContainer from '../dms/dms_list_container';
 import MessagesContainer from '../message/messages_container';
 import MessageInputContainer from '../message/message_input_container';
-import UserListContainer from '../sidebar/user_list_container';
 
-class ChannelMessage extends React.Component {
+
+class DmMessage extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -16,8 +17,6 @@ class ChannelMessage extends React.Component {
   render() {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />
-    } else if (this.props.currentUser.server_ids.indexOf(parseInt(this.props.match.params.serverId)) === -1 ){
-      return <Redirect to="/channels/@me" />
     } else {
       return (
         <div className="user-channel-main">
@@ -26,23 +25,22 @@ class ChannelMessage extends React.Component {
           </div>
           <div className="friend-selector-sidebar">
             <div className = "channel-list-div">
-              <ChannelListContainer />
+              <DmListContainer />
             </div>
             <FooterContainer />
           </div>
           <div className="message-div">
-            <NavBarContainer />
-              <div className="messages-main-body">
-                <div className="messages-sub-body">
-                  <div className="messages">
-                    <MessagesContainer />
-                  </div>
-                  <div className="message-input-div">
-                    <MessageInputContainer />
-                  </div>
+            <DmNavBarContainer />
+            <div className="messages-main-body">
+              <div className="messages-sub-body">
+                <div className="messages">
+                  <MessagesContainer />
                 </div>
-                <UserListContainer />
+                <div className="message-input-div">
+                  <MessageInputContainer />
+                </div>
               </div>
+            </div>
           </div>
         </div>
       )
@@ -50,4 +48,4 @@ class ChannelMessage extends React.Component {
   }
 }
 
-export default ChannelMessage;
+export default DmMessage;
