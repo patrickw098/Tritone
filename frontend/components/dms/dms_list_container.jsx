@@ -7,7 +7,14 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     serverId: ownProps.match.params.serverId,
     server: state.entities.servers[ownProps.match.params.serverId],
-    dmServers: Object.values(state.entities.dmServers)
+    dmServers: selectDmServers(state, ownProps)
+  })
+}
+
+const selectDmServers = (state, ownProps) => {
+  let currUser = state.session.id;
+  return state.entities.users[currUser].dm_ids.map((id) => {
+    return state.entities.dmServers[id];
   })
 }
 

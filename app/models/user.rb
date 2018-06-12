@@ -46,6 +46,12 @@ class User < ApplicationRecord
     sorted
   end
 
+  def sorted_dms
+    sorted = self.dms.select{ |server| server.last_message }
+    sorted = sorted.sort_by { |server| server.last_message.created_at }
+    sorted.reverse
+  end
+
   def online
     self.update_attributes({online_status: "online"})
   end

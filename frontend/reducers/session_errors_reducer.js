@@ -1,4 +1,5 @@
 import { RECEIVE_ERRORS, LOGIN_USER, CLEAR_ERRORS } from '../actions/session_actions';
+import { LOGOUT_USER } from '../actions/session_actions';
 
 const initialState = [];
 
@@ -10,6 +11,8 @@ const sessionsErrorReducer = (state = initialState, action) => {
     case LOGIN_USER:
       return [];
     case CLEAR_ERRORS:
+      return [];
+    case LOGOUT_USER:
       return [];
     default:
       return state;

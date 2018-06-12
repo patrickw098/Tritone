@@ -18,7 +18,7 @@ class Api::SearchesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:display_name)
+    params.require(:user).permit(:name)
   end
 
   def server_params

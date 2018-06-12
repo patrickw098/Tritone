@@ -1,4 +1,5 @@
 import { OPEN_MODAL, CLOSE_MODAL, TOGGLE_FOOTER, TOGGLE_FRIENDS, RESET_FRIENDS, ERROR_MESSAGE } from '../actions/modal_actions';
+import { LOGOUT_USER } from '../actions/session_actions';
 
 const initialState = {
   modal: null,
@@ -29,6 +30,8 @@ const uiReducer = (state = initialState, action) => {
       return Object.assign({}, state, { friends: true });
     case ERROR_MESSAGE:
       return Object.assign({}, state, { modal: "errorMessage" })
+    case LOGOUT_USER:
+      return initialState;
     default:
       return state;
   }

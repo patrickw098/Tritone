@@ -38,9 +38,12 @@ class UserSearch extends React.Component {
       id: object.id
     },  () => {
       let index = this.props.dmServerIds.indexOf(`${this.state.id}`)
-      if ( index !== -1 ) {
-        this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
+      if (this.state.id === this.props.currentUser ) {
+        this.props.history.push('/channels/@me')
         this.props.closeModal();
+      } else if ( index !== -1 ) {
+        this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
+        this.props.closeModal(); 
       } else {
         this.props.dmServer(this.state).then(this.redirectAfter);
       }

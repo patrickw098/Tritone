@@ -11,3 +11,16 @@ json.messages do
     json.partial! 'api/messages/message', message: message
   end
 end
+
+dm_user = current_user.sorted_dms.map do |dm|
+  users = dm.dm_users.select { |user| user.id != current_user.id }
+  users.first.id
+end
+
+json.users do
+  json.set! current_user.id do
+    json.extract! current_user, :id, :display_name, :online_status
+    json.server_ids current_user.sorted_servers
+    json.dm_ids dm_user
+  end
+end

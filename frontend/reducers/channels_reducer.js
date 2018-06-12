@@ -3,6 +3,7 @@ import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_MESSAGE, REMOVE_MESSAGE } from '../actions/message_actions';
 import { RECEIVE_DM_SERVER } from '../actions/server_actions';
+import { LOGOUT_USER } from '../actions/session_actions';
 
 const initialState = {};
 
@@ -25,6 +26,8 @@ const channelsReducer = (state = initialState, action) => {
         return Object.assign({}, state, action.payload.channels);
       case REMOVE_MESSAGE:
         return Object.assign({}, state, action.payload.channels)
+      case LOGOUT_USER:
+        return initialState;
       default:
         return state;
   }

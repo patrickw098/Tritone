@@ -24,11 +24,19 @@ class Server < ApplicationRecord
   through: :dm_members,
   source: :user
 
+  has_many :messages,
+  through: :channels,
+  source: :messages
+
   def sorted_channels
     serv_channels = self.channels
     sorted = serv_channels.sort_by { |channel| channel.created_at }
     sorted.map! { |channel| channel.id }
     sorted
+  end
+
+  def last_message
+    self.messages.includes(:server).last
   end
 
 
