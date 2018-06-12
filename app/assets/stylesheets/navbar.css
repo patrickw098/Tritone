@@ -1,9 +1,9 @@
 .channel-name-header {
-  vertical-align: middle;
   margin: auto 0;
   padding-left: 10px;
-  width: 100%;
-  overflow: hidden;
+  width: 300px;
+  overflow: scroll;
+  text-overflow: clip;
 }
 
 

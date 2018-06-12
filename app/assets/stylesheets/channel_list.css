@@ -21,6 +21,7 @@
 .channel-list {
   width: 100%;
   margin-right: 5px;
+  overflow-x:hidden;
 }
 
 .create-channel-li{
@@ -71,8 +72,8 @@
 }
 
 .header-span {
-  width: 200px;
-  overflow:hidden;
+  width: 160px;
+  overflow :hidden;
 }
 
 .channel-list-body {
@@ -95,6 +96,7 @@
 
 .channel-name strong {
   overflow: hidden;
+  width: 150px;
 }
 
 .channel-name span {

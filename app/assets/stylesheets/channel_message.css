@@ -1,16 +1,16 @@
 .navbar-header {
   height: 47px;
-  width: 100%;
+  width: 100% - 240px;
   border-bottom: 1px solid #b9bbbe;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-shrink: 0;
-  overflow: hidden;
 }
 
 .navbar-header span {
   padding-right: 5px;
+  width: 10px;
 }
 
 .navbar-header h1 {
@@ -18,6 +18,11 @@
   color: #4f545c;
   font-weight: 700;
   overflow: hidden;
+  width: 100% - 240px;;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 10;
+  text-overflow: clip;
 }
 
 .messages-main-body {
@@ -33,11 +38,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.messages {
-  height: 100%;
-  display: flex;
 }
 
 .online-user-list-container {
