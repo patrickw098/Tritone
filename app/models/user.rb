@@ -96,5 +96,8 @@ class User < ApplicationRecord
   through: :dm_memberships,
   source: :dm
 
+  has_many :dm_channels,
+  through: :dms,
+  source: :channels
 
 end

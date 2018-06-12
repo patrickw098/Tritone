@@ -27,7 +27,7 @@ class ChannelList extends React.Component {
       return (
         <div className="channel-list">
           <div className="channel-list-header">
-            <h1 className="server-name">{this.props.server.name} <ServerOptionsContainer server={this.props.server} /> </h1>
+            <h1 className="server-name"><span className="header-span">{this.props.server.name}</span><ServerOptionsContainer server={this.props.server} /> </h1>
           </div>
           <div className="channel-list-body">
             <ul className="channel-list-ul">

@@ -11,7 +11,7 @@ class ChannelListItem extends React.Component {
     return (
       <NavLink activeClassName="selected-channel" to={`/channels/${this.props.serverId}/${this.props.channel.id}`}>
         <li className="channel-name">
-          <span>#</span> { this.props.channel.name }
+          <span>#</span><strong>{ this.props.channel.name }</strong>
           <DeleteContainer channel={this.props.channel} serverId={this.props.serverId} formType={"channel"}/>
         </li>
       </NavLink>

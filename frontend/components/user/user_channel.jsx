@@ -4,6 +4,7 @@ import ServerListContainer from '../sidebar/server_list_container';
 import ChannelListContainer from '../server/channel_list_container';
 import FooterContainer from '../footer/footer_container';
 import NavBarContainer from '../navbar/navbar_container';
+import DmListContainer from '../dms/dms_list_container';
 
 class UserChannel extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class UserChannel extends React.Component {
           </div>
           <div className="friend-selector-sidebar">
             <div className = "channel-list-div">
+              <DmListContainer />
             </div>
             <FooterContainer />
           </div>

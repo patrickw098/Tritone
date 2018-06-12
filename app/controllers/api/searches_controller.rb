@@ -8,6 +8,11 @@ class Api::SearchesController < ApplicationController
   end
 
   def users
+    query = params[:user][:name]
+    query = "%" + query.split("").join("%") + "%"
+    @users = User.where('lower(display_name) LIKE ?', query).limit(10)
+
+    render '/api/users/index'
   end
 
   private

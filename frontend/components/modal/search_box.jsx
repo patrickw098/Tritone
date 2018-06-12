@@ -28,12 +28,16 @@ class SearchBox extends React.Component {
   render() {
     const { servers, query } = this.props;
     let array = [];
+    debugger
     let length = query.length;
     let queryLower = query.toLowerCase();
 
     servers.forEach( (server) => {
-      // let serverName = server.name.toLowerCase().split("").slice(0, length).join(""); //code golfing
-      if ( this.substringSearch(server.name, queryLower) === true ) {
+      let name = "name"
+      if ( server.name === undefined ) {
+        name = "display_name"
+      }
+      if ( this.substringSearch(server[name], queryLower) === true ) {
         array.push(server);
       }})
 

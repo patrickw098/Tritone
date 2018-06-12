@@ -22,4 +22,23 @@ json.channels do
       json.extract! channel, :id, :name, :message_ids
     end
   end
+
+  @user.dm_channels.each do |channel|
+    json.set! channel.id do
+      json.extract! channel, :id, :name, :message_ids
+    end
+  end
+end
+
+json.dms do
+  @user.dms.each do |dm|
+    dm_user = dm.dm_users.select { |user| user.id != current_user.id }
+    dm_user = dm_user.first
+    json.set! dm_user.id do
+      json.name dm_user.display_name
+      json.user_id dm_user.id
+      json.server_id dm.id
+      json.channel_id dm.channel_ids.first
+    end
+  end
 end

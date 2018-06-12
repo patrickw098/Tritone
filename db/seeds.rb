@@ -29,12 +29,16 @@ Friendship.delete_all
 Server.delete_all
 
 server1 = Server.create({ name: "High Five", creator_id: user2.id })
+server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
+dm1 = Server.create({ name: "private", creator_id: user1.id })
 
 Channel.delete_all
 
 channel1 = Channel.create({ name: "general", server_id: server1.id })
 channel2 = Channel.create({ name: "riddles discussion", server_id: server1.id })
 channel3 = Channel.create({ name: "Aech's hideout", server_id: server1.id })
+channel4 = Channel.create({ name: "general", server_id: server2.id })
+channel5 = Channel.create({ name: "general", server_id: dm1.id })
 
 ServerMembership.delete_all
 
@@ -56,3 +60,8 @@ message6 = Message.create({ body: "nope!", channel_id: channel1.id, author_id: u
 message7 = Message.create({ body: "ragh!", channel_id: channel1.id, author_id: user1.id })
 message8 = Message.create({ body: "broken!", channel_id: channel1.id, author_id: user1.id })
 message9 = Message.create({ body: "i'm the last message!", channel_id: channel1.id, author_id: user1.id })
+
+DmMembership.delete_all
+
+dmM1 = DmMembership.create({ dm_id: dm1.id, user_id: user1.id })
+dmM2 = DmMembership.create({ dm_id: dm1.id, user_id: user2.id })

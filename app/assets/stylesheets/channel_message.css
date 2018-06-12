@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .navbar-header span {
@@ -16,6 +17,7 @@
   height: 22px;
   color: #4f545c;
   font-weight: 700;
+  overflow: hidden;
 }
 
 .messages-main-body {

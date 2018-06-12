@@ -1,6 +1,7 @@
 import * as UserApiUtils from '../util/user_api_utils'
 
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_USERS = "RECEIVE_USERS";
 
 
 //will have to refactor jbuilder later to give back normalized data//
@@ -9,7 +10,17 @@ const receiveUser = (payload) => ({
   payload
 })
 
+const receiveUsers = payload => ({
+  type: RECEIVE_USERS,
+  payload
+})
+
 export const fetchUser = (id) => dispatch => {
   return UserApiUtils.fetchUser(id)
     .then( (res) => dispatch(receiveUser(res)));
+}
+
+export const searchUsers = (user) => dispatch => {
+  return UserApiUtils.searchUsers(user)
+    .then( (res) => dispatch(receiveUsers(res)))
 }
