@@ -58,7 +58,6 @@ class UserSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("yay")
   }
 
 
@@ -68,7 +67,7 @@ class UserSearch extends React.Component {
         <h1>Search For User</h1>
           <div className="join-server-div">
             <form onSubmit={(e) => this.handleSubmit(e) }>
-              <span>@ </span><input autocomplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
+              <span>@ </span><input autoComplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
             </form>
             <div className="search-box-div">
               <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>
