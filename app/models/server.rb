@@ -1,5 +1,5 @@
 class Server < ApplicationRecord
-  validates :creator_id, :name, presence: true
+  validates :creator_id, presence: true
 
   has_many :channels
 

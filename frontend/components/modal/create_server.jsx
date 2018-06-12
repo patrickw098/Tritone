@@ -45,10 +45,13 @@ class CreateServer extends React.Component {
 
   handleSubmit(type, e) {
     e.preventDefault();
-    if (type === "create") {
+    if (type === "create" && this.state.name !== "") {
       this.props.createServer(this.state).then(() => this.props.closeModal());
     } else if ( type === "join" && this.state.id !== null ) {
       this.props.joinServer(this.state).then(() => this.props.closeModal());
+    } else {
+      let input = document.getElementById("input-id");
+      input.focus()
     }
   }
 

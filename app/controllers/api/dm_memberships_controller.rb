@@ -1,7 +1,7 @@
 class Api::DmMembershipsController < ApplicationController
   def create
-    dmserver = Server.create({name: "private", creator_id: current_user.id })
-    channel = Channel.create({name: "general", server_id: dmserver.id })
+    dmserver = Server.create({name: "", creator_id: current_user.id })
+    channel = Channel.create({name: "direct", server_id: dmserver.id })
     membership1 = DmMembership.new(membership_params)
     membership1.dm_id = dmserver.id
     membership2 = DmMembership.new({ user_id: current_user.id })

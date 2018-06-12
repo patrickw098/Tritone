@@ -30,7 +30,7 @@ Server.delete_all
 
 server1 = Server.create({ name: "High Five", creator_id: user2.id })
 server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
-dm1 = Server.create({ name: "private", creator_id: user1.id })
+dm1 = Server.create({ name: "", creator_id: user1.id })
 
 Channel.delete_all
 
