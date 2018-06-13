@@ -44,6 +44,7 @@
   background-color: #f6f6f7;
   height: 100%;
   width: 240px;
+  flex-shrink: 0;
 }
 
 

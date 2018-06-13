@@ -3,6 +3,6 @@ dm_user = user.sorted_dms.map do |dm|
   users.first.id
 end
 
-json.extract! user, :id, :display_name, :online_status
+json.extract! user, :id, :display_name, :online_status, :avatar_url
 json.server_ids user.sorted_servers
 json.dm_ids dm_user

@@ -13,6 +13,7 @@ class ChannelMessage extends React.Component {
     super(props);
   }
 
+
   render() {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />

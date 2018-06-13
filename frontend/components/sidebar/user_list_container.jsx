@@ -21,7 +21,9 @@ const selectOfflineUsers = (state, ownProps) => {
 
   userArr.forEach( (id) => {
     let user = state.entities.users[id]
-    if ( user.online_status === "offline" ) {
+    if ( user === undefined ) {
+      users.push(user)
+    } else if ( user.online_status === "offline" ) {
       users.push(user)
     }
   })
@@ -35,7 +37,9 @@ const selectOnlineUsers = (state, ownProps) => {
   let users = []
   userArr.forEach( (id) => {
     let user = state.entities.users[id]
-    if ( user.online_status === "online" ) {
+    if ( user === undefined ) {
+      users.push(user)
+    } else if ( user.online_status === "online" ) {
       users.push(user)
     }
   })

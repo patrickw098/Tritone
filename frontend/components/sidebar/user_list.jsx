@@ -12,7 +12,6 @@ class UserList extends React.Component {
 
   render() {
     const { dmServers, dmServerIds, currentUser, dmServer } = this.props;
-    debugger
 
     if (this.props.offlineUsers[0] === undefined && this.props.onlineUsers[0] === undefined) {
       return (

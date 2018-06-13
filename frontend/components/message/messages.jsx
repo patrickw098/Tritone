@@ -35,7 +35,6 @@ class Messages extends React.Component {
             this.props.history.push(`/channels/${payload}`);
             break;
           case "update_users":
-            debugger
             this.props.receiveOnlineStatus(payload);
             break;
           default:

@@ -16,11 +16,9 @@ class UserListItem extends React.Component {
   handleClick(e) {
     e.preventDefault();
     let index = this.props.dmServerIds.indexOf(`${this.state.id}`)
-    debugger
     if (this.state.id === this.props.currentUser ) {
       this.props.history.push('/channels/@me')
     } else if ( index !== -1 ) {
-      debugger
       this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
     } else {
       this.props.dmServer(this.state).then(() =>
