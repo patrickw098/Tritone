@@ -114,8 +114,29 @@
   color: gray;
 }
 
-#search-user input:focus {
+.input-line {
   border: 2px solid gray;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.input-line:hover {
+  border: 2px solid black;
+}
+
+.input-line span {
+  font-size: 18px;
+}
+
+.user-search {
+  border: none !important;
+  padding: 0 0 !important;
+}
+
+#search-user input:focus {
+}
+
+#search-user input:hover {
 }
 
 .join-server-container h1 {

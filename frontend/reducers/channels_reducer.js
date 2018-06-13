@@ -25,7 +25,7 @@ const channelsReducer = (state = initialState, action) => {
       case RECEIVE_DM_SERVER:
         return Object.assign({}, state, action.payload.channels);
       case REMOVE_MESSAGE:
-        return Object.assign({}, state, action.payload.channels)
+        return Object.assign({}, state, action.payload.channels);
       case LOGOUT_USER:
         return initialState;
       default:

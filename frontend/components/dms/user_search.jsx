@@ -67,7 +67,10 @@ class UserSearch extends React.Component {
         <h1>Search For User</h1>
           <div className="join-server-div">
             <form onSubmit={(e) => this.handleSubmit(e) }>
-              <span>@ </span><input autoComplete="off" id="input-id" value={this.state.name} onChange={this.handleChange} />
+              <div className="input-line">
+                <span>@ </span>
+                  <input autoComplete="off" id="input-id" className="user-search" value={this.state.name} onChange={this.handleChange} />
+              </div>
             </form>
             <div className="search-box-div">
               <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>

@@ -1,7 +1,7 @@
 /* .online-ul  i {
   color: lightgreen !important;
 } */
-/* 
+/*
 .user-list-container i {
   margin-right: 10px;
 } */
@@ -36,6 +36,13 @@
   height: 46px;
   display: flex;
   flex-direction: row;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.online-user-list-container-li:hover {
+  background-color: hsla(210,3%,87%,.3);
+;;
 }
 
 .user-name-container {

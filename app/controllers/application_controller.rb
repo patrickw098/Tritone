@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
+    current_user.update(online_status: "offline")
+    UserOnlineEventBroadcastJob.perform_later(current_user)
     current_user.reset_session_token!
     session[:session_token] = nil
   end
@@ -18,6 +20,8 @@ class ApplicationController < ActionController::Base
   def login(user)
     @current_user = user
     session[:session_token] = user.reset_session_token!
+    user.update(online_status: "online")
+    UserOnlineEventBroadcastJob.perform_later(current_user)
   end
 
 end

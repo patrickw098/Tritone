@@ -35,7 +35,8 @@ class Messages extends React.Component {
             this.props.history.push(`/channels/${payload}`);
             break;
           case "update_users":
-            this.props.receiveServer(payload);
+            debugger
+            this.props.receiveOnlineStatus(payload);
             break;
           default:
             console.log(`Unknown command, ${command}`)

@@ -2,6 +2,7 @@ import * as UserApiUtils from '../util/user_api_utils'
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_ONLINE_STATUS = "RECEIVE_ONLINE_STATUS"
 
 
 //will have to refactor jbuilder later to give back normalized data//
@@ -12,6 +13,11 @@ const receiveUser = (payload) => ({
 
 const receiveUsers = payload => ({
   type: RECEIVE_USERS,
+  payload
+})
+
+export const receiveOnlineStatus = payload => ({
+  type: RECEIVE_ONLINE_STATUS,
   payload
 })
 

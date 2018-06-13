@@ -1,6 +1,7 @@
 class Api::SearchesController < ApplicationController
   def servers
     query = params[:server][:name]
+    query = query.downcase
     query = "%" + query.split("").join("%") + "%"
     @servers = Server.where('lower(name) LIKE ?', query).limit(10)
 
@@ -9,6 +10,7 @@ class Api::SearchesController < ApplicationController
 
   def users
     query = params[:user][:name]
+    query = query.downcase
     query = "%" + query.split("").join("%") + "%"
     @users = User.where('lower(display_name) LIKE ?', query).limit(10)
 

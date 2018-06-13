@@ -2,12 +2,16 @@ import { connect } from 'react-redux';
 import UserList from './user_list';
 import { withRouter } from 'react-router-dom';
 import { fetchServer } from '../../actions/server_actions';
+import { dmServer } from '../../actions/server_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   offlineUsers: selectOfflineUsers(state, ownProps),
   onlineUsers: selectOnlineUsers(state, ownProps),
   serverId: ownProps.match.params.serverId,
-  friends: state.ui.friends
+  friends: state.ui.friends,
+  dmServers: state.entities.dmServers,
+  dmServerIds: Object.keys(state.entities.dmServers),
+  currentUser: state.session.id
 })
 
 const selectOfflineUsers = (state, ownProps) => {
@@ -18,7 +22,7 @@ const selectOfflineUsers = (state, ownProps) => {
   userArr.forEach( (id) => {
     let user = state.entities.users[id]
     if ( user.online_status === "offline" ) {
-      users.push(user.display_name)
+      users.push(user)
     }
   })
 
@@ -32,7 +36,7 @@ const selectOnlineUsers = (state, ownProps) => {
   userArr.forEach( (id) => {
     let user = state.entities.users[id]
     if ( user.online_status === "online" ) {
-      users.push(user.display_name)
+      users.push(user)
     }
   })
 
@@ -40,7 +44,8 @@ const selectOnlineUsers = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchServer: (id) => dispatch(fetchServer(id))
+  fetchServer: (id) => dispatch(fetchServer(id)),
+  dmServer: (user) => dispatch(dmServer(user))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserList));
