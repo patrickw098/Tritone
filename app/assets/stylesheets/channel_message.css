@@ -1,6 +1,6 @@
 .navbar-header {
   height: 47px;
-  width: 100% - 240px;
+  width: 100%;
   border-bottom: 1px solid #b9bbbe;
   overflow: hidden;
   display: flex;
@@ -18,7 +18,7 @@
   color: #4f545c;
   font-weight: 700;
   overflow: hidden;
-  width: 100% - 240px;;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-shrink: 10;
