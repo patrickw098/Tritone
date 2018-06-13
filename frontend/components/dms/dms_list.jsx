@@ -19,9 +19,9 @@ class DmList extends React.Component {
 
     return (
       <div className="channel-list">
-        <div className="channel-list-header">
-          <h1 className="server-name">
-            <button onClick={this.searchUsers} className="search-user-button">Search for User</button>
+        <div className="">
+          <h1 className="dms-list-header">
+            <button onClick={this.searchUsers} className="search-user-button">Find or start a conversation</button>
           </h1>
         </div>
         <div className="channel-list-body">

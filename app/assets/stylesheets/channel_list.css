@@ -1,10 +1,9 @@
 .channel-list-div {
   display: flex;
   height: 100%;
-  color: white;
   font-size: 16px;
   font-weight: 500;
-  color: #f6f6f7;
+  color: #72767d;
   width: 100%;
   line-height: 32px;
   overflow:scroll;
@@ -16,6 +15,7 @@
   padding: 0 12px 0 16px;
   width: 100%;
   border-bottom: 1px solid #202225;
+  color: white;
 }
 
 .channel-list {
@@ -45,6 +45,7 @@
 
 .create-channel-li input:focus {
   border: 1px solid #7289da;
+  color: white;
 }
 
 .create-channel-li button {
@@ -56,6 +57,7 @@
   padding-left: 2px;
   padding-bottom: 5px;
   margin-top: 5px;
+  color: white;
 }
 
 .create-channel-li button:hover {
@@ -119,9 +121,11 @@
 
 .channel-name:hover {
   background-color: rgba(79,84,92,.6);
+  color: white;
 }
 
 .selected-channel li {
   background-color: rgba(79,84,92,.6) !important;
   cursor: default !important;
+  color: white !important;
 }
