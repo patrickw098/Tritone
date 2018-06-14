@@ -96,6 +96,11 @@ class Messages extends React.Component {
             { messages.map ((message) => {
               return <MessageItem key={message.id} message={message} />
             })}
+            <li className="beginning-of-messages">
+              <i class="fas fa-angle-double-left"></i>
+                Beginning of messages
+              <i class="fas fa-angle-double-right"></i>
+            </li>
           </ul>
         </div>
       )

@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     } else {
     return (
       <div className="navbar-header">
-        <h1 className="channel-name-header"><span>#</span>{this.props.channel.name.slice(0,120)}</h1>
+        <h1 className="channel-name-header"><span>#</span>{this.props.channel.name}</h1>
         <ToggleFriendsContainer />
       </div>
       )

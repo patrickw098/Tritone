@@ -11,16 +11,16 @@
 
 
 .channel-list-header {
-  height: 47px;
+  height: 48px;
   padding: 0 12px 0 16px;
   width: 100%;
   border-bottom: 1px solid #202225;
   color: white;
+  box-sizing: border-box;
 }
 
 .channel-list {
   width: 100%;
-  margin-right: 5px;
   overflow-x:hidden;
 }
 
@@ -94,6 +94,7 @@
   font-weight: 700;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
 }
 
 .dm-channel-name {

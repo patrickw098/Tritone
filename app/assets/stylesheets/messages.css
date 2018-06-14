@@ -38,6 +38,16 @@
   border-top: 1px solid gray;
 }
 
+.beginning-of-messages {
+  height: auto;
+  padding: 20px 0;
+  margin-left: 20px;
+  margin-right: 6px;
+  color: #99aab5;
+  font-size: 16px;
+  text-align: center;
+}
+
 .message-content {
   display: flex;
   flex-direction: row;
@@ -53,9 +63,6 @@
   align-items: center;
 }
 
-.message-li i {
-  color: green;
-}
 
 .message-items-container {
   display: flex;

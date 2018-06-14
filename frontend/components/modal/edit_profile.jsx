@@ -41,7 +41,7 @@ class EditProfile extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.toggleDropdown
+    this.toggleDropdown();
   }
 
   setColor(e){
@@ -62,7 +62,7 @@ class EditProfile extends React.Component {
             <i className={`fab fa-discord ${this.state.avatar_url}`}></i>
           </div>
           <form className="edit-profile-form">
-            <button className="toggle-menu-button" onClick={(e) => this.toggleDropdown(e)}>{this.state.avatar_url}</button>
+            <button className="toggle-menu-button" onClick={this.handleClick}>{this.state.avatar_url}</button>
             {
                this.state.show
                  ? (

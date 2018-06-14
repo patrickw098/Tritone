@@ -15,7 +15,7 @@ class DmNavBar extends React.Component {
     } else {
     return (
       <div className="navbar-header">
-        <h1 className="channel-name-header"><span>@</span>{this.props.name.slice(0,120)}</h1>
+        <h1 className="channel-name-header"><span>@</span>{this.props.name}</h1>
       </div>
       )
     }

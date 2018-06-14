@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   #sets default avatar name to the username#
   def set_avatar_name
-    self.display_name = self.username
+    self.display_name ||= self.username
   end
 
   #sets default online status to false (offline) #

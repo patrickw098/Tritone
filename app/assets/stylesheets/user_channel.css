@@ -80,3 +80,23 @@
 .logout-button:hover {
   background-color: #202225;
 }
+
+.no-friends-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-friends {
+  font-size: 60px;
+  text-transform: uppercase;
+  color: rgba(179, 203, 209,.3);
+}
+
+.no-friends-div i {
+  font-size: 500px;
+  color: rgba(179, 203, 209,.3);
+}
