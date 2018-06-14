@@ -106,4 +106,16 @@ class User < ApplicationRecord
   through: :dms,
   source: :channels
 
+  def set_random_color!
+    colors = ['red', 'blue', 'black', 'gray', 'purple', 'orange', 'green']
+    index = rand(7)
+    self.avatar_url = colors[index]
+    self
+  end
+
+  before_create do
+    self.set_random_color!
+  end
+
+
 end

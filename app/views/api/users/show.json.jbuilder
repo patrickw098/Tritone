@@ -39,6 +39,7 @@ json.dms do
     json.set! dm_user.id do
       json.name dm_user.display_name
       json.user_id dm_user.id
+      json.color dm_user.avatar_url
       json.server_id dm.id
       json.channel_id dm.channel_ids.first
     end

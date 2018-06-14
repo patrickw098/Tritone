@@ -10,17 +10,17 @@ class ServerList extends React.Component {
       this.openServerModal = this.openServerModal.bind(this);
   }
 
-  componentDidMount() {
-    if ( this.props.match.params.serverId !== undefined ) {
-      this.props.fetchServer(this.props.match.params.serverId);
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.match.params.serverId !== this.props.match.params.serverId ) {
-      this.props.fetchServer(newProps.match.params.serverId);
-    }
-  }
+  // componentDidMount() {
+  //   if ( this.props.match.params.serverId !== undefined ) {
+  //     this.props.fetchServer(this.props.match.params.serverId);
+  //   }
+  // }
+  //
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.match.params.serverId !== this.props.match.params.serverId ) {
+  //     this.props.fetchServer(newProps.match.params.serverId);
+  //   }
+  // }
 
   goToUserPage(e) {
     e.preventDefault();

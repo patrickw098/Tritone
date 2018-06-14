@@ -21,6 +21,7 @@ class Dropdown extends React.Component {
       return (
         <div className="dropdown-box">
           <ul>
+            <li onClick={this.userProfile}> Open Profile </li>
             <li onClick={this.closeFooter}> Log Out </li>
           </ul>
         </div>

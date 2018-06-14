@@ -31,7 +31,7 @@ class UserListItem extends React.Component {
 
     return (
       <li onClick={this.handleClick} className="online-user-list-container-li">
-        <Avatar user={user}/>
+        <Avatar color={this.props.color}/>
           <div className="user-name-container">
             <strong>{user.display_name.slice(0,15)}</strong>
           </div>

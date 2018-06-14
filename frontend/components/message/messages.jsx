@@ -8,16 +8,16 @@ class Messages extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchChannel(this.props.channelId);
-    this.setUpSubscription(this.props.channelId, this.props.receiveMessage);
+    this.setUpSubscription(this.props.channelId);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.channelId !== this.props.channelId) {
       this.props.fetchChannel(newProps.channelId);
       this.subscription.unsubscribe();
-      this.setUpSubscription(newProps.channelId, newProps.receiveMessage);
+      this.setUpSubscription(newProps.channelId);
     }
   }
 
@@ -25,9 +25,9 @@ class Messages extends React.Component {
     this.subscription.unsubscribe();
   }
 
-  setUpSubscription(channelId, receiveMessage) {
-    let consumer = ActionCable.createConsumer();
-    this.subscription = consumer.subscriptions.create({
+  setUpSubscription(channelId) {
+    this.consumer = ActionCable.createConsumer();
+    this.subscription = this.consumer.subscriptions.create({
       channel: 'ChatChannel',
       room: `${channelId}`
     }, {

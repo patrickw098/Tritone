@@ -15,7 +15,7 @@ class MessageItem extends React.Component {
       <li className="message-li">
         <div className="message-content">
           <div className="message-icon">
-            <Avatar color={"green"}/>
+            <Avatar color={this.props.message.color}/>
           </div>
           <div className="message-items-container">
             <h3 className="message-author">{this.props.message.author}
