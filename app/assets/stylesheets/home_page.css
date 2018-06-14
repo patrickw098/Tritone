@@ -177,6 +177,11 @@ body {
   color: black;
 }
 
+#logging-in {
+  background-color: lightgray;
+  box-shadow: 0 0 0 0;
+}
+
 .demo-user:hover {
   background-color: lightgray;
 }
