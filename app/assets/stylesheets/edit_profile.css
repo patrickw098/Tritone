@@ -1,0 +1,112 @@
+.edit-profile-div {
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #72767d;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.edit-avatar-div {
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-avatar-display {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.edit-avatar-div i {
+  font-size: 100px;
+}
+
+.edit-profile-div button {
+  height: 25px;
+  width: 70px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-menu-button {
+  position:relative;
+  background-color: white;
+}
+
+.edit-profile-form {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-menu-item:hover {
+  background-color: #b9bbbe;
+}
+
+.edit-profile-form input {
+  width: 200px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.edit-profile-form label {
+  margin-top: 180px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.color-menu {
+  position: absolute;
+  top: 185px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.save-user-input {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #72767d;
+  margin-top: 5px;
+}
+
+.save-user-input:hover {
+  border: 1px solid black;
+}
+
+.save-user-input:focus {
+  border: 1px solid #7289da;
+}
+
+.save-user-button {
+  background-color:#7289da;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save-user-button:hover {
+  background-color: #677bc4;
+}

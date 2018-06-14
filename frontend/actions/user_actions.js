@@ -30,3 +30,8 @@ export const searchUsers = (user) => dispatch => {
   return UserApiUtils.searchUsers(user)
     .then( (res) => dispatch(receiveUsers(res)))
 }
+
+export const updateCurrentUser = user => dispatch => {
+  return UserApiUtils.updateUser(user)
+    .then( (res) => dispatch(receiveUser(res)))
+}

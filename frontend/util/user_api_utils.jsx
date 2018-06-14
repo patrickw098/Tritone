@@ -12,3 +12,11 @@ export const searchUsers = user => {
     data: { user }
   })
 }
+
+export const updateUser = user => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: { user }
+  })
+}

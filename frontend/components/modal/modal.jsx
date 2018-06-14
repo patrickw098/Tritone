@@ -6,6 +6,7 @@ import EditChannelContainer from './edit_channel_container';
 import EditServerContainer from './edit_server_container';
 import ErrorMessageContainer from './error_message_container';
 import UserSearchContainer from '../dms/user_search_container';
+import EditProfileContainer from './edit_profile_container';
 
 const Modal = ( { modal, closeModal } ) => {
   if (!modal) {
@@ -28,6 +29,9 @@ const Modal = ( { modal, closeModal } ) => {
       break;
     case 'searchUsers':
       component = <UserSearchContainer />
+      break;
+    case 'openProfile':
+      component = <EditProfileContainer />
       break;
     default:
       return null;

@@ -5,6 +5,7 @@ class Dropdown extends React.Component {
     super(props);
 
     this.closeFooter = this.closeFooter.bind(this);
+    this.userProfile = this.userProfile.bind(this);
   }
 
   closeFooter(e) {
@@ -12,6 +13,12 @@ class Dropdown extends React.Component {
     e.preventDefault();
     this.props.closeFooter();
     this.props.logout();
+  }
+
+  userProfile(e) {
+    e.preventDefault();
+    this.props.closeFooter();
+    this.props.openModal('openProfile');
   }
 
   render() {
