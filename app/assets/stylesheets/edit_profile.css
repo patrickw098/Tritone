@@ -55,7 +55,8 @@
 }
 
 .color-menu-item:hover {
-  background-color: #b9bbbe;
+  background-color: #7289da;
+  color: white;
 }
 
 .edit-profile-form input {

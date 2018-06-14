@@ -225,10 +225,11 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(0,0,0, .3);
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .login-form-div input:focus {
-  border: 2px solid #677bc4;
+  border: 2px solid #677bc4 !important;
 }
 
 .login-form-div input:hover {

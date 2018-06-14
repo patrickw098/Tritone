@@ -29,7 +29,7 @@ class UserChannel extends React.Component {
           <div className="message-div">
             <NavBarContainer />
             <div className="no-friends-div">
-              <h1 className="no-friends">No Friends Yet..</h1>
+              <h1 className="no-friends">No Friends Yet...</h1>
               <i className="far fa-frown"></i>
             </div>
           </div>

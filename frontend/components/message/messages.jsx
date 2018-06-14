@@ -98,7 +98,7 @@ class Messages extends React.Component {
             })}
             <li className="beginning-of-messages">
               <i class="fas fa-angle-double-left"></i>
-                Beginning of messages
+                <span> </span>Beginning of messages<span> </span>
               <i class="fas fa-angle-double-right"></i>
             </li>
           </ul>
