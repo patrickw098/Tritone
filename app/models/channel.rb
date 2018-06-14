@@ -13,7 +13,7 @@ class Channel < ApplicationRecord
   end
 
   def sorted_messages
-    channel_messages = self.messages
+    channel_messages = self.messages.includes(:channel).where(channel_id: self.id)
     sorted = channel_messages.sort_by { |message| message.created_at }
     sorted.map! { |message| message.id}
     sorted

@@ -17,4 +17,9 @@ class Message < ApplicationRecord
     NewMessageEventBroadcastJob.perform_later(self)
   end
 
+  before_destroy do
+    channel = Channel.find(self.channel_id)
+    DeleteMessageEventBroadcastJob.perform_later(self, channel)
+  end
+
 end

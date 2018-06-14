@@ -13,7 +13,7 @@ class Api::MessagesController < ApplicationController
 
   def destroy
     @message = Message.includes(:channel, :server).find(params[:id])
-    @message.delete
+    @message.destroy
     @channel = Channel.includes(:server, :messages).find(@message.channel_id);
 
     render :destroy

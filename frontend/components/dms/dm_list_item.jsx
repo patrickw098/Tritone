@@ -13,7 +13,7 @@ class DmListItem extends React.Component {
       <NavLink activeClassName="selected-channel" to={`/channels/@me/${this.props.dmServer.channel_id}`}>
         <li id="dm-channel-name" className="channel-name">
           <div className="dm-channel-name">
-            <Avatar color={"purple"}/>
+            <Avatar />
             <strong>{ this.props.dmServer.name }</strong>
           </div>
         </li>

@@ -16,13 +16,18 @@ class Messages extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.channelId !== this.props.channelId) {
       this.props.fetchChannel(newProps.channelId);
+      this.subscription.unsubscribe();
       this.setUpSubscription(newProps.channelId, newProps.receiveMessage);
     }
   }
 
+  componentWillUnMount(){
+    this.subscription.unsubscribe();
+  }
+
   setUpSubscription(channelId, receiveMessage) {
     let consumer = ActionCable.createConsumer();
-    consumer.subscriptions.create({
+    this.subscription = consumer.subscriptions.create({
       channel: 'ChatChannel',
       room: `${channelId}`
     }, {
@@ -36,6 +41,10 @@ class Messages extends React.Component {
             break;
           case "update_users":
             this.props.receiveOnlineStatus(payload);
+            break;
+          case "delete_message":
+          debugger
+            this.props.removeMessage(payload);
             break;
           default:
             console.log(`Unknown command, ${command}`)

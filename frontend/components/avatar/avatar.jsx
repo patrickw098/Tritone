@@ -16,7 +16,8 @@ class Avatar extends React.Component {
     } else if ( this.props.color ){
       randomColor = this.props.color;
     } else {
-      randomColor = "gray";
+      let index = Math.floor( Math.random() * this.colors.length )
+      randomColor = this.colors[index];
     }
 
     return (

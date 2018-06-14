@@ -19,13 +19,15 @@ end
 json.channels do
   @user.channels.each do |channel|
     json.set! channel.id do
-      json.extract! channel, :id, :name, :message_ids
+      json.extract! channel, :id, :name
+      json.message_ids channel.sorted_messages
     end
   end
 
   @user.dm_channels.each do |channel|
     json.set! channel.id do
-      json.extract! channel, :id, :name, :message_ids
+      json.extract! channel, :id, :name
+      json.message_ids channel.sorted_messages
     end
   end
 end

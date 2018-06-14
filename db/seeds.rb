@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+Server.delete_all
+Channel.delete_all
+ServerMembership.delete_all
+Message.delete_all
+DmMembership.delete_all
 
 user1 = User.create({ username: "demo_user", password: "fireball42" })
 user2 = User.create({ username: "Parzival", password: "artemis"})
@@ -14,6 +19,7 @@ user3 = User.create({ username: "Art3mis", password: "savetheworld"})
 user4 = User.create({ username: "Aech", password: "imcool"})
 user5 = User.create({ username: "Daito", password: "samurai"})
 user6 = User.create({ username: "Shoto", password: "ninjas"})
+user7 = User.create({ username: "Anorak", password: "hallidayparty"})
 #
 Friendship.delete_all
 #
@@ -26,21 +32,16 @@ Friendship.delete_all
 # Friendship.create({ user_id: user4.id, friend_id: user2.id, accepted: true })
 # Friendship.create({ user_id: user5.id, friend_id: user2.id, accepted: true })
 
-Server.delete_all
 
 server1 = Server.create({ name: "High Five", creator_id: user2.id })
 server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
 dm1 = Server.create({ name: "", creator_id: user1.id })
-
-Channel.delete_all
 
 channel1 = Channel.create({ name: "general", server_id: server1.id })
 channel2 = Channel.create({ name: "riddles discussion", server_id: server1.id })
 channel3 = Channel.create({ name: "Aech's hideout", server_id: server1.id })
 channel4 = Channel.create({ name: "general", server_id: server2.id })
 channel5 = Channel.create({ name: "general", server_id: dm1.id })
-
-ServerMembership.delete_all
 
 membership1 = ServerMembership.create({ member_id: user6.id, server_id: server1.id })
 membership2 = ServerMembership.create({ member_id: user2.id, server_id: server1.id })
@@ -49,7 +50,14 @@ membership4 = ServerMembership.create({ member_id: user4.id, server_id: server1.
 membership5 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })
 membership6 = ServerMembership.create({ member_id: user1.id, server_id: server1.id })
 
-Message.delete_all
+20.times do
+  message = Faker::ChuckNorris.fact
+  Message.create({
+      body: message,
+      channel_id: 1 + rand(4),
+      author_id: 2 + rand(6)
+    })
+  end
 
 message1 = Message.create({ body: "hello world!", channel_id: channel1.id, author_id: user1.id })
 message2 = Message.create({ body: "demo user testing!", channel_id: channel1.id, author_id: user1.id })
@@ -61,7 +69,480 @@ message7 = Message.create({ body: "ragh!", channel_id: channel1.id, author_id: u
 message8 = Message.create({ body: "broken!", channel_id: channel1.id, author_id: user1.id })
 message9 = Message.create({ body: "i'm the last message!", channel_id: channel1.id, author_id: user1.id })
 
-DmMembership.delete_all
-
 dmM1 = DmMembership.create({ dm_id: dm1.id, user_id: user1.id })
 dmM2 = DmMembership.create({ dm_id: dm1.id, user_id: user2.id })
+
+server = Server.create({ name: "Game of Thrones", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+5.times do
+    name = Faker::GameOfThrones.character
+    user = User.create({ username: name, password: "password123" })
+    ServerMembership.create({ member_id: user.id, server_id: server.id })
+  end
+
+4.times do
+    channel_name = Faker::GameOfThrones.city
+    channel = Channel.create({ name: channel_name, server_id: server.id })
+  end
+
+50.times do
+  message = Faker::GameOfThrones.quote
+  Message.create({
+      body: message,
+      channel_id: 6 + rand(5),
+      author_id: 8 + rand(5)
+    })
+  end
+
+server = Server.create({ name: "Back to the Future", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+5.times do
+    name = Faker::BackToTheFuture.character
+    user = User.create({ username: name, password: "password123" })
+    ServerMembership.create({ member_id: user.id, server_id: server.id })
+  end
+
+4.times do
+    channel_name = Faker::BackToTheFuture.date
+    channel = Channel.create({ name: channel_name, server_id: server.id })
+  end
+
+20.times do
+  message = Faker::BackToTheFuture.quote
+  Message.create({
+      body: message,
+      channel_id: 11 + rand(5),
+      author_id: 13 + rand(5)
+    })
+  end
+
+
+
+server = Server.create({ name: "Books", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+5.times do
+    name = Faker::Book.author
+    user = User.create({ username: name, password: "password123" })
+    ServerMembership.create({ member_id: user.id, server_id: server.id })
+  end
+
+4.times do
+    channel_name = Faker::Book.publisher
+    channel = Channel.create({ name: channel_name, server_id: server.id })
+  end
+
+20.times do
+  message = Faker::Book.title
+  Message.create({
+      body: message,
+      channel_id: 16 + rand(5),
+      author_id: 18 + rand(5)
+    })
+  end
+
+server = Server.create({ name: "Coffee", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+  5.times do
+    name = Faker::Coffee.blend_name
+    user = User.create({ username: name, password: "password123" })
+    ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+    channel_name = Faker::Coffee.origin
+    channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
+
+  20.times do
+    message = Faker::Coffee.notes
+    Message.create({
+      body: message,
+      channel_id: 21 + rand(5),
+      author_id: 23 + rand(5)
+    })
+  end
+
+  server = Server.create({ name: "One Piece", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::OnePiece.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::OnePiece.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+        message = Faker::OnePiece.quote
+        Message.create({
+          body: message,
+          channel_id: 26 + rand(5),
+          author_id: 28 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "Company", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::Company.name
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::Company.industry
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::Company.buzzword
+      Message.create({
+          body: message,
+          channel_id: 31 + rand(5),
+          author_id: 33 + rand(5)
+        })
+      end
+
+
+  server = Server.create({ name: "Dogs", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::Dog.name
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::Dog.breed
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::Dog.meme_phrase
+      Message.create({
+          body: message,
+          channel_id: 36 + rand(5),
+          author_id: 38 + rand(5)
+        })
+      end
+
+
+  server = Server.create({ name: "Dr Who", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::DrWho.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::DrWho.catch_phrase
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::DrWho.quote
+      Message.create({
+          body: message,
+          channel_id: 41 + rand(5),
+          author_id: 43 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "Family Guy", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::FamilyGuy.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::FamilyGuy.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::FamilyGuy.quote
+      Message.create({
+          body: message,
+          channel_id: 46 + rand(5),
+          author_id: 48 + rand(5)
+        })
+      end
+
+
+  server = Server.create({ name: "Hey Arnold!", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::HeyArnold.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::HeyArnold.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::HeyArnold.quote
+      Message.create({
+          body: message,
+          channel_id: 51 + rand(5),
+          author_id: 53 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "Harry Potter", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+  ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+    5.times do
+        name = Faker::HarryPotter.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::HarryPotter.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::HarryPotter.quote
+      Message.create({
+          body: message,
+          channel_id: 56 + rand(5),
+          author_id: 58 + rand(5)
+        })
+  end
+
+  server = Server.create({ name: "Hitchhikers Guide to the Galaxy", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::HitchhikersGuideToTheGalaxy.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::HitchhikersGuideToTheGalaxy.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::HitchhikersGuideToTheGalaxy.quote
+      Message.create({
+          body: message,
+          channel_id: 61 + rand(5),
+          author_id: 63 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "The Hobbit", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+  ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+    5.times do
+        name = Faker::Hobbit.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::Hobbit.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::Hobbit.quote
+      Message.create({
+          body: message,
+          channel_id: 66 + rand(5),
+          author_id: 68 + rand(5)
+        })
+  end
+
+  server = Server.create({ name: "League of Legends", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+  ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+    5.times do
+        name = Faker::LeagueOfLegends.champion
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::LeagueOfLegends.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::LeagueOfLegends.quote
+      Message.create({
+          body: message,
+          channel_id: 71 + rand(5),
+          author_id: 73 + rand(5)
+        })
+  end
+
+  server = Server.create({ name: "How I Met Your Mother", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::HowIMetYourMother.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::HowIMetYourMother.high_five
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::HowIMetYourMother.quote
+      Message.create({
+          body: message,
+          channel_id: 76 + rand(5),
+          author_id: 78 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "Lord of the Rings", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+
+    5.times do
+        name = Faker::LordOfTheRings.character
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::LordOfTheRings.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::Hobbit.quote
+      Message.create({
+          body: message,
+          channel_id: 81 + rand(5),
+          author_id: 83 + rand(5)
+        })
+      end
+
+  server = Server.create({ name: "Lovecraft", creator_id: user7.id })
+  Channel.create( { name: "general", server_id: server.id })
+  ServerMembership.create( { member_id: user1.id, server_id: server.id })
+
+    5.times do
+        name = Faker::Lovecraft.deity
+        user = User.create({ username: name, password: "password123" })
+        ServerMembership.create({ member_id: user.id, server_id: server.id })
+      end
+
+    4.times do
+        channel_name = Faker::Lovecraft.location
+        channel = Channel.create({ name: channel_name, server_id: server.id })
+      end
+
+    20.times do
+      message = Faker::Lovecraft.fhtagn(3)
+      Message.create({
+          body: message,
+          channel_id: 86 + rand(5),
+          author_id: 88 + rand(5)
+        })
+  end
+
+
+server = Server.create({ name: "Beer", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+  5.times do
+      name = Faker::Beer.name
+      user = User.create({ username: name, password: "password123" })
+      ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+      channel_name = Faker::Beer.hop
+      channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
+
+
+server = Server.create({ name: "Breaking Bad", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+  5.times do
+      name = Faker::BreakingBad.character
+      user = User.create({ username: name, password: "password123" })
+      ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+      channel_name = Faker::BreakingBad.episode
+      channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
+
+server = Server.create({ name: "Mythology", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+  5.times do
+      name = Faker::Ancient.god
+      user = User.create({ username: name, password: "password123" })
+      ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+      channel_name = Faker::Ancient.primordial
+      channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
+
+server = Server.create({ name: "Overwatch", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+  5.times do
+      name = Faker::Overwatch.hero
+      user = User.create({ username: name, password: "password123" })
+      ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+      channel_name = Faker::Overwatch.location
+      channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
+
+
+server = Server.create({ name: "ESports", creator_id: user7.id })
+Channel.create( { name: "general", server_id: server.id })
+
+  5.times do
+      name = Faker::Esport.player
+      user = User.create({ username: name, password: "password123" })
+      ServerMembership.create({ member_id: user.id, server_id: server.id })
+    end
+
+  4.times do
+      channel_name = Faker::Esport.game
+      channel = Channel.create({ name: channel_name, server_id: server.id })
+    end
