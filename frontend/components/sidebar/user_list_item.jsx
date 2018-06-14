@@ -33,7 +33,7 @@ class UserListItem extends React.Component {
       <li onClick={this.handleClick} className="online-user-list-container-li">
         <Avatar user={user}/>
           <div className="user-name-container">
-            <strong>{user.display_name}</strong>
+            <strong>{user.display_name.slice(0,15)}</strong>
           </div>
       </li>
     )

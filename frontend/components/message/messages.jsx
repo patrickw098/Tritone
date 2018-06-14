@@ -43,7 +43,6 @@ class Messages extends React.Component {
             this.props.receiveOnlineStatus(payload);
             break;
           case "delete_message":
-          debugger
             this.props.removeMessage(payload);
             break;
           default:

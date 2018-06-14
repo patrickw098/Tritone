@@ -14,7 +14,7 @@ class DmListItem extends React.Component {
         <li id="dm-channel-name" className="channel-name">
           <div className="dm-channel-name">
             <Avatar />
-            <strong>{ this.props.dmServer.name }</strong>
+            <strong>{ this.props.dmServer.name.slice(0,15) }</strong>
           </div>
         </li>
       </NavLink>

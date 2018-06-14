@@ -17,6 +17,8 @@ class DmMessage extends React.Component {
   render() {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />
+    } else if (this.props.channelIds.indexOf(parseInt(this.props.match.params.channelId)) === -1 ){
+      return <Redirect to="/channels/@me" />
     } else {
       return (
         <div className="user-channel-main">

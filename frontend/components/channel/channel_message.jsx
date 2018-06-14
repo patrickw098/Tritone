@@ -17,7 +17,7 @@ class ChannelMessage extends React.Component {
   render() {
     if ( this.props.currentUser.display_name === undefined ) {
       return <Redirect to="/app" />
-    } else if (this.props.currentUser.server_ids.indexOf(parseInt(this.props.match.params.serverId)) === -1 ){
+    } else if (this.props.server.channel_ids.indexOf(parseInt(this.props.match.params.channelId)) === -1 ){
       return <Redirect to="/channels/@me" />
     } else {
       return (
