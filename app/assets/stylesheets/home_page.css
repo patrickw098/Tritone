@@ -80,7 +80,8 @@ body {
   width: 100vw;
   background-image: url('https://i.imgur.com/lpKiQk5.jpg');
   background-position: center;
-  /* animation: animate-background 20s infinite; */
+  animation-timing-function: ease-in-out;
+  animation: animate-background 20s infinite;
 }
 
 @keyframes animate-background {

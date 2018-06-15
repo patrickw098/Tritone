@@ -11,7 +11,6 @@ import ChannelMessageContainer from './channel/channel_message_container';
 import DmMessageContainer from './dms/dm_message_container';
 import Modal from './modal/modal';
 import Logo from './greeting/logo';
-import WelcomePage from './welcome_page'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
