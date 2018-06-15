@@ -82,6 +82,8 @@ class Messages extends React.Component {
   }
 
   render() {
+    const { users } = this.props;
+
     if ( this.props.messages[0] === undefined ) {
       return (
         <div className="messages-box">
@@ -94,12 +96,12 @@ class Messages extends React.Component {
         <div className="messages-box">
           <ul className="messages-ul">
             { messages.map ((message) => {
-              return <MessageItem key={message.id} message={message} />
+              return <MessageItem key={message.id} message={message} author={users[message.author_id]}/>
             })}
             <li className="beginning-of-messages">
-              <i class="fas fa-angle-double-left"></i>
+              <i className="fas fa-angle-double-left"></i>
                 <span> </span>Beginning of messages<span> </span>
-              <i class="fas fa-angle-double-right"></i>
+              <i className="fas fa-angle-double-right"></i>
             </li>
           </ul>
         </div>

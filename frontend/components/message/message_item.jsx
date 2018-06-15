@@ -10,12 +10,13 @@ class MessageItem extends React.Component {
   render() {
     let time = this.props.message.created_at.slice(0,20);
     let image = <i className="fab fa-discord"></i>
+    let color = this.props.author ? this.props.author.avatar_url : "gray"
 
     return (
       <li className="message-li">
         <div className="message-content">
           <div className="message-icon">
-            <Avatar color={this.props.message.color}/>
+            <Avatar color={color}/>
           </div>
           <div className="message-items-container">
             <h3 className="message-author">{this.props.message.author}

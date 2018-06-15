@@ -9,7 +9,8 @@ import { receiveOnlineStatus } from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => ({
   channelId: ownProps.match.params.channelId,
   channel: state.entities.channels[ownProps.match.params.channelId],
-  messages: selectMessages(state, ownProps)
+  messages: selectMessages(state, ownProps),
+  users: state.entities.users
 })
 
 const selectMessages = (state, ownProps) => {

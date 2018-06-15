@@ -19,7 +19,6 @@ class EditProfile extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
-    debugger
     this.props.updateUser(this.state).then(() => this.props.closeModal())
   }
 
