@@ -71,6 +71,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-image: url('https://i.imgur.com/lpKiQk5.jpg');
+  background-position: center;
 }
 
 .home-page-body {
