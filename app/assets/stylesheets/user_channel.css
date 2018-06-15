@@ -46,6 +46,7 @@
   flex-direction: column;
   justify-content: center;
   font-size: 12px;
+  text-align: left;
 }
 
 .user-footer h3 {
@@ -71,6 +72,10 @@
   height: 42px;
   width: 42px;
   border-radius: 5px
+}
+
+.identifier {
+  opacity: .4;
 }
 
 .logout-button i {

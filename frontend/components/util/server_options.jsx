@@ -12,6 +12,7 @@ class ServerOptions extends React.Component {
     this.handleLeave = this.handleLeave.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.toggleClick = this.toggleClick.bind(this);
+    this.closeOptions = this.closeOptions.bind(this);
   }
 
   toggleClick() {
@@ -24,6 +25,22 @@ class ServerOptions extends React.Component {
         toggle: true
       })
     }
+  }
+
+  closeOptions(event) {
+    if (event.key === 'Escape' || event.keyCode === 27 ) {
+      this.setState({
+        toggle: false
+      })
+    }
+  }
+
+  componentDidMount(){
+    document.addEventListener('keydown', (event) => this.closeOptions(event))
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', (event) => this.closeOptions(event));
   }
 
   handleDelete(e) {

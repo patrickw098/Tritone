@@ -21,6 +21,7 @@ class Dropdown extends React.Component {
     this.props.openModal('openProfile');
   }
 
+
   render() {
     if (!this.props.dropdown) {
       return null;
