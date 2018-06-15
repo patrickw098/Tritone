@@ -14,7 +14,7 @@ const findMutualServers = (state, ownProps) => {
   let currentUser = state.entities.users[state.session.id];
   let friend = ownProps.friend;
 
-  let mutualServerArr = (currentUser.server_ids && friend.server_ids)
+  let mutualServerArr = currentUser.server_ids.filter (id => friend.server_ids.indexOf(id) !== -1 )
 
   return mutualServerArr.map((id) => state.entities.servers[id])
 }

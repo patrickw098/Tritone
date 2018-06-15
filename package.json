@@ -12,7 +12,6 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
     "webpack": "^4.10.2"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
@@ -25,7 +24,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -d -w",
-    "postinstall": "webpack"
+    "postinstall": "webpack --optimize-minimize"
   },
   "repository": {
     "type": "git",
@@ -39,7 +38,8 @@
   },
   "homepage": "https://github.com/patrickw098/Tritone#readme",
   "devDependencies": {
-    "webpack-cli": "^3.0.2"
+    "webpack-cli": "^3.0.2",
+    "redux-logger": "^3.0.6"
   },
   "engines": {
     "node": "8.4.0",

@@ -44,7 +44,6 @@ class EditProfile extends React.Component {
   }
 
   setColor(e){
-    console.log(e);
     e.stopPropagation();
     e.preventDefault();
     this.setState({
@@ -53,7 +52,6 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="edit-profile-div">
         <div className="edit-avatar-div">
