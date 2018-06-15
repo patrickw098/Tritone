@@ -11,7 +11,7 @@ class UserSearch extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleServerSelect = this.handleServerSelect.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
     this.redirectAfter = this.redirectAfter.bind(this);
   }
 
@@ -31,21 +31,24 @@ class UserSearch extends React.Component {
     this.props.closeModal();
   }
 
-  handleServerSelect(e, object) {
+  handleSelect(e, object) {
     e.preventDefault();
+
+    const { dmServerIds, currentUser, history, closeModal, dmServer, dmServers } = this.props;
+
     this.setState({
       name: object.display_name,
       id: object.id
     },  () => {
-      let index = this.props.dmServerIds.indexOf(`${this.state.id}`)
-      if (this.state.id === this.props.currentUser ) {
-        this.props.history.push('/channels/@me')
-        this.props.closeModal();
+      let index = dmServerIds.indexOf(`${this.state.id}`)
+      if (this.state.id === currentUser ) {
+        history.push('/channels/@me')
+        closeModal();
       } else if ( index !== -1 ) {
-        this.props.history.push(`/channels/@me/${this.props.dmServers[this.state.id].channel_id}`);
-        this.props.closeModal();
+        history.push(`/channels/@me/${dmServers[this.state.id].channel_id}`);
+        closeModal();
       } else {
-        this.props.dmServer(this.state).then(this.redirectAfter);
+        dmServer(this.state).then(this.redirectAfter);
       }
     });
   }
@@ -73,7 +76,7 @@ class UserSearch extends React.Component {
               </div>
             </form>
             <div className="search-box-div">
-              <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleServerSelect}/>
+              <SearchBox servers={this.props.servers} query={this.state.name} select={this.handleSelect}/>
             </div>
           </div>
       </div>

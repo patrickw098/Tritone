@@ -26,6 +26,8 @@ class Messages extends React.Component {
   }
 
   setUpSubscription(channelId) {
+    const { receiveMessage, history, receiveOnlineStatus, removeMessage } = this.props;
+
     this.consumer = ActionCable.createConsumer();
     this.subscription = this.consumer.subscriptions.create({
       channel: 'ChatChannel',
@@ -34,16 +36,16 @@ class Messages extends React.Component {
       received: ({ payload, command }) => {
         switch (command) {
           case "update_message":
-            this.props.receiveMessage(payload);
+            receiveMessage(payload);
             break;
           case "redirect_to_server":
-            this.props.history.push(`/channels/${payload}`);
+            history.push(`/channels/${payload}`);
             break;
           case "update_users":
-            this.props.receiveOnlineStatus(payload);
+            receiveOnlineStatus(payload);
             break;
           case "delete_message":
-            this.props.removeMessage(payload);
+            removeMessage(payload);
             break;
           default:
             console.log(`Unknown command, ${command}`)
