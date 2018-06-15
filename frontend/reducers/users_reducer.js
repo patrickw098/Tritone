@@ -12,7 +12,9 @@ const usersReducer = (state = initialState, action) => {
       case LOGIN_USER:
         return Object.assign({}, state, { [action.payload.user.id]: action.payload.user });
       case RECEIVE_USER:
-        return Object.assign({}, state, { [action.payload.user.id]: action.payload.user });
+        let newState = Object.assign({}, state, { [action.payload.user.id]: action.payload.user });
+        let newerState = Object.assign({}, newState, action.payload.users);
+        return newerState;
       case RECEIVE_USERS:
         return Object.assign({}, state, action.payload.users);
       case RECEIVE_SERVER:

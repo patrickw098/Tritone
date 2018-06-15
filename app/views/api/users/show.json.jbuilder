@@ -2,6 +2,15 @@ json.user do
   json.partial! 'api/users/user', user: @user
 end
 
+json.users do
+  @user.friends.each do |friend|
+    json.set! friend.id do
+      json.partial! 'api/users/user', user: friend
+    end
+  end
+end
+
+
 json.servers do
   @user.servers.each do |server|
     json.partial! 'api/servers/server', server: server

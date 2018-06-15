@@ -40,29 +40,33 @@ class GetStarted extends React.Component {
     if (!currentUser) {
       if (this.state.username === null) {
         return (
-          <div className="get-started-div">
-            <h1> Tritone, a discord app clone </h1>
-            <div className="get-started-button-container">
-              <button disabled={this.state.username} className="demo-user" onClick={this.demoUser}>
-                <h2>Demo User Log In</h2>
-              </button>
-              <button disabled={this.state.username} className="get-started-button" onClick={this.getStarted}>
-                <h2>Get Started!</h2>
-              </button>
+          <div className="home-page-body">
+            <div className="get-started-div">
+              <h1> Tritone, a discord app clone </h1>
+              <div className="get-started-button-container">
+                <button disabled={this.state.username} className="demo-user" onClick={this.demoUser}>
+                  <h2>Demo User Log In</h2>
+                </button>
+                <button disabled={this.state.username} className="get-started-button" onClick={this.getStarted}>
+                  <h2>Get Started!</h2>
+                </button>
+              </div>
             </div>
           </div>
         );
       } else {
         return (
-          <div className="get-started-div">
-            <h1> Tritone, a discord app clone </h1>
-            <div className="get-started-button-container">
-              <button disabled={this.state.username} id="logging-in" className="demo-user">
-                <h2>Logging In...</h2>
-              </button>
-              <button disabled={this.state.username} className="get-started-button">
-                <h2>Get Started!</h2>
-              </button>
+          <div className="home-page-body">
+            <div className="get-started-div">
+              <h1> Tritone, a discord app clone </h1>
+              <div className="get-started-button-container">
+                <button disabled={this.state.username} id="logging-in" className="demo-user">
+                  <h2>Logging In...</h2>
+                </button>
+                <button disabled={this.state.username} className="get-started-button">
+                  <h2>Get Started!</h2>
+                </button>
+              </div>
             </div>
           </div>
         );

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create, :destroy]
     resources :dm_memberships, only: [:create, :destroy]
     resources :dms, only: [:create, :destroy]
+    resources :friend_requests, only: [:create, :destroy]
 
     get '/searches/servers', to: 'searches#servers'
     get '/searches/users', to: 'searches#users'

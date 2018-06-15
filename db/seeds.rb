@@ -33,7 +33,7 @@ Friendship.delete_all
 # Friendship.create({ user_id: user5.id, friend_id: user2.id, accepted: true })
 
 
-server1 = Server.create({ name: "High Five", creator_id: user2.id })
+server1 = Server.create({ name: "High Five", creator_id: user2.id, image_url: "http://d1marr3m5x4iac.cloudfront.net/images/block/movies/161783/161783_ba.jpg" })
 server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
 dm1 = Server.create({ name: "", creator_id: user1.id })
 
@@ -72,7 +72,7 @@ message9 = Message.create({ body: "i'm the last message!", channel_id: channel1.
 dmM1 = DmMembership.create({ dm_id: dm1.id, user_id: user1.id })
 dmM2 = DmMembership.create({ dm_id: dm1.id, user_id: user2.id })
 
-server = Server.create({ name: "Game of Thrones", creator_id: user7.id })
+server = Server.create({ name: "Game of Thrones", creator_id: user7.id, image_url: "http://icons.iconarchive.com/icons/limav/game-of-thrones/256/Stark-icon.png" })
 Channel.create( { name: "general", server_id: server.id })
 ServerMembership.create( { member_id: user1.id, server_id: server.id })
 
@@ -144,7 +144,7 @@ Channel.create( { name: "general", server_id: server.id })
     })
   end
 
-server = Server.create({ name: "Coffee", creator_id: user7.id })
+server = Server.create({ name: "Coffee", creator_id: user7.id, image_url: "https://cdn1.iconfinder.com/data/icons/hotel-restaurant/512/15-512.png" })
 Channel.create( { name: "general", server_id: server.id })
 ServerMembership.create( { member_id: user1.id, server_id: server.id })
 
@@ -309,7 +309,7 @@ ServerMembership.create( { member_id: user1.id, server_id: server.id })
         })
       end
 
-  server = Server.create({ name: "Harry Potter", creator_id: user7.id })
+  server = Server.create({ name: "Harry Potter", creator_id: user7.id, image_url: "http://icons.iconarchive.com/icons/artua/harry-potter/256/home-icon.png" })
   Channel.create( { name: "general", server_id: server.id })
   ServerMembership.create( { member_id: user1.id, server_id: server.id })
 
@@ -356,7 +356,7 @@ ServerMembership.create( { member_id: user1.id, server_id: server.id })
         })
       end
 
-  server = Server.create({ name: "The Hobbit", creator_id: user7.id })
+  server = Server.create({ name: "The Hobbit", creator_id: user7.id, image_url: "http://www.iconeasy.com/icon/png/Movie%20%26%20TV/LOTR%20-%20Armoury%20of%20the%20Third%20Age/The%20One%20Ring%20%28version%202%29.png" })
   Channel.create( { name: "general", server_id: server.id })
   ServerMembership.create( { member_id: user1.id, server_id: server.id })
 
@@ -380,7 +380,7 @@ ServerMembership.create( { member_id: user1.id, server_id: server.id })
         })
   end
 
-  server = Server.create({ name: "League of Legends", creator_id: user7.id })
+  server = Server.create({ name: "League of Legends", creator_id: user7.id, image_url: "http://2.bp.blogspot.com/-HqSOKIIV59A/U8WP4WFW28I/AAAAAAAAT5U/qTSiV9UgvUY/s1600/icon.png" })
   Channel.create( { name: "general", server_id: server.id })
   ServerMembership.create( { member_id: user1.id, server_id: server.id })
 
@@ -427,7 +427,7 @@ ServerMembership.create( { member_id: user1.id, server_id: server.id })
         })
       end
 
-  server = Server.create({ name: "Lord of the Rings", creator_id: user7.id })
+  server = Server.create({ name: "Lord of the Rings", creator_id: user7.id, image_url: "https://vignette.wikia.nocookie.net/lotr/images/9/9b/TheOneRing.jpg/revision/latest?cb=20131116000607" })
   Channel.create( { name: "general", server_id: server.id })
 
     5.times do
@@ -450,7 +450,7 @@ ServerMembership.create( { member_id: user1.id, server_id: server.id })
         })
       end
 
-  server = Server.create({ name: "Lovecraft", creator_id: user7.id })
+  server = Server.create({ name: "Lovecraft", creator_id: user7.id, image_url: "https://i.redditmedia.com/dVlZ0jsEcGncsxEGHI_aUmfLzZ5fT5HIZ9Y8HTkT-9A.jpg?s=118535f0538693ab0301d561a8594e2f" })
   Channel.create( { name: "general", server_id: server.id })
   ServerMembership.create( { member_id: user1.id, server_id: server.id })
 

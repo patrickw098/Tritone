@@ -60,23 +60,42 @@ class User < ApplicationRecord
     self.update_attributes({online_status: "offline"})
   end
 
-  has_many :friendships,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: :Friendship
+  def friends_array
+    friends = self.friends.includes(:friends)
+  end
 
-  has_many :friends_of,
-  primary_key: :id,
-  foreign_key: :friend_id,
-  class_name: :Friendship
+  def confirmed_friends
+    friend_obj = {
+      friends: [],
+      friend_reqs: []
+    }
+    self.friends_array.each do |friend|
+      if friend.friends.include?(self)
+        friend_obj[:friends].push(friend.id)
+      else
+        friend_obj[:friend_reqs].push(friend.id)
+      end
+    end
+    friend_obj
+  end
 
-  has_many :friends,
-  through: :friendships,
-  source: :friendship
-
-  has_many :friend_requests,
-  through: :friends_of,
-  source: :user
+  # has_many :friendships,
+  # primary_key: :id,
+  # foreign_key: :user_id,
+  # class_name: :Friendship
+  #
+  # has_many :friends_of,
+  # primary_key: :id,
+  # foreign_key: :friend_id,
+  # class_name: :Friendship
+  #
+  # has_many :friends,
+  # through: :friendships,
+  # source: :friendship
+  #
+  # has_many :friend_requests,
+  # through: :friends_of,
+  # source: :user
 
   has_many :server_memberships,
   primary_key: :id,
@@ -106,8 +125,28 @@ class User < ApplicationRecord
   through: :dms,
   source: :channels
 
+  has_many :friend_requests
+
+  has_one :friendship
+
+  has_many :requested_friendships,
+  through: :friendship,
+  source: :friend_requests
+
+  has_many :friends,
+  through: :requested_friendships,
+  source: :user
+
+  has_many :wants_to_have_friendship,
+  through: :friend_requests,
+  source: :friendship
+
+  has_many :wants_to_be_friends_with,
+  through: :wants_to_have_friendship,
+  source: :user
+
   def set_random_color!
-    colors = ['red', 'blue', 'black', 'gray', 'purple', 'orange', 'green']
+    colors = ['red', 'blue', 'black', 'yellow', 'purple', 'orange', 'green']
     index = rand(7)
     self.avatar_url = colors[index]
     self
@@ -115,6 +154,10 @@ class User < ApplicationRecord
 
   before_create do
     self.set_random_color!
+  end
+
+  after_create do
+    Friendship.new( {user_id: self.id} )
   end
 
 
