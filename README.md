@@ -32,7 +32,7 @@ And 1 secondary view:
 While navigating from page to page, the app makes a single database API query to fetch the relevant data that is necessary to navigate from one node on the webpage to any of the adjacent nodes using only one query and a normalized store.
 
 ### Direct Messaging
-Users are able to search for other users using a backend fuzzy search that fetches a list of 10 users who match the query using wildcards in the SQL query.  The users are then merged into the redux store via a dispatch action.  A front end fuzzy search is then implemented.  When a user is selected, it is returned as an object to the search's parent component and stored as its state.  The following code is run to determine whether or not a direct message with the user already exists.  If it does, it redirects to that user's direct message channel with the current user, if it doesn't it creates a new direct message server utilizing the same server/channel architecture and initializes the current user and the selected user as members.
+Users are able to search for other users using a backend fuzzy search that fetches a list of 10 users who match the query using wildcards in the SQL query at a custom API search route.  The users are then merged into the redux store via a dispatch action.  A front end fuzzy search is then implemented.  When a user is selected, it is returned as an object to the search's parent component and stored as its state.  The following code is run to determine whether or not a direct message with the user already exists.  If it does, it redirects to that user's direct message channel with the current user, if it doesn't it creates a new direct message server utilizing the same server/channel architecture and initializes the current user and the selected user as members.
 
 ` frontend/components/dms/user_search.jsx`
 ```javascript
@@ -59,9 +59,11 @@ Users are able to search for other users using a backend fuzzy search that fetch
     });
   }
 ```
+
 ### Live Messaging with Action Cables
 When a user joins a channel.  He subscribes to the channel and a direct link is established with the server.  This subscription is saved in the components' local state and the user is automatically unsubscribed when `componentWillUnmount()` is called.
 
+`frontend/components/message/messages.jsx`
 ```javascript
   componentWillUnMount(){
     this.subscription.unsubscribe();
@@ -96,3 +98,16 @@ When a user joins a channel.  He subscribes to the channel and a direct link is 
     });
   }
 ```
+
+
+When users initiate certain actions on the app, after the API request hits the backend, certain `EventBroadcastJobs` are initialized and information is delivered to all relevant subscribed users in the form of a `command` and a `payload`.  The `command` determines which course of action to take, while the `payload` is a package of information that gets merged with the existing information in each users' `store`.
+
+## Technologies Used
+* Ruby on Rails/PostgresSQL on the backend using RESTful and custom routes.
+* Redux/React on the frontend with ActionCables as an intermediary.
+* Rails ActionCables implements websockets.
+
+## Future TODOs
+* Add support for messaging images and GIFS
+* Implement a way to easily add and remove friends.
+* Add a chat bot to play games with!
