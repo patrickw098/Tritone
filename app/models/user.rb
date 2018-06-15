@@ -156,9 +156,5 @@ class User < ApplicationRecord
     self.set_random_color!
   end
 
-  after_create do
-    Friendship.new( {user_id: self.id} )
-  end
-
 
 end

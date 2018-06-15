@@ -5,11 +5,11 @@ class Api::FriendRequestsController < ApplicationController
     if @friendship
       FriendRequest.create({ friendship_id: @friendship.id, user_id: current_user.id} )
     else
-      @friendship = Friendship.create({ user_id: params[:user][:id] )
+      @friendship = Friendship.create({ user_id: params[:user][:id] })
       FriendRequest.create({ friendship_id: @friendship.id, user_id: current_user.id} )
     end
 
-    render 
+    render
   end
 
   def destroy
