@@ -19,8 +19,6 @@ end
 
 json.users do
   json.set! current_user.id do
-    json.extract! current_user, :id, :display_name, :online_status, :avatar_url
-    json.server_ids current_user.sorted_servers
-    json.dm_ids dm_user
+    json.partial! 'api/users/user', user: current_user
   end
 end

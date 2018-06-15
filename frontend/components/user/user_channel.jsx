@@ -5,6 +5,7 @@ import ChannelListContainer from '../server/channel_list_container';
 import FooterContainer from '../footer/footer_container';
 import NavBarContainer from '../navbar/navbar_container';
 import DmListContainer from '../dms/dms_list_container';
+import FriendsContainer from '../friends/friends_container';
 
 class UserChannel extends React.Component {
   constructor(props) {
@@ -28,10 +29,7 @@ class UserChannel extends React.Component {
           </div>
           <div className="message-div">
             <NavBarContainer />
-            <div className="no-friends-div">
-              <h1 className="no-friends">No Friends Yet...</h1>
-              <i className="far fa-frown"></i>
-            </div>
+            <FriendsContainer />
           </div>
         </div>
       )

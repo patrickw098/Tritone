@@ -12,6 +12,8 @@ Channel.delete_all
 ServerMembership.delete_all
 Message.delete_all
 DmMembership.delete_all
+Friendship.delete_all
+FriendRequest.delete_all
 
 user1 = User.create({ username: "demo_user", password: "fireball42" })
 user2 = User.create({ username: "Parzival", password: "artemis"})
@@ -20,8 +22,18 @@ user4 = User.create({ username: "Aech", password: "imcool"})
 user5 = User.create({ username: "Daito", password: "samurai"})
 user6 = User.create({ username: "Shoto", password: "ninjas"})
 user7 = User.create({ username: "Anorak", password: "hallidayparty"})
+friendship1 = Friendship.create({ user_id: user1.id })
+friendship2 = Friendship.create({ user_id: user2.id })
+friendship3 = Friendship.create({ user_id: user3.id })
+FriendRequest.create({ user_id: user1.id, friendship_id: friendship2.id})
+FriendRequest.create({ user_id: user1.id, friendship_id: friendship3.id})
+FriendRequest.create({ user_id: user2.id, friendship_id: friendship1.id})
+FriendRequest.create({ user_id: user2.id, friendship_id: friendship3.id})
+FriendRequest.create({ user_id: user3.id, friendship_id: friendship1.id})
+FriendRequest.create({ user_id: user3.id, friendship_id: friendship2.id})
+
 #
-Friendship.delete_all
+
 #
 # Friendship.create({ user_id: user2.id, friend_id: user6.id, accepted: true })
 # Friendship.create({ user_id: user2.id, friend_id: user3.id, accepted: true })

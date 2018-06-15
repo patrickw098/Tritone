@@ -4,7 +4,7 @@ class Avatar extends React.Component {
   constructor(props) {
     super(props)
 
-    this.colors = ['red', 'blue', 'black', 'gray', 'purple', 'orange', 'green']
+    this.colors = ['red', 'blue', 'black', 'yellow', 'purple', 'orange', 'green']
   }
 
   render() {

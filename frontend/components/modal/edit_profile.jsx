@@ -72,7 +72,7 @@ class EditProfile extends React.Component {
                      <button className="color-menu-item" onClick={this.setColor}> orange </button>
                      <button className="color-menu-item" onClick={this.setColor}> purple </button>
                      <button className="color-menu-item" onClick={this.setColor}> black </button>
-                     <button className="color-menu-item" onClick={this.setColor}> gray </button>
+                     <button className="color-menu-item" onClick={this.setColor}> yellow </button>
                    </div>
                  )
                  : (
