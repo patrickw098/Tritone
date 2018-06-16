@@ -36,8 +36,10 @@ class MessageInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createMessage(this.state)
-      .then(() => this.setState({ body: "" }));
+    if ( this.state.body.length !== 0 ) {
+      this.props.createMessage(this.state)
+      this.setState({ body: "" });
+    }
   }
 
   render() {
