@@ -92,6 +92,11 @@
   margin-left: 10px
 }
 
+.mutual-servers-div ul {
+  display: flex;
+  flex-direction: row;
+}
+
 .mutual-servers-icon {
   height: 30px;
   width: 30px;

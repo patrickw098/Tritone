@@ -30,23 +30,25 @@ class UserList extends React.Component {
           <div className="online-users">
             <ul className="online-ul">
               <h1> ONLINE - {this.props.onlineUsers.length} </h1>
-              {this.props.onlineUsers.map ((user) => {
+              {this.props.onlineUsers ?
+              ( this.props.onlineUsers.map ((user) => {
                 return <UserListItem key={user.id}
                         dmServer={dmServer} dmServers={dmServers}
                         dmServerIds={dmServerIds} currentUser={currentUser}
                         user={user} color={user.avatar_url}/>
-              })}
+              })) : null }
             </ul>
           </div>
           <div className="offline-users">
             <h1> OFFLINE - {this.props.offlineUsers.length} </h1>
             <ul className="offline-ul">
-              {this.props.offlineUsers.map ((user) => {
+              {this.props.onlineUsers ?
+              ( this.props.offlineUsers.map ((user) => {
                 return <UserListItem key={user.id} dmServer={dmServer}
                       dmServers={dmServers} dmServerIds={dmServerIds}
                       currentUser={currentUser}
                       user={user} color={"gray"}/>
-              })}
+              })) : null }
             </ul>
           </div>
         </div>
