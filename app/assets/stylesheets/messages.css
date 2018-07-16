@@ -68,7 +68,7 @@
 .message-items-container {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
   box-sizing: content-box;
 }
 
