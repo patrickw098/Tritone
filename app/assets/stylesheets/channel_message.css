@@ -9,6 +9,7 @@
   flex-shrink: 0;
   box-sizing: border-box;
   background-color: white;
+  word-break: break-all;
   z-index: -1;
 }
 

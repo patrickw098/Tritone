@@ -101,6 +101,8 @@
   height: 30px;
   width: 30px;
   overflow: hidden;
-  border-radius: 5px;
   margin: 0 5px;
+  font-size: 25px;
+  border-radius: 5px !important;
+  line-height: 25px;
 }

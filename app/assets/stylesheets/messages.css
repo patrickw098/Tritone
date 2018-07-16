@@ -68,6 +68,8 @@
 .message-items-container {
   display: flex;
   flex-direction: column;
+  width: 500px;
+  box-sizing: content-box;
 }
 
 .message-text {
@@ -79,6 +81,7 @@
   font-weight: 500;
   height: auto;
   word-break: break-all;
+  width: 100%;
 }
 
 .timestamp {
