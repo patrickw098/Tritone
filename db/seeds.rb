@@ -46,14 +46,14 @@ FriendRequest.create({ user_id: user3.id, friendship_id: friendship2.id})
 
 
 server1 = Server.create({ name: "High Five", creator_id: user2.id, image_url: "http://d1marr3m5x4iac.cloudfront.net/images/block/movies/161783/161783_ba.jpg" })
-server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
 dm1 = Server.create({ name: "", creator_id: user1.id })
 
 channel1 = Channel.create({ name: "general", server_id: server1.id })
 channel2 = Channel.create({ name: "riddles discussion", server_id: server1.id })
 channel3 = Channel.create({ name: "Aech's hideout", server_id: server1.id })
-channel4 = Channel.create({ name: "general", server_id: server2.id })
 channel5 = Channel.create({ name: "general", server_id: dm1.id })
+server2 = Server.create({ name: "Thequickbrownfoxjumpsoverthelazydog", creator_id: user2.id })
+channel4 = Channel.create({ name: "general", server_id: server2.id })
 
 membership1 = ServerMembership.create({ member_id: user6.id, server_id: server1.id })
 membership2 = ServerMembership.create({ member_id: user2.id, server_id: server1.id })
@@ -61,15 +61,24 @@ membership3 = ServerMembership.create({ member_id: user3.id, server_id: server1.
 membership4 = ServerMembership.create({ member_id: user4.id, server_id: server1.id })
 membership5 = ServerMembership.create({ member_id: user5.id, server_id: server1.id })
 membership6 = ServerMembership.create({ member_id: user1.id, server_id: server1.id })
+membership1 = ServerMembership.create({ member_id: user6.id, server_id: server2.id })
+membership2 = ServerMembership.create({ member_id: user2.id, server_id: server2.id })
+membership3 = ServerMembership.create({ member_id: user3.id, server_id: server2.id })
+membership4 = ServerMembership.create({ member_id: user4.id, server_id: server2.id })
+membership5 = ServerMembership.create({ member_id: user5.id, server_id: server2.id })
+membership6 = ServerMembership.create({ member_id: user1.id, server_id: server2.id })
 
 20.times do
   message = Faker::ChuckNorris.fact
   Message.create({
-      body: message,
-      channel_id: 1 + rand(4),
-      author_id: 2 + rand(6)
-    })
-  end
+    body: message,
+    channel_id: 1 + rand(3),
+    author_id: 2 + rand(6)
+  })
+end
+
+
+
 
 message1 = Message.create({ body: "hello world!", channel_id: channel1.id, author_id: user1.id })
 message2 = Message.create({ body: "demo user testing!", channel_id: channel1.id, author_id: user1.id })
