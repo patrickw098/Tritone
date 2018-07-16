@@ -22,8 +22,8 @@ class ServerListItem extends React.Component {
     if ( server.image_url !== undefined && server.image_url !== null ) {
       return (
         <li className="server-list-item">
-          <NavLink activeClassName="active-server" to={`/channels/${server.id}`}>
-            <button className="server-icon">
+          <NavLink activeClassName="active-server-photo" to={`/channels/${server.id}`}>
+            <button className="server-icon photo">
               <img src={server.image_url} />
             </button>
           </NavLink>
