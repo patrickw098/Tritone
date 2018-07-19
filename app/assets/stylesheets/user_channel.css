@@ -6,6 +6,9 @@
   z-index: 1;
   flex-direction: row;
   display: flex;
+  justify-content: flex-start;
+  flex-shrink: none;
+  margin: 0 0;
 }
 
 .server-selector-sidebar {
