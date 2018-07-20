@@ -97,6 +97,7 @@ body {
   animation-timing-function: ease-in-out;
   animation: animate-background 20s infinite;
   overflow: hidden;
+  min-width: 800px;
 }
 
 @keyframes animate-background {
