@@ -9,6 +9,7 @@
   justify-content: flex-start;
   flex-shrink: none;
   margin: 0 0;
+  min-width: 800px;
 }
 
 .server-selector-sidebar {

@@ -13,6 +13,7 @@
 .friends-list-ul {
   height: 90%;
   width: 100%;
+  overflow: hidden;
 }
 
 .friend-list-li {
@@ -26,6 +27,7 @@
 
 .friend-list-li:first-child {
   border-bottom: 1px solid rgb(153, 170, 181);
+  box-sizing: border-box;
 }
 
 .friend-list-li-content {
@@ -42,6 +44,7 @@
   border-bottom: 1px solid rgb(153, 170, 181);
   border-radius: 3px;
   border-right: none;
+  box-sizing: border-box;
 }
 
 #first-friend-li:hover {
